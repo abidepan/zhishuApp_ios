@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31D194E91A383E570075CDB7 /* main_news@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D194E51A383E570075CDB7 /* main_news@2x.png */; };
+		31D194EA1A383E570075CDB7 /* tab_me_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D194E61A383E570075CDB7 /* tab_me_selected@2x.png */; };
+		31D194EB1A383E570075CDB7 /* tab_scan_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D194E71A383E570075CDB7 /* tab_scan_selected@2x.png */; };
+		31D194EC1A383E570075CDB7 /* tab_setting_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D194E81A383E570075CDB7 /* tab_setting_selected@2x.png */; };
+		31D194F11A3840CE0075CDB7 /* ITMakeCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D194EF1A3840CE0075CDB7 /* ITMakeCodeViewController.m */; };
+		31D194F21A3840CE0075CDB7 /* ITMakeCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D194F01A3840CE0075CDB7 /* ITMakeCodeViewController.xib */; };
+		31D194F71A3841340075CDB7 /* ITUserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D194F51A3841340075CDB7 /* ITUserCenterViewController.m */; };
+		31D194F81A3841340075CDB7 /* ITUserCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D194F61A3841340075CDB7 /* ITUserCenterViewController.xib */; };
 		405D51261A348DF600A8C803 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D50471A348DF600A8C803 /* AppDelegate.m */; };
 		405D51271A348DF600A8C803 /* UIBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D504A1A348DF600A8C803 /* UIBaseTableViewController.m */; };
 		405D51281A348DF600A8C803 /* UIBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D504C1A348DF600A8C803 /* UIBaseViewController.m */; };
@@ -73,7 +81,6 @@
 		405D519E1A372AFB00A8C803 /* tab_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405D519B1A372AFB00A8C803 /* tab_setting@2x.png */; };
 		405D51A21A372DC700A8C803 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405D51A11A372DC700A8C803 /* logo@2x.png */; };
 		405D51A61A3734F000A8C803 /* main_qrcode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405D51A51A3734F000A8C803 /* main_qrcode@2x.png */; };
-		405D51AC1A37355700A8C803 /* main_activity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405D51A71A37355700A8C803 /* main_activity@2x.png */; };
 		405D51AD1A37355700A8C803 /* main_history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405D51A81A37355700A8C803 /* main_history@2x.png */; };
 		405D51AE1A37355700A8C803 /* main_makecode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405D51A91A37355700A8C803 /* main_makecode@2x.png */; };
 		405D51AF1A37355700A8C803 /* main_nfc@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405D51AA1A37355700A8C803 /* main_nfc@2x.png */; };
@@ -87,6 +94,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31D194E51A383E570075CDB7 /* main_news@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_news@2x.png"; sourceTree = "<group>"; };
+		31D194E61A383E570075CDB7 /* tab_me_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_me_selected@2x.png"; sourceTree = "<group>"; };
+		31D194E71A383E570075CDB7 /* tab_scan_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_scan_selected@2x.png"; sourceTree = "<group>"; };
+		31D194E81A383E570075CDB7 /* tab_setting_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_setting_selected@2x.png"; sourceTree = "<group>"; };
+		31D194EE1A3840CE0075CDB7 /* ITMakeCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITMakeCodeViewController.h; sourceTree = "<group>"; };
+		31D194EF1A3840CE0075CDB7 /* ITMakeCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITMakeCodeViewController.m; sourceTree = "<group>"; };
+		31D194F01A3840CE0075CDB7 /* ITMakeCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITMakeCodeViewController.xib; sourceTree = "<group>"; };
+		31D194F41A3841340075CDB7 /* ITUserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITUserCenterViewController.h; sourceTree = "<group>"; };
+		31D194F51A3841340075CDB7 /* ITUserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITUserCenterViewController.m; sourceTree = "<group>"; };
+		31D194F61A3841340075CDB7 /* ITUserCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITUserCenterViewController.xib; sourceTree = "<group>"; };
 		4049099B1A15D8650053B1C5 /* MatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		405D50461A348DF600A8C803 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		405D50471A348DF600A8C803 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -200,7 +217,6 @@
 		405D519B1A372AFB00A8C803 /* tab_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_setting@2x.png"; sourceTree = "<group>"; };
 		405D51A11A372DC700A8C803 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		405D51A51A3734F000A8C803 /* main_qrcode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_qrcode@2x.png"; sourceTree = "<group>"; };
-		405D51A71A37355700A8C803 /* main_activity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_activity@2x.png"; sourceTree = "<group>"; };
 		405D51A81A37355700A8C803 /* main_history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_history@2x.png"; sourceTree = "<group>"; };
 		405D51A91A37355700A8C803 /* main_makecode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_makecode@2x.png"; sourceTree = "<group>"; };
 		405D51AA1A37355700A8C803 /* main_nfc@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_nfc@2x.png"; sourceTree = "<group>"; };
@@ -230,6 +246,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31D194ED1A38406B0075CDB7 /* makecode */ = {
+			isa = PBXGroup;
+			children = (
+				31D194EE1A3840CE0075CDB7 /* ITMakeCodeViewController.h */,
+				31D194EF1A3840CE0075CDB7 /* ITMakeCodeViewController.m */,
+				31D194F01A3840CE0075CDB7 /* ITMakeCodeViewController.xib */,
+			);
+			name = makecode;
+			sourceTree = "<group>";
+		};
+		31D194F31A3840FA0075CDB7 /* user */ = {
+			isa = PBXGroup;
+			children = (
+				31D194F41A3841340075CDB7 /* ITUserCenterViewController.h */,
+				31D194F51A3841340075CDB7 /* ITUserCenterViewController.m */,
+				31D194F61A3841340075CDB7 /* ITUserCenterViewController.xib */,
+			);
+			name = user;
+			sourceTree = "<group>";
+		};
 		404909921A15D8650053B1C5 = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +301,8 @@
 				405D51C71A373B6300A8C803 /* Scan */,
 				405D51CB1A373B6300A8C803 /* ScanHistory */,
 				405D51A41A37306D00A8C803 /* Setting */,
+				31D194ED1A38406B0075CDB7 /* makecode */,
+				31D194F31A3840FA0075CDB7 /* user */,
 				405D502C1A348DF600A8C803 /* Account */,
 				405D50481A348DF600A8C803 /* Common */,
 				405D50461A348DF600A8C803 /* AppDelegate.h */,
@@ -458,7 +496,10 @@
 		405D50FC1A348DF600A8C803 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				405D51A71A37355700A8C803 /* main_activity@2x.png */,
+				31D194E51A383E570075CDB7 /* main_news@2x.png */,
+				31D194E61A383E570075CDB7 /* tab_me_selected@2x.png */,
+				31D194E71A383E570075CDB7 /* tab_scan_selected@2x.png */,
+				31D194E81A383E570075CDB7 /* tab_setting_selected@2x.png */,
 				405D51A81A37355700A8C803 /* main_history@2x.png */,
 				405D51A91A37355700A8C803 /* main_makecode@2x.png */,
 				405D51AA1A37355700A8C803 /* main_nfc@2x.png */,
@@ -598,13 +639,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31D194EC1A383E570075CDB7 /* tab_setting_selected@2x.png in Resources */,
 				405D517F1A348DF600A8C803 /* Default.png in Resources */,
 				405D51A21A372DC700A8C803 /* logo@2x.png in Resources */,
-				405D51AC1A37355700A8C803 /* main_activity@2x.png in Resources */,
+				31D194F21A3840CE0075CDB7 /* ITMakeCodeViewController.xib in Resources */,
 				405D51B01A37355700A8C803 /* main_shop@2x.png in Resources */,
 				405D51D21A373B6300A8C803 /* ITScanHistoryViewController.xib in Resources */,
 				405D517C1A348DF600A8C803 /* Default-6.png in Resources */,
+				31D194F81A3841340075CDB7 /* ITUserCenterViewController.xib in Resources */,
 				405D51291A348DF600A8C803 /* UIBaseViewController.xib in Resources */,
+				31D194EA1A383E570075CDB7 /* tab_me_selected@2x.png in Resources */,
 				405D518C1A348DF600A8C803 /* CycleScrollViewCell.xib in Resources */,
 				405D51A61A3734F000A8C803 /* main_qrcode@2x.png in Resources */,
 				405D51811A348DF600A8C803 /* grayarrowright@2x.png in Resources */,
@@ -612,8 +656,10 @@
 				405D51AE1A37355700A8C803 /* main_makecode@2x.png in Resources */,
 				405D517A1A348DF600A8C803 /* Default-568h@2x.png in Resources */,
 				405D51801A348DF600A8C803 /* Default@2x.png in Resources */,
+				31D194E91A383E570075CDB7 /* main_news@2x.png in Resources */,
 				405D51821A348DF600A8C803 /* grayarrowup@2x.png in Resources */,
 				405D51831A348DF600A8C803 /* placeholder@2x.png in Resources */,
+				31D194EB1A383E570075CDB7 /* tab_scan_selected@2x.png in Resources */,
 				405D51851A348DF600A8C803 /* tab@2x.png in Resources */,
 				405D51BA1A37373600A8C803 /* ITSettingViewController.xib in Resources */,
 				405D517E1A348DF600A8C803 /* Default-Ipad@2x.png in Resources */,
@@ -653,6 +699,7 @@
 				405D51261A348DF600A8C803 /* AppDelegate.m in Sources */,
 				405D51671A348DF600A8C803 /* MKAnnotationView+WebCache.m in Sources */,
 				405D51661A348DF600A8C803 /* MBProgressHUD.m in Sources */,
+				31D194F11A3840CE0075CDB7 /* ITMakeCodeViewController.m in Sources */,
 				405D516E1A348DF600A8C803 /* SDWebImageManager.m in Sources */,
 				405D51721A348DF600A8C803 /* UIImage+MultiFormat.m in Sources */,
 				405D516F1A348DF600A8C803 /* SDWebImagePrefetcher.m in Sources */,
@@ -680,6 +727,7 @@
 				405D51711A348DF600A8C803 /* UIImage+GIF.m in Sources */,
 				405D51551A348DF600A8C803 /* MainViewController.m in Sources */,
 				405D51271A348DF600A8C803 /* UIBaseTableViewController.m in Sources */,
+				31D194F71A3841340075CDB7 /* ITUserCenterViewController.m in Sources */,
 				405D51601A348DF600A8C803 /* ASIInputStream.m in Sources */,
 				405D51891A348DF600A8C803 /* CyclePageControl.m in Sources */,
 			);

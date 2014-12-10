@@ -11,6 +11,13 @@
 @interface MainViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIView *qickResponseCodeVW;
+@property (weak, nonatomic) IBOutlet UIView *newsVM;
+@property (weak, nonatomic) IBOutlet UIView *nfcVM;
+@property (weak, nonatomic) IBOutlet UIView *mallVM;
+@property (weak, nonatomic) IBOutlet UIView *historyVM;
+@property (weak, nonatomic) IBOutlet UIView *makeCodeVM;
+
+
 
 - (IBAction)onQuickResponseCodeBtnClicked:(id)sender;
 
