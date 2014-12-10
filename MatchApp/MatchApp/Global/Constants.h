@@ -37,17 +37,7 @@
 #define IOS8 [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0
 #endif
 
-#define kWhiteColor kRGB(255.0, 255.0, 255.0)
-#define kGoldenColor kRGB(255.0, 215.0, 0.0)
-#define kGoldenShampinColor kRGB(255.0, 248.0, 177.0)
-
-#define kAppleRedColor kRGB(255.0, 130.0, 133.0)
-#define kAppleGreenColor kRGB(190.0, 242.0, 66.0)
-#define kAppleBlueColor kRGB(92.0, 197.0, 255.0)
-#define kEggBlueColor kRGB(0.0, 125.0, 188.0)
-#define kLightBlueColor kRGB(92.0, 197.0, 255.0)
-#define kSnowCaynColor kRGB(58.0, 149.0, 167.0)
-#define kBlackColor kRGB(0, 0, 0)
+#define kAppleBlueColor kRGB(0.0, 122.0, 255.0)
 
 
 

@@ -48,7 +48,7 @@
         pageControl.userInteractionEnabled = NO ;
         [pageControl setDefersCurrentPageDisplay: NO] ;
         [pageControl setType: DDPageControlTypeOnFullOffFull] ;
-        [pageControl setOnColor: kAppleRedColor] ;
+        [pageControl setOnColor: kAppleBlueColor] ;
         [pageControl setOffColor: [UIColor whiteColor]] ;
         [pageControl setIndicatorDiameter: 10.0f] ;
         [pageControl setIndicatorSpace: 5.0f] ;

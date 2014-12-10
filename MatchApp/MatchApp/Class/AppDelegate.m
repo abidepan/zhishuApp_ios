@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "MainViewController.h"
 #import "Constants.h"
 
 @interface AppDelegate ()
@@ -20,13 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [application setStatusBarStyle:UIStatusBarStyleLightContent];
+    //[application setStatusBarStyle:UIStatusBarStyleLightContent];
     
-    self.centerNavigationController = [[UINavigationController alloc] initWithRootViewController:self.window.rootViewController];
-    _centerNavigationController.navigationBar.translucent = NO;
-    
-    [self.window setBackgroundColor:[UIColor whiteColor]];
-    [self.window makeKeyAndVisible];
     [self setAppearance];
     
     return YES;
@@ -36,26 +31,17 @@
     
     if (IOS7) {
         [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                              kWhiteColor,
+                                                              kAppleBlueColor,
                                                               NSForegroundColorAttributeName,
-                                                              [UIFont boldSystemFontOfSize:20],
-                                                              NSFontAttributeName,
                                                               nil]];
-        [[UINavigationBar appearance] setTintColor:kWhiteColor];
-        //kRGB(217, 105, 105)
-        [[UINavigationBar appearance] setBarTintColor:kLightBlueColor];
-        [[UITabBar appearance] setBackgroundColor:kLightBlueColor];
-        [[UITabBar appearance] setTintColor:kAppleRedColor];
         
         [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                              forBarMetrics:UIBarMetricsDefault];
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+        
     }else
     {
-        [[UINavigationBar appearance] setTintColor:kLightBlueColor];
-        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-        [[UIBarButtonItem appearance] setTintColor:kLightBlueColor];
-        [[UITabBar appearance] setTintColor:kAppleRedColor];
+        [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:kAppleBlueColor}];
+
     }
 }
 
