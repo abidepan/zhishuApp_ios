@@ -8,8 +8,13 @@
 
 #import "UIBaseViewController.h"
 #import "AppDelegate.h"
+#import "ITLoadingView.h"
+#import "ITErrorView.h"
 
 @interface UIBaseViewController ()
+
+
+
 
 @end
 
@@ -31,6 +36,26 @@
 -(UITabBarController *) rootTabBarController{
 
     return ((AppDelegate *)[UIApplication sharedApplication].delegate ).tabBarViewController;
+}
+
+
+-(void) showErrorViewWithTitle:(NSString*)title Image:(UIImage*)image{
+
+    if (_errorView==nil) {
+        
+        _errorView = [[[NSBundle mainBundle] loadNibNamed:@"ITErrorView" owner:self options:nil] objectAtIndex:0];
+    }
+    
+}
+
+-(void) showLoadingViewWithTitle:(NSString*)title Image:(UIImage*)image{
+    
+    if (_loadingView==nil) {
+        
+        _loadingView = [[[NSBundle mainBundle] loadNibNamed:@"ITLoadingView" owner:self options:nil] objectAtIndex:0];
+        [_loadingView initLoadingContent];
+    }
+    
 }
 
 @end

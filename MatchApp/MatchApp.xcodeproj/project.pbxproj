@@ -91,6 +91,10 @@
 		405D51D21A373B6300A8C803 /* ITScanHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 405D51CE1A373B6300A8C803 /* ITScanHistoryViewController.xib */; };
 		405D51D61A373BB900A8C803 /* ITScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D51D41A373BB900A8C803 /* ITScanQRCodeViewController.m */; };
 		405D51D71A373BB900A8C803 /* ITScanQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 405D51D51A373BB900A8C803 /* ITScanQRCodeViewController.xib */; };
+		40E1B3F21A389AB100111867 /* ITErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E1B3F11A389AB100111867 /* ITErrorView.m */; };
+		40E1B3F51A389AC900111867 /* ITLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E1B3F41A389AC900111867 /* ITLoadingView.m */; };
+		40E1B3F71A389AE000111867 /* ITErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E1B3F61A389AE000111867 /* ITErrorView.xib */; };
+		40E1B3F91A389AFA00111867 /* ITLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E1B3F81A389AFA00111867 /* ITLoadingView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -230,6 +234,12 @@
 		405D51D31A373BB900A8C803 /* ITScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITScanQRCodeViewController.h; path = MatchApp/Class/ScanHistory/ITScanQRCodeViewController.h; sourceTree = SOURCE_ROOT; };
 		405D51D41A373BB900A8C803 /* ITScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITScanQRCodeViewController.m; path = MatchApp/Class/ScanHistory/ITScanQRCodeViewController.m; sourceTree = SOURCE_ROOT; };
 		405D51D51A373BB900A8C803 /* ITScanQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ITScanQRCodeViewController.xib; path = MatchApp/Class/ScanHistory/ITScanQRCodeViewController.xib; sourceTree = SOURCE_ROOT; };
+		40E1B3F01A389AB100111867 /* ITErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITErrorView.h; sourceTree = "<group>"; };
+		40E1B3F11A389AB100111867 /* ITErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITErrorView.m; sourceTree = "<group>"; };
+		40E1B3F31A389AC900111867 /* ITLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITLoadingView.h; sourceTree = "<group>"; };
+		40E1B3F41A389AC900111867 /* ITLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITLoadingView.m; sourceTree = "<group>"; };
+		40E1B3F61A389AE000111867 /* ITErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITErrorView.xib; sourceTree = "<group>"; };
+		40E1B3F81A389AFA00111867 /* ITLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITLoadingView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +340,12 @@
 				405D504B1A348DF600A8C803 /* UIBaseViewController.h */,
 				405D504C1A348DF600A8C803 /* UIBaseViewController.m */,
 				405D504D1A348DF600A8C803 /* UIBaseViewController.xib */,
+				40E1B3F01A389AB100111867 /* ITErrorView.h */,
+				40E1B3F11A389AB100111867 /* ITErrorView.m */,
+				40E1B3F61A389AE000111867 /* ITErrorView.xib */,
+				40E1B3F31A389AC900111867 /* ITLoadingView.h */,
+				40E1B3F41A389AC900111867 /* ITLoadingView.m */,
+				40E1B3F81A389AFA00111867 /* ITLoadingView.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -669,11 +685,13 @@
 				405D51841A348DF600A8C803 /* search@2x.png in Resources */,
 				405D517B1A348DF600A8C803 /* Default-6-568h@2x.png in Resources */,
 				405D519D1A372AFB00A8C803 /* tab_scan@2x.png in Resources */,
+				40E1B3F71A389AE000111867 /* ITErrorView.xib in Resources */,
 				405D51861A348DF600A8C803 /* Images.xcassets in Resources */,
 				405D51871A348DF600A8C803 /* Info.plist in Resources */,
 				405D519E1A372AFB00A8C803 /* tab_setting@2x.png in Resources */,
 				405D51331A348DF600A8C803 /* LaunchScreen.xib in Resources */,
 				405D51AD1A37355700A8C803 /* main_history@2x.png in Resources */,
+				40E1B3F91A389AFA00111867 /* ITLoadingView.xib in Resources */,
 				405D517D1A348DF600A8C803 /* Default-Ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -691,10 +709,12 @@
 				405D51651A348DF600A8C803 /* UIColor+iOS7Colors.m in Sources */,
 				405D51761A348DF600A8C803 /* UIView+WebCacheOperation.m in Sources */,
 				405D516D1A348DF600A8C803 /* SDWebImageDownloaderOperation.m in Sources */,
+				40E1B3F51A389AC900111867 /* ITLoadingView.m in Sources */,
 				405D51621A348DF600A8C803 /* ASIWebPageRequest.m in Sources */,
 				405D51591A348DF600A8C803 /* WebServer.m in Sources */,
 				405D515E1A348DF600A8C803 /* ASIFormDataRequest.m in Sources */,
 				405D51631A348DF600A8C803 /* Reachability.m in Sources */,
+				40E1B3F21A389AB100111867 /* ITErrorView.m in Sources */,
 				405D515D1A348DF600A8C803 /* ASIDownloadCache.m in Sources */,
 				405D51261A348DF600A8C803 /* AppDelegate.m in Sources */,
 				405D51671A348DF600A8C803 /* MKAnnotationView+WebCache.m in Sources */,
