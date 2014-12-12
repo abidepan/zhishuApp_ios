@@ -12,8 +12,6 @@
 @implementation ITLoadingView
 
 
-
-
 -(id)initWithCoder:(NSCoder *)aDecoder{
 
     self = [super initWithCoder:aDecoder];
@@ -27,7 +25,7 @@
 
 -(void)initLoadingContent{
 
-    [MBProgressHUD showHUDAddedTo:self animated:YES];
+    _progressHUD = [MBProgressHUD showHUDAddedTo:self animated:YES];
 }
 
 @end

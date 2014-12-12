@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
 @interface ITLoadingView : UIView
 
 -(void)initLoadingContent;
+
+@property(nonatomic,strong) MBProgressHUD * progressHUD;
+
 @end

@@ -13,9 +13,6 @@
 
 @interface UIBaseViewController ()
 
-
-
-
 @end
 
 @implementation UIBaseViewController
@@ -39,23 +36,56 @@
 }
 
 
--(void) showErrorViewWithTitle:(NSString*)title Image:(UIImage*)image{
+-(void) showErrorViewWithTitle:(NSString*)descTitle Image:(UIImage*)image{
 
     if (_errorView==nil) {
         
         _errorView = [[[NSBundle mainBundle] loadNibNamed:@"ITErrorView" owner:self options:nil] objectAtIndex:0];
+        _errorView.bounds = self.view.bounds;
+        
+        [_errorView.errorBtn addTarget:self action:@selector(onErrorBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     }
+    
+    if (descTitle!=nil) _errorView.errorTitleLbl.text = descTitle;
+    if (image!=nil) [_errorView.errorImgView setImage:image];
+    
+    [self.view addSubview:_errorView];
     
 }
 
--(void) showLoadingViewWithTitle:(NSString*)title Image:(UIImage*)image{
+-(void) showLoadingViewWithTitle:(NSString*)descTitle{
     
     if (_loadingView==nil) {
         
         _loadingView = [[[NSBundle mainBundle] loadNibNamed:@"ITLoadingView" owner:self options:nil] objectAtIndex:0];
         [_loadingView initLoadingContent];
+        _loadingView.bounds = self.view.bounds;
     }
+    if (descTitle !=nil)  _loadingView.progressHUD.labelText = descTitle;
+    
+    
+    [self.view addSubview:_loadingView];
     
 }
 
+-(void) dismissErrorView{
+
+    [_errorView removeFromSuperview];
+}
+
+-(void) dismissLoadingView{
+    
+    [_loadingView removeFromSuperview];
+}
+
+-(void) onErrorBtnClicked{
+
+    if ([self respondsToSelector:@selector(onRetryPageRequest)]) {
+        [self onRetryPageRequest];
+    }
+}
+
+-(void)onRetryPageRequest{
+
+}
 @end

@@ -94,7 +94,6 @@
 		40E1B3F21A389AB100111867 /* ITErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E1B3F11A389AB100111867 /* ITErrorView.m */; };
 		40E1B3F51A389AC900111867 /* ITLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E1B3F41A389AC900111867 /* ITLoadingView.m */; };
 		40E1B3F71A389AE000111867 /* ITErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E1B3F61A389AE000111867 /* ITErrorView.xib */; };
-		40E1B3F91A389AFA00111867 /* ITLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E1B3F81A389AFA00111867 /* ITLoadingView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -239,7 +238,6 @@
 		40E1B3F31A389AC900111867 /* ITLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITLoadingView.h; sourceTree = "<group>"; };
 		40E1B3F41A389AC900111867 /* ITLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITLoadingView.m; sourceTree = "<group>"; };
 		40E1B3F61A389AE000111867 /* ITErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITErrorView.xib; sourceTree = "<group>"; };
-		40E1B3F81A389AFA00111867 /* ITLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITLoadingView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,7 +343,6 @@
 				40E1B3F61A389AE000111867 /* ITErrorView.xib */,
 				40E1B3F31A389AC900111867 /* ITLoadingView.h */,
 				40E1B3F41A389AC900111867 /* ITLoadingView.m */,
-				40E1B3F81A389AFA00111867 /* ITLoadingView.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -691,7 +688,6 @@
 				405D519E1A372AFB00A8C803 /* tab_setting@2x.png in Resources */,
 				405D51331A348DF600A8C803 /* LaunchScreen.xib in Resources */,
 				405D51AD1A37355700A8C803 /* main_history@2x.png in Resources */,
-				40E1B3F91A389AFA00111867 /* ITLoadingView.xib in Resources */,
 				405D517D1A348DF600A8C803 /* Default-Ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

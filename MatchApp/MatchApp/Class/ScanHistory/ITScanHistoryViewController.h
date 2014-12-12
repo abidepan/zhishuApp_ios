@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIBaseViewController.h"
 
-@interface ITScanHistoryViewController : UIViewController
+@interface ITScanHistoryViewController : UIBaseViewController
+
+
+
+
 
 @end

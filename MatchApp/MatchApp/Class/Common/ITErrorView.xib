@@ -5,13 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ITErrorView">
-            <connections>
-                <outlet property="errorBtn" destination="TY5-4j-Yvb" id="zgm-1A-xo6"/>
-                <outlet property="errorImgView" destination="3YS-7Z-azc" id="pxg-1p-RpR"/>
-                <outlet property="errorTitleLbl" destination="fJ6-bc-1xB" id="Vwv-SA-Yr6"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ITErrorView"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ITErrorView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -37,6 +31,11 @@
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="errorBtn" destination="TY5-4j-Yvb" id="dat-PB-udg"/>
+                <outlet property="errorImgView" destination="3YS-7Z-azc" id="dSK-NU-tog"/>
+                <outlet property="errorTitleLbl" destination="fJ6-bc-1xB" id="BiU-0d-XxR"/>
+            </connections>
             <point key="canvasLocation" x="204" y="324"/>
         </view>
     </objects>

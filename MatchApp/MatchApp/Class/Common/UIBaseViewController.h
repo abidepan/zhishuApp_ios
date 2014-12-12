@@ -19,5 +19,8 @@
 
 @property (nonatomic,strong) ITErrorView * errorView;
 
+-(void) showErrorViewWithTitle:(NSString*)title Image:(UIImage*)image;
+-(void) showLoadingViewWithTitle:(NSString*)title;
+
 
 @end

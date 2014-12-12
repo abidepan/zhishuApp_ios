@@ -18,11 +18,17 @@
     [super viewDidLoad];
 
     self.title=@"扫码历史";
-}
+    
+    [self showLoadingViewWithTitle:@"加载中..."];}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+}
+
+-(void)onRetryPageRequest{
+ 
+    
 }
 
 /*
