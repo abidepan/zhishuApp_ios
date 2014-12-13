@@ -11,10 +11,6 @@
 		31D194EA1A383E570075CDB7 /* tab_me_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D194E61A383E570075CDB7 /* tab_me_selected@2x.png */; };
 		31D194EB1A383E570075CDB7 /* tab_scan_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D194E71A383E570075CDB7 /* tab_scan_selected@2x.png */; };
 		31D194EC1A383E570075CDB7 /* tab_setting_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D194E81A383E570075CDB7 /* tab_setting_selected@2x.png */; };
-		31D194F11A3840CE0075CDB7 /* ITMakeCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D194EF1A3840CE0075CDB7 /* ITMakeCodeViewController.m */; };
-		31D194F21A3840CE0075CDB7 /* ITMakeCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D194F01A3840CE0075CDB7 /* ITMakeCodeViewController.xib */; };
-		31D194F71A3841340075CDB7 /* ITUserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31D194F51A3841340075CDB7 /* ITUserCenterViewController.m */; };
-		31D194F81A3841340075CDB7 /* ITUserCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31D194F61A3841340075CDB7 /* ITUserCenterViewController.xib */; };
 		405D51261A348DF600A8C803 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D50471A348DF600A8C803 /* AppDelegate.m */; };
 		405D51271A348DF600A8C803 /* UIBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D504A1A348DF600A8C803 /* UIBaseTableViewController.m */; };
 		405D51281A348DF600A8C803 /* UIBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D504C1A348DF600A8C803 /* UIBaseViewController.m */; };
@@ -87,13 +83,20 @@
 		405D51B01A37355700A8C803 /* main_shop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405D51AB1A37355700A8C803 /* main_shop@2x.png */; };
 		405D51B91A37373600A8C803 /* ITSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D51B71A37373600A8C803 /* ITSettingViewController.m */; };
 		405D51BA1A37373600A8C803 /* ITSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 405D51B81A37373600A8C803 /* ITSettingViewController.xib */; };
-		405D51D11A373B6300A8C803 /* ITScanHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D51CD1A373B6300A8C803 /* ITScanHistoryViewController.m */; };
-		405D51D21A373B6300A8C803 /* ITScanHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 405D51CE1A373B6300A8C803 /* ITScanHistoryViewController.xib */; };
-		405D51D61A373BB900A8C803 /* ITScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D51D41A373BB900A8C803 /* ITScanQRCodeViewController.m */; };
-		405D51D71A373BB900A8C803 /* ITScanQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 405D51D51A373BB900A8C803 /* ITScanQRCodeViewController.xib */; };
+		4062CAAA1A3B27F3002C343C /* ITDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4062CAA91A3B27F3002C343C /* ITDataStore.m */; };
 		40E1B3F21A389AB100111867 /* ITErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E1B3F11A389AB100111867 /* ITErrorView.m */; };
 		40E1B3F51A389AC900111867 /* ITLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E1B3F41A389AC900111867 /* ITLoadingView.m */; };
 		40E1B3F71A389AE000111867 /* ITErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E1B3F61A389AE000111867 /* ITErrorView.xib */; };
+		40E2F17D1A3C833400ADE4B1 /* ITScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E2F1771A3C833400ADE4B1 /* ITScanQRCodeViewController.m */; };
+		40E2F17E1A3C833400ADE4B1 /* ITScanQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E2F1781A3C833400ADE4B1 /* ITScanQRCodeViewController.xib */; };
+		40E2F17F1A3C833400ADE4B1 /* ITScanHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E2F17B1A3C833400ADE4B1 /* ITScanHistoryViewController.m */; };
+		40E2F1801A3C833400ADE4B1 /* ITScanHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E2F17C1A3C833400ADE4B1 /* ITScanHistoryViewController.xib */; };
+		40E2F1891A3C838100ADE4B1 /* ITMakeCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E2F1831A3C838100ADE4B1 /* ITMakeCodeViewController.m */; };
+		40E2F18A1A3C838100ADE4B1 /* ITMakeCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E2F1841A3C838100ADE4B1 /* ITMakeCodeViewController.xib */; };
+		40E2F18B1A3C838100ADE4B1 /* ITUserCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E2F1871A3C838100ADE4B1 /* ITUserCenterViewController.m */; };
+		40E2F18C1A3C838100ADE4B1 /* ITUserCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E2F1881A3C838100ADE4B1 /* ITUserCenterViewController.xib */; };
+		40E2F1901A3C908F00ADE4B1 /* ITScanHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E2F18E1A3C908F00ADE4B1 /* ITScanHistoryCell.m */; };
+		40E2F1911A3C908F00ADE4B1 /* ITScanHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E2F18F1A3C908F00ADE4B1 /* ITScanHistoryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,12 +104,6 @@
 		31D194E61A383E570075CDB7 /* tab_me_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_me_selected@2x.png"; sourceTree = "<group>"; };
 		31D194E71A383E570075CDB7 /* tab_scan_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_scan_selected@2x.png"; sourceTree = "<group>"; };
 		31D194E81A383E570075CDB7 /* tab_setting_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_setting_selected@2x.png"; sourceTree = "<group>"; };
-		31D194EE1A3840CE0075CDB7 /* ITMakeCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITMakeCodeViewController.h; sourceTree = "<group>"; };
-		31D194EF1A3840CE0075CDB7 /* ITMakeCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITMakeCodeViewController.m; sourceTree = "<group>"; };
-		31D194F01A3840CE0075CDB7 /* ITMakeCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITMakeCodeViewController.xib; sourceTree = "<group>"; };
-		31D194F41A3841340075CDB7 /* ITUserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITUserCenterViewController.h; sourceTree = "<group>"; };
-		31D194F51A3841340075CDB7 /* ITUserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITUserCenterViewController.m; sourceTree = "<group>"; };
-		31D194F61A3841340075CDB7 /* ITUserCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITUserCenterViewController.xib; sourceTree = "<group>"; };
 		4049099B1A15D8650053B1C5 /* MatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		405D50461A348DF600A8C803 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		405D50471A348DF600A8C803 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -227,17 +224,28 @@
 		405D51B61A37373600A8C803 /* ITSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSettingViewController.h; sourceTree = "<group>"; };
 		405D51B71A37373600A8C803 /* ITSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSettingViewController.m; sourceTree = "<group>"; };
 		405D51B81A37373600A8C803 /* ITSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITSettingViewController.xib; sourceTree = "<group>"; };
-		405D51CC1A373B6300A8C803 /* ITScanHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanHistoryViewController.h; sourceTree = "<group>"; };
-		405D51CD1A373B6300A8C803 /* ITScanHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanHistoryViewController.m; sourceTree = "<group>"; };
-		405D51CE1A373B6300A8C803 /* ITScanHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITScanHistoryViewController.xib; sourceTree = "<group>"; };
-		405D51D31A373BB900A8C803 /* ITScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ITScanQRCodeViewController.h; path = MatchApp/Class/ScanHistory/ITScanQRCodeViewController.h; sourceTree = SOURCE_ROOT; };
-		405D51D41A373BB900A8C803 /* ITScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ITScanQRCodeViewController.m; path = MatchApp/Class/ScanHistory/ITScanQRCodeViewController.m; sourceTree = SOURCE_ROOT; };
-		405D51D51A373BB900A8C803 /* ITScanQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ITScanQRCodeViewController.xib; path = MatchApp/Class/ScanHistory/ITScanQRCodeViewController.xib; sourceTree = SOURCE_ROOT; };
+		4062CAA81A3B27F3002C343C /* ITDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITDataStore.h; sourceTree = "<group>"; };
+		4062CAA91A3B27F3002C343C /* ITDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITDataStore.m; sourceTree = "<group>"; };
 		40E1B3F01A389AB100111867 /* ITErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITErrorView.h; sourceTree = "<group>"; };
 		40E1B3F11A389AB100111867 /* ITErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITErrorView.m; sourceTree = "<group>"; };
 		40E1B3F31A389AC900111867 /* ITLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITLoadingView.h; sourceTree = "<group>"; };
 		40E1B3F41A389AC900111867 /* ITLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITLoadingView.m; sourceTree = "<group>"; };
 		40E1B3F61A389AE000111867 /* ITErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITErrorView.xib; sourceTree = "<group>"; };
+		40E2F1761A3C833400ADE4B1 /* ITScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanQRCodeViewController.h; sourceTree = "<group>"; };
+		40E2F1771A3C833400ADE4B1 /* ITScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanQRCodeViewController.m; sourceTree = "<group>"; };
+		40E2F1781A3C833400ADE4B1 /* ITScanQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITScanQRCodeViewController.xib; sourceTree = "<group>"; };
+		40E2F17A1A3C833400ADE4B1 /* ITScanHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanHistoryViewController.h; sourceTree = "<group>"; };
+		40E2F17B1A3C833400ADE4B1 /* ITScanHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanHistoryViewController.m; sourceTree = "<group>"; };
+		40E2F17C1A3C833400ADE4B1 /* ITScanHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITScanHistoryViewController.xib; sourceTree = "<group>"; };
+		40E2F1821A3C838100ADE4B1 /* ITMakeCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITMakeCodeViewController.h; sourceTree = "<group>"; };
+		40E2F1831A3C838100ADE4B1 /* ITMakeCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITMakeCodeViewController.m; sourceTree = "<group>"; };
+		40E2F1841A3C838100ADE4B1 /* ITMakeCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITMakeCodeViewController.xib; sourceTree = "<group>"; };
+		40E2F1861A3C838100ADE4B1 /* ITUserCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITUserCenterViewController.h; sourceTree = "<group>"; };
+		40E2F1871A3C838100ADE4B1 /* ITUserCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITUserCenterViewController.m; sourceTree = "<group>"; };
+		40E2F1881A3C838100ADE4B1 /* ITUserCenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITUserCenterViewController.xib; sourceTree = "<group>"; };
+		40E2F18D1A3C908F00ADE4B1 /* ITScanHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanHistoryCell.h; sourceTree = "<group>"; };
+		40E2F18E1A3C908F00ADE4B1 /* ITScanHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanHistoryCell.m; sourceTree = "<group>"; };
+		40E2F18F1A3C908F00ADE4B1 /* ITScanHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITScanHistoryCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,26 +262,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		31D194ED1A38406B0075CDB7 /* makecode */ = {
-			isa = PBXGroup;
-			children = (
-				31D194EE1A3840CE0075CDB7 /* ITMakeCodeViewController.h */,
-				31D194EF1A3840CE0075CDB7 /* ITMakeCodeViewController.m */,
-				31D194F01A3840CE0075CDB7 /* ITMakeCodeViewController.xib */,
-			);
-			name = makecode;
-			sourceTree = "<group>";
-		};
-		31D194F31A3840FA0075CDB7 /* user */ = {
-			isa = PBXGroup;
-			children = (
-				31D194F41A3841340075CDB7 /* ITUserCenterViewController.h */,
-				31D194F51A3841340075CDB7 /* ITUserCenterViewController.m */,
-				31D194F61A3841340075CDB7 /* ITUserCenterViewController.xib */,
-			);
-			name = user;
-			sourceTree = "<group>";
-		};
 		404909921A15D8650053B1C5 = {
 			isa = PBXGroup;
 			children = (
@@ -306,11 +294,11 @@
 		405D502B1A348DF600A8C803 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				405D51C71A373B6300A8C803 /* Scan */,
-				405D51CB1A373B6300A8C803 /* ScanHistory */,
+				40E2F1811A3C838100ADE4B1 /* MakeCode */,
+				40E2F1851A3C838100ADE4B1 /* UserCenter */,
+				40E2F1751A3C833400ADE4B1 /* Scan */,
+				40E2F1791A3C833400ADE4B1 /* ScanHistory */,
 				405D51A41A37306D00A8C803 /* Setting */,
-				31D194ED1A38406B0075CDB7 /* makecode */,
-				31D194F31A3840FA0075CDB7 /* user */,
 				405D502C1A348DF600A8C803 /* Account */,
 				405D50481A348DF600A8C803 /* Common */,
 				405D50461A348DF600A8C803 /* AppDelegate.h */,
@@ -343,6 +331,8 @@
 				40E1B3F61A389AE000111867 /* ITErrorView.xib */,
 				40E1B3F31A389AC900111867 /* ITLoadingView.h */,
 				40E1B3F41A389AC900111867 /* ITLoadingView.m */,
+				4062CAA81A3B27F3002C343C /* ITDataStore.h */,
+				4062CAA91A3B27F3002C343C /* ITDataStore.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -573,24 +563,47 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
-		405D51C71A373B6300A8C803 /* Scan */ = {
+		40E2F1751A3C833400ADE4B1 /* Scan */ = {
 			isa = PBXGroup;
 			children = (
-				405D51D31A373BB900A8C803 /* ITScanQRCodeViewController.h */,
-				405D51D41A373BB900A8C803 /* ITScanQRCodeViewController.m */,
-				405D51D51A373BB900A8C803 /* ITScanQRCodeViewController.xib */,
+				40E2F1761A3C833400ADE4B1 /* ITScanQRCodeViewController.h */,
+				40E2F1771A3C833400ADE4B1 /* ITScanQRCodeViewController.m */,
+				40E2F1781A3C833400ADE4B1 /* ITScanQRCodeViewController.xib */,
 			);
 			path = Scan;
 			sourceTree = "<group>";
 		};
-		405D51CB1A373B6300A8C803 /* ScanHistory */ = {
+		40E2F1791A3C833400ADE4B1 /* ScanHistory */ = {
 			isa = PBXGroup;
 			children = (
-				405D51CC1A373B6300A8C803 /* ITScanHistoryViewController.h */,
-				405D51CD1A373B6300A8C803 /* ITScanHistoryViewController.m */,
-				405D51CE1A373B6300A8C803 /* ITScanHistoryViewController.xib */,
+				40E2F17A1A3C833400ADE4B1 /* ITScanHistoryViewController.h */,
+				40E2F17B1A3C833400ADE4B1 /* ITScanHistoryViewController.m */,
+				40E2F17C1A3C833400ADE4B1 /* ITScanHistoryViewController.xib */,
+				40E2F18D1A3C908F00ADE4B1 /* ITScanHistoryCell.h */,
+				40E2F18E1A3C908F00ADE4B1 /* ITScanHistoryCell.m */,
+				40E2F18F1A3C908F00ADE4B1 /* ITScanHistoryCell.xib */,
 			);
 			path = ScanHistory;
+			sourceTree = "<group>";
+		};
+		40E2F1811A3C838100ADE4B1 /* MakeCode */ = {
+			isa = PBXGroup;
+			children = (
+				40E2F1821A3C838100ADE4B1 /* ITMakeCodeViewController.h */,
+				40E2F1831A3C838100ADE4B1 /* ITMakeCodeViewController.m */,
+				40E2F1841A3C838100ADE4B1 /* ITMakeCodeViewController.xib */,
+			);
+			path = MakeCode;
+			sourceTree = "<group>";
+		};
+		40E2F1851A3C838100ADE4B1 /* UserCenter */ = {
+			isa = PBXGroup;
+			children = (
+				40E2F1861A3C838100ADE4B1 /* ITUserCenterViewController.h */,
+				40E2F1871A3C838100ADE4B1 /* ITUserCenterViewController.m */,
+				40E2F1881A3C838100ADE4B1 /* ITUserCenterViewController.xib */,
+			);
+			path = UserCenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -655,21 +668,20 @@
 				31D194EC1A383E570075CDB7 /* tab_setting_selected@2x.png in Resources */,
 				405D517F1A348DF600A8C803 /* Default.png in Resources */,
 				405D51A21A372DC700A8C803 /* logo@2x.png in Resources */,
-				31D194F21A3840CE0075CDB7 /* ITMakeCodeViewController.xib in Resources */,
 				405D51B01A37355700A8C803 /* main_shop@2x.png in Resources */,
-				405D51D21A373B6300A8C803 /* ITScanHistoryViewController.xib in Resources */,
 				405D517C1A348DF600A8C803 /* Default-6.png in Resources */,
-				31D194F81A3841340075CDB7 /* ITUserCenterViewController.xib in Resources */,
 				405D51291A348DF600A8C803 /* UIBaseViewController.xib in Resources */,
 				31D194EA1A383E570075CDB7 /* tab_me_selected@2x.png in Resources */,
 				405D518C1A348DF600A8C803 /* CycleScrollViewCell.xib in Resources */,
 				405D51A61A3734F000A8C803 /* main_qrcode@2x.png in Resources */,
 				405D51811A348DF600A8C803 /* grayarrowright@2x.png in Resources */,
+				40E2F18A1A3C838100ADE4B1 /* ITMakeCodeViewController.xib in Resources */,
 				405D51AF1A37355700A8C803 /* main_nfc@2x.png in Resources */,
 				405D51AE1A37355700A8C803 /* main_makecode@2x.png in Resources */,
 				405D517A1A348DF600A8C803 /* Default-568h@2x.png in Resources */,
 				405D51801A348DF600A8C803 /* Default@2x.png in Resources */,
 				31D194E91A383E570075CDB7 /* main_news@2x.png in Resources */,
+				40E2F1911A3C908F00ADE4B1 /* ITScanHistoryCell.xib in Resources */,
 				405D51821A348DF600A8C803 /* grayarrowup@2x.png in Resources */,
 				405D51831A348DF600A8C803 /* placeholder@2x.png in Resources */,
 				31D194EB1A383E570075CDB7 /* tab_scan_selected@2x.png in Resources */,
@@ -677,13 +689,15 @@
 				405D51BA1A37373600A8C803 /* ITSettingViewController.xib in Resources */,
 				405D517E1A348DF600A8C803 /* Default-Ipad@2x.png in Resources */,
 				405D51341A348DF600A8C803 /* Main.storyboard in Resources */,
-				405D51D71A373BB900A8C803 /* ITScanQRCodeViewController.xib in Resources */,
 				405D519C1A372AFB00A8C803 /* tab_me@2x.png in Resources */,
 				405D51841A348DF600A8C803 /* search@2x.png in Resources */,
+				40E2F17E1A3C833400ADE4B1 /* ITScanQRCodeViewController.xib in Resources */,
 				405D517B1A348DF600A8C803 /* Default-6-568h@2x.png in Resources */,
 				405D519D1A372AFB00A8C803 /* tab_scan@2x.png in Resources */,
 				40E1B3F71A389AE000111867 /* ITErrorView.xib in Resources */,
+				40E2F1801A3C833400ADE4B1 /* ITScanHistoryViewController.xib in Resources */,
 				405D51861A348DF600A8C803 /* Images.xcassets in Resources */,
+				40E2F18C1A3C838100ADE4B1 /* ITUserCenterViewController.xib in Resources */,
 				405D51871A348DF600A8C803 /* Info.plist in Resources */,
 				405D519E1A372AFB00A8C803 /* tab_setting@2x.png in Resources */,
 				405D51331A348DF600A8C803 /* LaunchScreen.xib in Resources */,
@@ -702,6 +716,8 @@
 				405D518B1A348DF600A8C803 /* CycleScrollViewCell.m in Sources */,
 				405D51741A348DF600A8C803 /* UIImageView+HighlightedWebCache.m in Sources */,
 				405D51B91A37373600A8C803 /* ITSettingViewController.m in Sources */,
+				40E2F1901A3C908F00ADE4B1 /* ITScanHistoryCell.m in Sources */,
+				40E2F18B1A3C838100ADE4B1 /* ITUserCenterViewController.m in Sources */,
 				405D51651A348DF600A8C803 /* UIColor+iOS7Colors.m in Sources */,
 				405D51761A348DF600A8C803 /* UIView+WebCacheOperation.m in Sources */,
 				405D516D1A348DF600A8C803 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -710,15 +726,16 @@
 				405D51591A348DF600A8C803 /* WebServer.m in Sources */,
 				405D515E1A348DF600A8C803 /* ASIFormDataRequest.m in Sources */,
 				405D51631A348DF600A8C803 /* Reachability.m in Sources */,
+				40E2F17F1A3C833400ADE4B1 /* ITScanHistoryViewController.m in Sources */,
 				40E1B3F21A389AB100111867 /* ITErrorView.m in Sources */,
 				405D515D1A348DF600A8C803 /* ASIDownloadCache.m in Sources */,
 				405D51261A348DF600A8C803 /* AppDelegate.m in Sources */,
 				405D51671A348DF600A8C803 /* MKAnnotationView+WebCache.m in Sources */,
 				405D51661A348DF600A8C803 /* MBProgressHUD.m in Sources */,
-				31D194F11A3840CE0075CDB7 /* ITMakeCodeViewController.m in Sources */,
 				405D516E1A348DF600A8C803 /* SDWebImageManager.m in Sources */,
 				405D51721A348DF600A8C803 /* UIImage+MultiFormat.m in Sources */,
 				405D516F1A348DF600A8C803 /* SDWebImagePrefetcher.m in Sources */,
+				40E2F1891A3C838100ADE4B1 /* ITMakeCodeViewController.m in Sources */,
 				405D51751A348DF600A8C803 /* UIImageView+WebCache.m in Sources */,
 				405D515A1A348DF600A8C803 /* ASIAuthenticationDialog.m in Sources */,
 				405D516B1A348DF600A8C803 /* SDWebImageDecoder.m in Sources */,
@@ -728,12 +745,11 @@
 				405D516A1A348DF600A8C803 /* SDWebImageCompat.m in Sources */,
 				405D515F1A348DF600A8C803 /* ASIHTTPRequest.m in Sources */,
 				405D51701A348DF600A8C803 /* UIButton+WebCache.m in Sources */,
-				405D51D61A373BB900A8C803 /* ITScanQRCodeViewController.m in Sources */,
 				405D51611A348DF600A8C803 /* ASINetworkQueue.m in Sources */,
 				405D51281A348DF600A8C803 /* UIBaseViewController.m in Sources */,
+				40E2F17D1A3C833400ADE4B1 /* ITScanQRCodeViewController.m in Sources */,
 				405D516C1A348DF600A8C803 /* SDWebImageDownloader.m in Sources */,
 				405D51731A348DF600A8C803 /* UIImage+WebP.m in Sources */,
-				405D51D11A373B6300A8C803 /* ITScanHistoryViewController.m in Sources */,
 				405D515C1A348DF600A8C803 /* ASIDataDecompressor.m in Sources */,
 				405D518A1A348DF600A8C803 /* CycleScrollView.m in Sources */,
 				405D51691A348DF600A8C803 /* SDImageCache.m in Sources */,
@@ -743,7 +759,7 @@
 				405D51711A348DF600A8C803 /* UIImage+GIF.m in Sources */,
 				405D51551A348DF600A8C803 /* MainViewController.m in Sources */,
 				405D51271A348DF600A8C803 /* UIBaseTableViewController.m in Sources */,
-				31D194F71A3841340075CDB7 /* ITUserCenterViewController.m in Sources */,
+				4062CAAA1A3B27F3002C343C /* ITDataStore.m in Sources */,
 				405D51601A348DF600A8C803 /* ASIInputStream.m in Sources */,
 				405D51891A348DF600A8C803 /* CyclePageControl.m in Sources */,
 			);

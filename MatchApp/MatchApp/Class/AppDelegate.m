@@ -10,6 +10,7 @@
 
 #import "MainViewController.h"
 #import "Constants.h"
+#import "ITDataStore.h"
 
 @interface AppDelegate ()
 
@@ -22,6 +23,7 @@
     
     //[application setStatusBarStyle:UIStatusBarStyleLightContent];
     
+    [ITDataStore instance];
     [self setAppearance];
     
     return YES;
