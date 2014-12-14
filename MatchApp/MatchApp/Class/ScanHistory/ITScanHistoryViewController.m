@@ -9,12 +9,17 @@
 #import "ITScanHistoryViewController.h"
 #import "Constants.h"
 #import "ITDataStore.h"
+#import "ITScanHistoryBaseView.h"
+#import "ITQRCodeScanHistoryView.h"
+#import "ITBarCodeScanHistoryView.h"
+#import "ITNfcCodeScanHistoryView.h"
+
 
 @interface ITScanHistoryViewController ()
 {
     UISegmentedControl * _segment;
-    
-    NSArray * _tableViews;
+    NSArray * _scanHistoryViews;
+    NSInteger _currentSelectedIndex;
     
 }
 @end
@@ -27,29 +32,55 @@
     self.title=@"扫码历史";
     
     double y = (IOS7?64:0)+6;
-    
     _segment = [[UISegmentedControl alloc] initWithFrame:CGRectMake(kDeviceWidth/8, y, 0.75*kDeviceWidth, 32.0f)];
-    [_segment insertSegmentWithTitle:@"二维码" atIndex:0 animated:NO];
-    [_segment insertSegmentWithTitle:@"条码" atIndex:1 animated:NO];
-    [_segment insertSegmentWithTitle:@"NFC" atIndex:2 animated:NO];
     [_segment addTarget:self action:@selector(onValueChanged:) forControlEvents:UIControlEventValueChanged];
+    CGRect mainViewRect = CGRectMake(0, y+ 38, kDeviceWidth, kDeviceHeight-y-38) ;
+    
+    ITScanHistoryBaseView * qrSacnView = [[ITQRCodeScanHistoryView alloc] initWithFrame:mainViewRect];
+    ITScanHistoryBaseView * barSacnView = [[ITBarCodeScanHistoryView alloc] initWithFrame:mainViewRect];
+    ITScanHistoryBaseView * nfcSacnView = [[ITNfcCodeScanHistoryView alloc] initWithFrame:mainViewRect];
+    _scanHistoryViews = @[qrSacnView,barSacnView,nfcSacnView];
+    
+    for (int i=0; i<_scanHistoryViews.count; i++) {
+        ITScanHistoryBaseView * scanView = [_scanHistoryViews objectAtIndex:i];
+        [_segment insertSegmentWithTitle:scanView.title atIndex:i animated:NO];
+    }
+    _currentSelectedIndex = _segment.selectedSegmentIndex = [ITDataStore instance].lastScanType;
+    
     [self.view addSubview:_segment];
-    _segment.selectedSegmentIndex = [ITDataStore instance].lastScanType;
-    
-    UITableView* table1 = [[UITableView alloc] initWithFrame:CGRectMake(0, y+ 38, kDeviceWidth, kDeviceHeight-y-38) style:UITableViewStylePlain];
-    UITableView* table2 = [[UITableView alloc] initWithFrame:CGRectMake(0, y+ 38, kDeviceWidth, kDeviceHeight-y-38) style:UITableViewStylePlain];
-    UITableView* table3 = [[UITableView alloc] initWithFrame:CGRectMake(0, y+ 38, kDeviceWidth, kDeviceHeight-y-38) style:UITableViewStylePlain];
-    
-    _tableViews = @[table1,table2,table3];
-    
-    [self.view addSubview:table1];
+    [self.view addSubview:[_scanHistoryViews objectAtIndex:_segment.selectedSegmentIndex]];
 }
+
+
+
 
 -(void) onValueChanged:(UISegmentedControl *) segment{
 
-    NSInteger index = segment.selectedSegmentIndex;
+    NSInteger newIndex = segment.selectedSegmentIndex;
     
+    double y = (IOS7?64:0)+44;
+    if(_currentSelectedIndex != newIndex){
     
+        
+        UIView * oldView = [_scanHistoryViews objectAtIndex:_currentSelectedIndex];
+        UIView * newView = [_scanHistoryViews objectAtIndex:newIndex];
+        
+        BOOL right =  newIndex > _currentSelectedIndex;
+        
+        [newView setFrame:CGRectMake(right ? kDeviceWidth : -kDeviceWidth, y, kDeviceWidth, kDeviceHeight-y)];
+        
+        [self.view addSubview: newView];
+        
+        [UIView animateWithDuration:0.35 animations:^{
+            [oldView setFrame:CGRectMake(right ?-kDeviceWidth:kDeviceWidth, y, kDeviceWidth, kDeviceHeight-y)];
+            [newView setFrame:CGRectMake(0, y, kDeviceWidth, kDeviceHeight-y)];
+            
+        } completion:^(BOOL finished) {
+            [oldView removeFromSuperview];
+            
+        }];
+        _currentSelectedIndex = newIndex;
+    }
 
 }
 

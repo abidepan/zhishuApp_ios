@@ -97,6 +97,10 @@
 		40E2F18C1A3C838100ADE4B1 /* ITUserCenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E2F1881A3C838100ADE4B1 /* ITUserCenterViewController.xib */; };
 		40E2F1901A3C908F00ADE4B1 /* ITScanHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E2F18E1A3C908F00ADE4B1 /* ITScanHistoryCell.m */; };
 		40E2F1911A3C908F00ADE4B1 /* ITScanHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E2F18F1A3C908F00ADE4B1 /* ITScanHistoryCell.xib */; };
+		40E2F1941A3D79EA00ADE4B1 /* ITScanHistoryBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E2F1931A3D79EA00ADE4B1 /* ITScanHistoryBaseView.m */; };
+		40E2F1971A3D7A6200ADE4B1 /* ITQRCodeScanHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E2F1961A3D7A6200ADE4B1 /* ITQRCodeScanHistoryView.m */; };
+		40E2F19A1A3D7A9E00ADE4B1 /* ITBarCodeScanHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E2F1991A3D7A9E00ADE4B1 /* ITBarCodeScanHistoryView.m */; };
+		40E2F19D1A3D7ABF00ADE4B1 /* ITNfcCodeScanHistoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E2F19C1A3D7ABF00ADE4B1 /* ITNfcCodeScanHistoryView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -246,6 +250,14 @@
 		40E2F18D1A3C908F00ADE4B1 /* ITScanHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanHistoryCell.h; sourceTree = "<group>"; };
 		40E2F18E1A3C908F00ADE4B1 /* ITScanHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanHistoryCell.m; sourceTree = "<group>"; };
 		40E2F18F1A3C908F00ADE4B1 /* ITScanHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITScanHistoryCell.xib; sourceTree = "<group>"; };
+		40E2F1921A3D79EA00ADE4B1 /* ITScanHistoryBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanHistoryBaseView.h; sourceTree = "<group>"; };
+		40E2F1931A3D79EA00ADE4B1 /* ITScanHistoryBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanHistoryBaseView.m; sourceTree = "<group>"; };
+		40E2F1951A3D7A6200ADE4B1 /* ITQRCodeScanHistoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITQRCodeScanHistoryView.h; sourceTree = "<group>"; };
+		40E2F1961A3D7A6200ADE4B1 /* ITQRCodeScanHistoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITQRCodeScanHistoryView.m; sourceTree = "<group>"; };
+		40E2F1981A3D7A9E00ADE4B1 /* ITBarCodeScanHistoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITBarCodeScanHistoryView.h; sourceTree = "<group>"; };
+		40E2F1991A3D7A9E00ADE4B1 /* ITBarCodeScanHistoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITBarCodeScanHistoryView.m; sourceTree = "<group>"; };
+		40E2F19B1A3D7ABF00ADE4B1 /* ITNfcCodeScanHistoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITNfcCodeScanHistoryView.h; sourceTree = "<group>"; };
+		40E2F19C1A3D7ABF00ADE4B1 /* ITNfcCodeScanHistoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITNfcCodeScanHistoryView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -582,6 +594,14 @@
 				40E2F18D1A3C908F00ADE4B1 /* ITScanHistoryCell.h */,
 				40E2F18E1A3C908F00ADE4B1 /* ITScanHistoryCell.m */,
 				40E2F18F1A3C908F00ADE4B1 /* ITScanHistoryCell.xib */,
+				40E2F1921A3D79EA00ADE4B1 /* ITScanHistoryBaseView.h */,
+				40E2F1931A3D79EA00ADE4B1 /* ITScanHistoryBaseView.m */,
+				40E2F1951A3D7A6200ADE4B1 /* ITQRCodeScanHistoryView.h */,
+				40E2F1961A3D7A6200ADE4B1 /* ITQRCodeScanHistoryView.m */,
+				40E2F1981A3D7A9E00ADE4B1 /* ITBarCodeScanHistoryView.h */,
+				40E2F1991A3D7A9E00ADE4B1 /* ITBarCodeScanHistoryView.m */,
+				40E2F19B1A3D7ABF00ADE4B1 /* ITNfcCodeScanHistoryView.h */,
+				40E2F19C1A3D7ABF00ADE4B1 /* ITNfcCodeScanHistoryView.m */,
 			);
 			path = ScanHistory;
 			sourceTree = "<group>";
@@ -720,6 +740,7 @@
 				40E2F18B1A3C838100ADE4B1 /* ITUserCenterViewController.m in Sources */,
 				405D51651A348DF600A8C803 /* UIColor+iOS7Colors.m in Sources */,
 				405D51761A348DF600A8C803 /* UIView+WebCacheOperation.m in Sources */,
+				40E2F1971A3D7A6200ADE4B1 /* ITQRCodeScanHistoryView.m in Sources */,
 				405D516D1A348DF600A8C803 /* SDWebImageDownloaderOperation.m in Sources */,
 				40E1B3F51A389AC900111867 /* ITLoadingView.m in Sources */,
 				405D51621A348DF600A8C803 /* ASIWebPageRequest.m in Sources */,
@@ -733,8 +754,10 @@
 				405D51671A348DF600A8C803 /* MKAnnotationView+WebCache.m in Sources */,
 				405D51661A348DF600A8C803 /* MBProgressHUD.m in Sources */,
 				405D516E1A348DF600A8C803 /* SDWebImageManager.m in Sources */,
+				40E2F1941A3D79EA00ADE4B1 /* ITScanHistoryBaseView.m in Sources */,
 				405D51721A348DF600A8C803 /* UIImage+MultiFormat.m in Sources */,
 				405D516F1A348DF600A8C803 /* SDWebImagePrefetcher.m in Sources */,
+				40E2F19A1A3D7A9E00ADE4B1 /* ITBarCodeScanHistoryView.m in Sources */,
 				40E2F1891A3C838100ADE4B1 /* ITMakeCodeViewController.m in Sources */,
 				405D51751A348DF600A8C803 /* UIImageView+WebCache.m in Sources */,
 				405D515A1A348DF600A8C803 /* ASIAuthenticationDialog.m in Sources */,
@@ -752,6 +775,7 @@
 				405D51731A348DF600A8C803 /* UIImage+WebP.m in Sources */,
 				405D515C1A348DF600A8C803 /* ASIDataDecompressor.m in Sources */,
 				405D518A1A348DF600A8C803 /* CycleScrollView.m in Sources */,
+				40E2F19D1A3D7ABF00ADE4B1 /* ITNfcCodeScanHistoryView.m in Sources */,
 				405D51691A348DF600A8C803 /* SDImageCache.m in Sources */,
 				405D518D1A348DF600A8C803 /* UIPlaceHolderTextView.m in Sources */,
 				405D51641A348DF600A8C803 /* ColoredRoundedButton.m in Sources */,

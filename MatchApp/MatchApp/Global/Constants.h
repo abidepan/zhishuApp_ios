@@ -54,11 +54,42 @@
 #define kAppApi(api) [NSString stringWithFormat:@"%@://%@:%@/%@", kAppHostProtocal, kAppHost, kAppHostPort, api]
 
 
+
+typedef enum {
+    TagTypeRfid,
+    TagTypeQR,
+    TagTypeNumber,
+    TagTypeBar
+}TagType;
+
+
+typedef enum {
+    CodeTypeQR,
+    CodeTypeBar,
+    CodeTypeNFC,
+}CodeType;
+
+
 typedef enum {
     
-    DetailActionEdit,
-    DetailActionAdd,
-}DetailActionType;
+    CodeFormatCard,
+    CodeFormatPhone,
+    CodeFormatText,
+    CodeFormatWebsite,
+    CodeFormatPosition,
+    CodeFormatWifi
+}CodeFormat;
+
+
+typedef enum {
+    
+    ScanResultFailed,
+    ScanResultLegal,
+    ScanResultIllegalNoCompany,
+    ScanResultIllegalNoProduct,
+    ScanResultIllegalError,
+    ScanResultIllegalOther
+}ScanResultState;
 
 
 
