@@ -20,6 +20,8 @@
 
 
 - (IBAction)onQuickResponseCodeBtnClicked:(id)sender;
+- (IBAction)onScanHistoryBtnClicked:(id)sender;
+
 
 
 
