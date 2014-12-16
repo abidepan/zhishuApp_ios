@@ -22,7 +22,7 @@ dispatch_queue_t _taskDispatchQueue;
 {
     if (!webserver) {
         webserver = [[WebServer alloc] init];
-        _taskDispatchQueue =dispatch_queue_create("com.spetal.webservices.taskDispatchQueue", DISPATCH_QUEUE_SERIAL);
+        _taskDispatchQueue =dispatch_queue_create("com.itrace.webservices.taskDispatchQueue", DISPATCH_QUEUE_SERIAL);
     }
     return webserver;
 }
@@ -69,50 +69,16 @@ dispatch_queue_t _taskDispatchQueue;
                 succeedCallBack(responseCode,resultData);
             }else{
                 
-                NSString* str= [NSString stringWithFormat:@"Get price table failed:code=%d,%@", responseCode,responseString];
-                [self performSelectorOnMainThread:@selector(onErrorOccurred:) withObject:str waitUntilDone:NO];
+                UIAlertView * alert = [[UIAlertView alloc] initWithTitle:nil message:responseString delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+                [alert show];
             }
         }else{
             
             if (failedCallBack!=nil) {
                 failedCallBack(responseCode,nil);
-                return;
             }
-            
-            NSString * title = @"Access Failed";
-            NSString * str= [NSString stringWithFormat:@"Get price table failed:code=%d,error=%@", responseCode,[request error]];
-            
-            switch ([request error].code) {
-                case 1:
-                    
-                    title = @"No Internet Connection";
-                    str= @"Oops! The application cannot access any online content. Please check your internet connection and try again.";
-                    break;
-                    
-                case 2:
-                    title = @"Connection Time Out";
-                    str= @"Try to relaunch the application.";
-                    break;
-            }
-            
-            NSMutableArray * ar = [[NSMutableArray alloc] initWithObjects:title,str, nil];
-            [self performSelectorOnMainThread:@selector(onErrorOccurred:) withObject:ar  waitUntilDone:NO];
         }
     });
 }
-
-
--(void) onErrorOccurred:(NSMutableArray*) ar{
-    
-    [MBProgressHUD hideHUDForView:[[UIApplication sharedApplication].windows objectAtIndex:0] animated:YES];
-    
-    [[[UIAlertView alloc] initWithTitle:NSLocalizedString([ar objectAtIndex:0], nil)
-                                message:NSLocalizedString([ar objectAtIndex:1], nil)
-                               delegate:self
-                      cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                      otherButtonTitles:nil] show];
-}
-
-
 
 @end

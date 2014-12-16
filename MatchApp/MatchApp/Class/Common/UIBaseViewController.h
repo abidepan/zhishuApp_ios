@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ITLoadingView.h"
 #import "ITErrorView.h"
+#import "WebServer.h"
 
 @interface UIBaseViewController : UIViewController
 
@@ -21,6 +22,8 @@
 
 -(void) showErrorViewWithTitle:(NSString*)title Image:(UIImage*)image;
 -(void) showLoadingViewWithTitle:(NSString*)title;
+
+-(void) callServerWithUrl:(NSString*) urlString param:(NSDictionary *)param successCallBack:(WebServerCallBack)succeedCallBack loadingOptions:(NSDictionary*)loadingOptions failOptions:(NSDictionary*)faliOptoins;
 
 
 @end

@@ -3,7 +3,7 @@
 //  Pocket
 //
 //  Created by fuyiming on 13-11-6.
-//  Copyright (c) 2013年 Spetal. All rights reserved.
+//  Copyright (c) 2013年 Itrace. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

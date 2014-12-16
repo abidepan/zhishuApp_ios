@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "ITLoadingView.h"
 #import "ITErrorView.h"
+#import "WebServer.h"
 
 @interface UIBaseViewController ()
 
@@ -33,6 +34,20 @@
 -(UITabBarController *) rootTabBarController{
 
     return ((AppDelegate *)[UIApplication sharedApplication].delegate ).tabBarViewController;
+}
+
+
+-(void) callServerWithUrl:(NSString*) urlString param:(NSDictionary *)param successCallBack:(WebServerCallBack)succeedCallBack loadingOptions:(NSDictionary*)loadingOptions failOptions:(NSDictionary*)faliOptoins{
+
+    [self showLoadingViewWithTitle:[loadingOptions objectForKey:@"title"]];
+    
+    [[WebServer instance] startCallServerUrl:urlString param:param Succeed:^(NSInteger code, id data) {
+        succeedCallBack(code,data);
+        
+    } Failed:^(NSInteger code, id data) {
+        
+        [self showErrorViewWithTitle:[faliOptoins objectForKey:@"title"]  Image:[faliOptoins objectForKey:@"image"]];
+    }];
 }
 
 
@@ -88,4 +103,5 @@
 -(void)onRetryPageRequest{
 
 }
+
 @end
