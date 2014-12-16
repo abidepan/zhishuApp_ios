@@ -44,6 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Function area
 // 二维码
 - (IBAction)onQuickResponseCodeBtnClicked:(id)sender {
     
@@ -51,6 +52,15 @@
     [self.navigationController pushViewController:sacnView animated:YES];
 }
 
+// 历史记录
+- (IBAction)onScanHistoryBtnClicked:(id)sender {
+    
+    ITScanHistoryViewController * sacnView =[[ITScanHistoryViewController alloc] initWithNibName:@"ITScanHistoryViewController" bundle:nil];
+    [self.navigationController pushViewController:sacnView animated:YES];
+}
+
+
+#pragma mark - Tabbar
 // 用户中心
 - (IBAction)onMineBtnClicked:(id)sender {
     
@@ -58,10 +68,10 @@
     [self.navigationController pushViewController:userView animated:YES];
 }
 
-//
+// 二维码
 - (IBAction)onScanBtnClicked:(id)sender {
-
-    ITScanHistoryViewController * sacnView =[[ITScanHistoryViewController alloc] initWithNibName:@"ITScanHistoryViewController" bundle:nil];
+    
+    ITScanQRCodeViewController* sacnView =[[ITScanQRCodeViewController alloc] initWithNibName:@"ITScanQRCodeViewController" bundle:nil];
     [self.navigationController pushViewController:sacnView animated:YES];
 }
 
