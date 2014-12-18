@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31CE940F1A42D5C10038480E /* YYCommonArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE94061A42D5C00038480E /* YYCommonArrowItem.m */; };
+		31CE94101A42D5C10038480E /* YYCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE94081A42D5C00038480E /* YYCommonCell.m */; };
+		31CE94111A42D5C10038480E /* YYCommonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE940A1A42D5C10038480E /* YYCommonGroup.m */; };
+		31CE94121A42D5C10038480E /* YYCommonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE940C1A42D5C10038480E /* YYCommonItem.m */; };
+		31CE94131A42D5C10038480E /* YYCommonSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE940E1A42D5C10038480E /* YYCommonSwitchItem.m */; };
+		31CE94171A42DAA50038480E /* ITSettingIPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE94151A42DAA50038480E /* ITSettingIPViewController.m */; };
+		31CE94181A42DAA50038480E /* ITSettingIPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31CE94161A42DAA50038480E /* ITSettingIPViewController.xib */; };
 		31D194E91A383E570075CDB7 /* main_news@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D194E51A383E570075CDB7 /* main_news@2x.png */; };
 		31D194EA1A383E570075CDB7 /* tab_me_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D194E61A383E570075CDB7 /* tab_me_selected@2x.png */; };
 		31D194EB1A383E570075CDB7 /* tab_scan_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D194E71A383E570075CDB7 /* tab_scan_selected@2x.png */; };
@@ -106,6 +113,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31CE94051A42D5C00038480E /* YYCommonArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCommonArrowItem.h; sourceTree = "<group>"; };
+		31CE94061A42D5C00038480E /* YYCommonArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCommonArrowItem.m; sourceTree = "<group>"; };
+		31CE94071A42D5C00038480E /* YYCommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCommonCell.h; sourceTree = "<group>"; };
+		31CE94081A42D5C00038480E /* YYCommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCommonCell.m; sourceTree = "<group>"; };
+		31CE94091A42D5C00038480E /* YYCommonGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCommonGroup.h; sourceTree = "<group>"; };
+		31CE940A1A42D5C10038480E /* YYCommonGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCommonGroup.m; sourceTree = "<group>"; };
+		31CE940B1A42D5C10038480E /* YYCommonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCommonItem.h; sourceTree = "<group>"; };
+		31CE940C1A42D5C10038480E /* YYCommonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCommonItem.m; sourceTree = "<group>"; };
+		31CE940D1A42D5C10038480E /* YYCommonSwitchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCommonSwitchItem.h; sourceTree = "<group>"; };
+		31CE940E1A42D5C10038480E /* YYCommonSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCommonSwitchItem.m; sourceTree = "<group>"; };
+		31CE94141A42DAA50038480E /* ITSettingIPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSettingIPViewController.h; sourceTree = "<group>"; };
+		31CE94151A42DAA50038480E /* ITSettingIPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSettingIPViewController.m; sourceTree = "<group>"; };
+		31CE94161A42DAA50038480E /* ITSettingIPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITSettingIPViewController.xib; sourceTree = "<group>"; };
 		31D194E51A383E570075CDB7 /* main_news@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_news@2x.png"; sourceTree = "<group>"; };
 		31D194E61A383E570075CDB7 /* tab_me_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_me_selected@2x.png"; sourceTree = "<group>"; };
 		31D194E71A383E570075CDB7 /* tab_scan_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_scan_selected@2x.png"; sourceTree = "<group>"; };
@@ -577,6 +597,19 @@
 				405D51B61A37373600A8C803 /* ITSettingViewController.h */,
 				405D51B71A37373600A8C803 /* ITSettingViewController.m */,
 				405D51B81A37373600A8C803 /* ITSettingViewController.xib */,
+				31CE94091A42D5C00038480E /* YYCommonGroup.h */,
+				31CE940A1A42D5C10038480E /* YYCommonGroup.m */,
+				31CE940B1A42D5C10038480E /* YYCommonItem.h */,
+				31CE940C1A42D5C10038480E /* YYCommonItem.m */,
+				31CE94071A42D5C00038480E /* YYCommonCell.h */,
+				31CE94081A42D5C00038480E /* YYCommonCell.m */,
+				31CE94051A42D5C00038480E /* YYCommonArrowItem.h */,
+				31CE94061A42D5C00038480E /* YYCommonArrowItem.m */,
+				31CE940D1A42D5C10038480E /* YYCommonSwitchItem.h */,
+				31CE940E1A42D5C10038480E /* YYCommonSwitchItem.m */,
+				31CE94141A42DAA50038480E /* ITSettingIPViewController.h */,
+				31CE94151A42DAA50038480E /* ITSettingIPViewController.m */,
+				31CE94161A42DAA50038480E /* ITSettingIPViewController.xib */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -693,6 +726,7 @@
 			files = (
 				31D194EC1A383E570075CDB7 /* tab_setting_selected@2x.png in Resources */,
 				405D517F1A348DF600A8C803 /* Default.png in Resources */,
+				31CE94181A42DAA50038480E /* ITSettingIPViewController.xib in Resources */,
 				405D51A21A372DC700A8C803 /* logo@2x.png in Resources */,
 				405D51B01A37355700A8C803 /* main_shop@2x.png in Resources */,
 				405D517C1A348DF600A8C803 /* Default-6.png in Resources */,
@@ -744,6 +778,7 @@
 				405D518B1A348DF600A8C803 /* CycleScrollViewCell.m in Sources */,
 				405D51741A348DF600A8C803 /* UIImageView+HighlightedWebCache.m in Sources */,
 				405D51B91A37373600A8C803 /* ITSettingViewController.m in Sources */,
+				31CE94171A42DAA50038480E /* ITSettingIPViewController.m in Sources */,
 				40E2F1901A3C908F00ADE4B1 /* ITScanHistoryCell.m in Sources */,
 				40E2F18B1A3C838100ADE4B1 /* ITUserCenterViewController.m in Sources */,
 				405D51651A348DF600A8C803 /* UIColor+iOS7Colors.m in Sources */,
@@ -759,6 +794,7 @@
 				40E1B3F21A389AB100111867 /* ITErrorView.m in Sources */,
 				405D515D1A348DF600A8C803 /* ASIDownloadCache.m in Sources */,
 				405D51261A348DF600A8C803 /* AppDelegate.m in Sources */,
+				31CE94111A42D5C10038480E /* YYCommonGroup.m in Sources */,
 				405D51671A348DF600A8C803 /* MKAnnotationView+WebCache.m in Sources */,
 				405D51661A348DF600A8C803 /* MBProgressHUD.m in Sources */,
 				405D516E1A348DF600A8C803 /* SDWebImageManager.m in Sources */,
@@ -780,16 +816,20 @@
 				405D51281A348DF600A8C803 /* UIBaseViewController.m in Sources */,
 				40E2F17D1A3C833400ADE4B1 /* ITScanQRCodeViewController.m in Sources */,
 				405D516C1A348DF600A8C803 /* SDWebImageDownloader.m in Sources */,
+				31CE94101A42D5C10038480E /* YYCommonCell.m in Sources */,
 				405D51731A348DF600A8C803 /* UIImage+WebP.m in Sources */,
 				405D515C1A348DF600A8C803 /* ASIDataDecompressor.m in Sources */,
 				405D518A1A348DF600A8C803 /* CycleScrollView.m in Sources */,
 				40E2F19D1A3D7ABF00ADE4B1 /* ITNfcCodeScanHistoryView.m in Sources */,
+				31CE94121A42D5C10038480E /* YYCommonItem.m in Sources */,
 				405D51691A348DF600A8C803 /* SDImageCache.m in Sources */,
 				405D518D1A348DF600A8C803 /* UIPlaceHolderTextView.m in Sources */,
 				405D51641A348DF600A8C803 /* ColoredRoundedButton.m in Sources */,
 				405D51681A348DF600A8C803 /* NSData+ImageContentType.m in Sources */,
+				31CE940F1A42D5C10038480E /* YYCommonArrowItem.m in Sources */,
 				405D51711A348DF600A8C803 /* UIImage+GIF.m in Sources */,
 				405D51551A348DF600A8C803 /* MainViewController.m in Sources */,
+				31CE94131A42D5C10038480E /* YYCommonSwitchItem.m in Sources */,
 				405D51271A348DF600A8C803 /* UIBaseTableViewController.m in Sources */,
 				4062CAAA1A3B27F3002C343C /* ITDataStore.m in Sources */,
 				405D51601A348DF600A8C803 /* ASIInputStream.m in Sources */,
