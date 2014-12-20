@@ -11,6 +11,7 @@
 #import "MainViewController.h"
 #import "Constants.h"
 #import "ITDataStore.h"
+#import "ZBarSDK.h"
 
 @interface AppDelegate ()
 
@@ -26,6 +27,7 @@
     [ITDataStore instance];
     [self setAppearance];
     
+    [ZBarReaderView class]; 
     return YES;
 }
 

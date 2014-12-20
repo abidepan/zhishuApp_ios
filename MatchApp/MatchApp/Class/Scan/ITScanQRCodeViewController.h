@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZBarSDK.h"
 
-@interface ITScanQRCodeViewController : UIViewController
+@interface ITScanQRCodeViewController : UIViewController<ZBarReaderDelegate,ZBarReaderViewDelegate>
+{
+    ZBarReaderView * _readerView;
+    ZBarCameraSimulator * _cameraSim;
+}
 
 @end
