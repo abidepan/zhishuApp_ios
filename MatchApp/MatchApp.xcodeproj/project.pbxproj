@@ -20,6 +20,8 @@
 		31D194EC1A383E570075CDB7 /* tab_setting_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D194E81A383E570075CDB7 /* tab_setting_selected@2x.png */; };
 		31E835FB1A3E932300B661C9 /* splash_background-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31E835F91A3E932300B661C9 /* splash_background-568h@2x.png */; };
 		31E835FC1A3E932300B661C9 /* splash_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31E835FA1A3E932300B661C9 /* splash_background@2x.png */; };
+		404ECCD41A45679C001C1658 /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 404ECCD21A45679C001C1658 /* line@2x.png */; };
+		404ECCD51A45679C001C1658 /* pick_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 404ECCD31A45679C001C1658 /* pick_bg@2x.png */; };
 		405D51261A348DF600A8C803 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D50471A348DF600A8C803 /* AppDelegate.m */; };
 		405D51271A348DF600A8C803 /* UIBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D504A1A348DF600A8C803 /* UIBaseTableViewController.m */; };
 		405D51281A348DF600A8C803 /* UIBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D504C1A348DF600A8C803 /* UIBaseViewController.m */; };
@@ -96,7 +98,6 @@
 		40E1B3F51A389AC900111867 /* ITLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E1B3F41A389AC900111867 /* ITLoadingView.m */; };
 		40E1B3F71A389AE000111867 /* ITErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E1B3F61A389AE000111867 /* ITErrorView.xib */; };
 		40E2F17D1A3C833400ADE4B1 /* ITScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E2F1771A3C833400ADE4B1 /* ITScanQRCodeViewController.m */; };
-		40E2F17E1A3C833400ADE4B1 /* ITScanQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E2F1781A3C833400ADE4B1 /* ITScanQRCodeViewController.xib */; };
 		40E2F17F1A3C833400ADE4B1 /* ITScanHistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E2F17B1A3C833400ADE4B1 /* ITScanHistoryViewController.m */; };
 		40E2F1801A3C833400ADE4B1 /* ITScanHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E2F17C1A3C833400ADE4B1 /* ITScanHistoryViewController.xib */; };
 		40E2F1891A3C838100ADE4B1 /* ITMakeCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E2F1831A3C838100ADE4B1 /* ITMakeCodeViewController.m */; };
@@ -152,6 +153,8 @@
 		31E835F91A3E932300B661C9 /* splash_background-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_background-568h@2x.png"; sourceTree = "<group>"; };
 		31E835FA1A3E932300B661C9 /* splash_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_background@2x.png"; sourceTree = "<group>"; };
 		4049099B1A15D8650053B1C5 /* MatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		404ECCD21A45679C001C1658 /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line@2x.png"; sourceTree = "<group>"; };
+		404ECCD31A45679C001C1658 /* pick_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pick_bg@2x.png"; sourceTree = "<group>"; };
 		405D50461A348DF600A8C803 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		405D50471A348DF600A8C803 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		405D50491A348DF600A8C803 /* UIBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBaseTableViewController.h; sourceTree = "<group>"; };
@@ -280,7 +283,6 @@
 		40E1B3F61A389AE000111867 /* ITErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITErrorView.xib; sourceTree = "<group>"; };
 		40E2F1761A3C833400ADE4B1 /* ITScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanQRCodeViewController.h; sourceTree = "<group>"; };
 		40E2F1771A3C833400ADE4B1 /* ITScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanQRCodeViewController.m; sourceTree = "<group>"; };
-		40E2F1781A3C833400ADE4B1 /* ITScanQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITScanQRCodeViewController.xib; sourceTree = "<group>"; };
 		40E2F17A1A3C833400ADE4B1 /* ITScanHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanHistoryViewController.h; sourceTree = "<group>"; };
 		40E2F17B1A3C833400ADE4B1 /* ITScanHistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanHistoryViewController.m; sourceTree = "<group>"; };
 		40E2F17C1A3C833400ADE4B1 /* ITScanHistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITScanHistoryViewController.xib; sourceTree = "<group>"; };
@@ -702,7 +704,6 @@
 			children = (
 				40E2F1761A3C833400ADE4B1 /* ITScanQRCodeViewController.h */,
 				40E2F1771A3C833400ADE4B1 /* ITScanQRCodeViewController.m */,
-				40E2F1781A3C833400ADE4B1 /* ITScanQRCodeViewController.xib */,
 			);
 			path = Scan;
 			sourceTree = "<group>";
@@ -828,6 +829,8 @@
 		40E2F8521A452C1C00ADE4B1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				404ECCD21A45679C001C1658 /* line@2x.png */,
+				404ECCD31A45679C001C1658 /* pick_bg@2x.png */,
 				40E2F8531A452C1C00ADE4B1 /* zbar-back.png */,
 				40E2F8541A452C1C00ADE4B1 /* zbar-help.html */,
 				40E2F8551A452C1C00ADE4B1 /* zbar-helpicons.png */,
@@ -901,6 +904,7 @@
 				31CE94181A42DAA50038480E /* ITSettingIPViewController.xib in Resources */,
 				405D51A21A372DC700A8C803 /* logo@2x.png in Resources */,
 				405D51B01A37355700A8C803 /* main_shop@2x.png in Resources */,
+				404ECCD51A45679C001C1658 /* pick_bg@2x.png in Resources */,
 				405D517C1A348DF600A8C803 /* Default-6.png in Resources */,
 				405D51291A348DF600A8C803 /* UIBaseViewController.xib in Resources */,
 				31D194EA1A383E570075CDB7 /* tab_me_selected@2x.png in Resources */,
@@ -911,6 +915,7 @@
 				40E2F18A1A3C838100ADE4B1 /* ITMakeCodeViewController.xib in Resources */,
 				405D51AF1A37355700A8C803 /* main_nfc@2x.png in Resources */,
 				405D51AE1A37355700A8C803 /* main_makecode@2x.png in Resources */,
+				404ECCD41A45679C001C1658 /* line@2x.png in Resources */,
 				405D517A1A348DF600A8C803 /* Default-568h@2x.png in Resources */,
 				405D51801A348DF600A8C803 /* Default@2x.png in Resources */,
 				31D194E91A383E570075CDB7 /* main_news@2x.png in Resources */,
@@ -924,7 +929,6 @@
 				405D51341A348DF600A8C803 /* Main.storyboard in Resources */,
 				405D519C1A372AFB00A8C803 /* tab_me@2x.png in Resources */,
 				405D51841A348DF600A8C803 /* search@2x.png in Resources */,
-				40E2F17E1A3C833400ADE4B1 /* ITScanQRCodeViewController.xib in Resources */,
 				405D517B1A348DF600A8C803 /* Default-6-568h@2x.png in Resources */,
 				405D519D1A372AFB00A8C803 /* tab_scan@2x.png in Resources */,
 				31E835FB1A3E932300B661C9 /* splash_background-568h@2x.png in Resources */,
