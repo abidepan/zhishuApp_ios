@@ -71,4 +71,8 @@
     return [dateFormat dateFromString:str];
 }
 
++ (NSString*) getDeviceUid{
+    return [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+}
+
 @end

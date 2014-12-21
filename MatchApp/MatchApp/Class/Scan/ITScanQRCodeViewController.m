@@ -7,7 +7,8 @@
 //
 
 #import "ITScanQRCodeViewController.h"
-#import "ZBarSDK.h"
+#import "ITScanDetailViewController.h"
+#import "Constants.h"
 
 @interface ITScanQRCodeViewController ()
 {
@@ -26,15 +27,16 @@
     
     _scanRect = CGRectMake(30, 80, kDeviceWidth-60, kDeviceWidth-60);
     _lineRect = CGRectMake(_scanRect.origin.x+10, _scanRect.origin.y, _scanRect.size.width-20, 2);
-    
+    [self initScanView];
+    [self setupCamera];
 }
 
 
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self initScanView];
-    [self setupCamera];
+    
+    [_session startRunning];
 }
 -(void)viewDidDisappear:(BOOL)animated
 {
@@ -81,26 +83,47 @@
 
 - (void)setupCamera
 {
-    _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    _input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
-    _output = [[AVCaptureMetadataOutput alloc]init];
-    [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
-    [_output setRectOfInterest:CGRectMake(_scanRect.origin.y/kDeviceHeight, _scanRect.origin.x/kDeviceWidth, _scanRect.size.height/kDeviceHeight, _scanRect.size.width/kDeviceWidth)];
     
+    if (![self isCameraAvailable]) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:@"未检测到摄像头,请检查。" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+        [alert show];
+        
+        return ;
+    }
     
-    _session = [[AVCaptureSession alloc]init];
-    [_session setSessionPreset:AVCaptureSessionPresetHigh];
-    if ([_session canAddInput:self.input]) [_session addInput:self.input];
-    if ([_session canAddOutput:self.output])[_session addOutput:self.output];
-    
-    _output.metadataObjectTypes =@[AVMetadataObjectTypeQRCode];// 类型
-    _preview =[AVCaptureVideoPreviewLayer layerWithSession:self.session];
-    _preview.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    _preview.frame =self.view.layer.bounds;
-    [self.view.layer insertSublayer:self.preview atIndex:0];
-    
-    [_session startRunning];
+    if(IOS7)
+    {
+        _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+        _input = [AVCaptureDeviceInput deviceInputWithDevice:self.device error:nil];
+        _output = [[AVCaptureMetadataOutput alloc]init];
+        [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+        [_output setRectOfInterest:CGRectMake(_scanRect.origin.y/kDeviceHeight, _scanRect.origin.x/kDeviceWidth, _scanRect.size.height/kDeviceHeight, _scanRect.size.width/kDeviceWidth)];
+        
+        
+        _session = [[AVCaptureSession alloc]init];
+        [_session setSessionPreset:AVCaptureSessionPresetHigh];
+        if ([_session canAddInput:self.input]) [_session addInput:self.input];
+        if ([_session canAddOutput:self.output])[_session addOutput:self.output];
+        
+        _output.metadataObjectTypes =@[AVMetadataObjectTypeQRCode];// 类型
+        _preview =[AVCaptureVideoPreviewLayer layerWithSession:self.session];
+        _preview.videoGravity = AVLayerVideoGravityResizeAspectFill;
+        _preview.frame =self.view.layer.bounds;
+        [self.view.layer insertSublayer:self.preview atIndex:0];
+        
+        [_session startRunning];
+    }
 }
+
+-(BOOL) isCameraAvailable{
+
+    BOOL cameraAvailable = [UIImagePickerController isCameraDeviceAvailable:
+                            UIImagePickerControllerCameraDeviceRear];//前
+    BOOL frontCameraAvailable = [UIImagePickerController isCameraDeviceAvailable:
+                                 UIImagePickerControllerCameraDeviceFront];//后
+    return cameraAvailable || frontCameraAvailable;
+}
+
 
 #pragma mark ====== AVCaptureMetadataOutputObjectsDelegate ======
 
@@ -113,7 +136,16 @@
         stringValue = metadataObject.stringValue;
     }
     [_session stopRunning];
-     NSLog(@"%@",stringValue);
+    
+    
+    ITScanDetailViewController * scanDetail = [[ITScanDetailViewController alloc] initWithNibName:@"ITScanDetailViewController" bundle:nil];
+    scanDetail.code = stringValue;
+    scanDetail.codeType = CodeTypeQR;
+    
+    [scanDetail.navigationController pushViewController:scanDetail animated:YES];
+    
+    
+    NSLog(@"%@",stringValue);
     
 }
 
@@ -121,5 +153,8 @@
 {
     [super didReceiveMemoryWarning];
 }
+
+
+
 
 @end

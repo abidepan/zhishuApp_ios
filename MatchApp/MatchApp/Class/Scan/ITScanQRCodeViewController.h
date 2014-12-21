@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "UIBaseViewController.h"
 
-@interface ITScanQRCodeViewController : UIViewController<AVCaptureMetadataOutputObjectsDelegate>
+@interface ITScanQRCodeViewController : UIBaseViewController<AVCaptureMetadataOutputObjectsDelegate>
 {
     int num;
     NSTimer * timer;

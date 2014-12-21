@@ -94,6 +94,8 @@
 		405D51B91A37373600A8C803 /* ITSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D51B71A37373600A8C803 /* ITSettingViewController.m */; };
 		405D51BA1A37373600A8C803 /* ITSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 405D51B81A37373600A8C803 /* ITSettingViewController.xib */; };
 		4062CAAA1A3B27F3002C343C /* ITDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4062CAA91A3B27F3002C343C /* ITDataStore.m */; };
+		40B8D09F1A46EE2200FA2B3E /* ITScanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B8D09D1A46EE2200FA2B3E /* ITScanDetailViewController.m */; };
+		40B8D0A01A46EE2200FA2B3E /* ITScanDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40B8D09E1A46EE2200FA2B3E /* ITScanDetailViewController.xib */; };
 		40E1B3F21A389AB100111867 /* ITErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E1B3F11A389AB100111867 /* ITErrorView.m */; };
 		40E1B3F51A389AC900111867 /* ITLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E1B3F41A389AC900111867 /* ITLoadingView.m */; };
 		40E1B3F71A389AE000111867 /* ITErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40E1B3F61A389AE000111867 /* ITErrorView.xib */; };
@@ -276,6 +278,9 @@
 		405D51B81A37373600A8C803 /* ITSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITSettingViewController.xib; sourceTree = "<group>"; };
 		4062CAA81A3B27F3002C343C /* ITDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITDataStore.h; sourceTree = "<group>"; };
 		4062CAA91A3B27F3002C343C /* ITDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITDataStore.m; sourceTree = "<group>"; };
+		40B8D09C1A46EE2200FA2B3E /* ITScanDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanDetailViewController.h; sourceTree = "<group>"; };
+		40B8D09D1A46EE2200FA2B3E /* ITScanDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanDetailViewController.m; sourceTree = "<group>"; };
+		40B8D09E1A46EE2200FA2B3E /* ITScanDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITScanDetailViewController.xib; sourceTree = "<group>"; };
 		40E1B3F01A389AB100111867 /* ITErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITErrorView.h; sourceTree = "<group>"; };
 		40E1B3F11A389AB100111867 /* ITErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITErrorView.m; sourceTree = "<group>"; };
 		40E1B3F31A389AC900111867 /* ITLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITLoadingView.h; sourceTree = "<group>"; };
@@ -407,6 +412,7 @@
 		405D502B1A348DF600A8C803 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				40B8D0961A46EDE300FA2B3E /* Detail */,
 				40E2F1811A3C838100ADE4B1 /* MakeCode */,
 				40E2F1851A3C838100ADE4B1 /* UserCenter */,
 				40E2F1751A3C833400ADE4B1 /* Scan */,
@@ -699,6 +705,16 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		40B8D0961A46EDE300FA2B3E /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				40B8D09C1A46EE2200FA2B3E /* ITScanDetailViewController.h */,
+				40B8D09D1A46EE2200FA2B3E /* ITScanDetailViewController.m */,
+				40B8D09E1A46EE2200FA2B3E /* ITScanDetailViewController.xib */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
 		40E2F1751A3C833400ADE4B1 /* Scan */ = {
 			isa = PBXGroup;
 			children = (
@@ -915,6 +931,7 @@
 				40E2F18A1A3C838100ADE4B1 /* ITMakeCodeViewController.xib in Resources */,
 				405D51AF1A37355700A8C803 /* main_nfc@2x.png in Resources */,
 				405D51AE1A37355700A8C803 /* main_makecode@2x.png in Resources */,
+				40B8D0A01A46EE2200FA2B3E /* ITScanDetailViewController.xib in Resources */,
 				404ECCD41A45679C001C1658 /* line@2x.png in Resources */,
 				405D517A1A348DF600A8C803 /* Default-568h@2x.png in Resources */,
 				405D51801A348DF600A8C803 /* Default@2x.png in Resources */,
@@ -1004,6 +1021,7 @@
 				405D515C1A348DF600A8C803 /* ASIDataDecompressor.m in Sources */,
 				405D518A1A348DF600A8C803 /* CycleScrollView.m in Sources */,
 				40E2F19D1A3D7ABF00ADE4B1 /* ITNfcCodeScanHistoryView.m in Sources */,
+				40B8D09F1A46EE2200FA2B3E /* ITScanDetailViewController.m in Sources */,
 				31CE94121A42D5C10038480E /* YYCommonItem.m in Sources */,
 				405D51691A348DF600A8C803 /* SDImageCache.m in Sources */,
 				405D518D1A348DF600A8C803 /* UIPlaceHolderTextView.m in Sources */,

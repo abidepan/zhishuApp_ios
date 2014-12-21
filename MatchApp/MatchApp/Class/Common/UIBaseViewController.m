@@ -38,15 +38,22 @@
 
 
 -(void) callServerWithUrl:(NSString*) urlString param:(NSDictionary *)param successCallBack:(WebServerCallBack)succeedCallBack loadingOptions:(NSDictionary*)loadingOptions failOptions:(NSDictionary*)faliOptoins{
-
+    
     [self showLoadingViewWithTitle:[loadingOptions objectForKey:@"title"]];
     
     [[WebServer instance] startCallServerUrl:urlString param:param Succeed:^(NSInteger code, id data) {
-        succeedCallBack(code,data);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self dismissLoadingView];
+            succeedCallBack(code,data);
+        });
         
     } Failed:^(NSInteger code, id data) {
         
-        [self showErrorViewWithTitle:[faliOptoins objectForKey:@"title"]  Image:[faliOptoins objectForKey:@"image"]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self dismissLoadingView];
+            [self showErrorViewWithTitle:[faliOptoins objectForKey:@"title"]  Image:[faliOptoins objectForKey:@"image"]];
+        });
+        
     }];
 }
 
@@ -56,12 +63,12 @@
     if (_errorView==nil) {
         
         _errorView = [[[NSBundle mainBundle] loadNibNamed:@"ITErrorView" owner:self options:nil] objectAtIndex:0];
-        _errorView.bounds = self.view.bounds;
-        
         [_errorView.errorBtn addTarget:self action:@selector(onErrorBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     }
     
-    if (descTitle!=nil) _errorView.errorTitleLbl.text = descTitle;
+    _errorView.bounds = self.view.bounds;
+    
+    _errorView.errorTitleLbl.text = (descTitle==nil)?@"网络访问出错，请点击重试！":descTitle;
     if (image!=nil) [_errorView.errorImgView setImage:image];
     
     [self.view addSubview:_errorView];
@@ -72,13 +79,11 @@
     
     if (_loadingView==nil) {
         
-        _loadingView = [[[NSBundle mainBundle] loadNibNamed:@"ITLoadingView" owner:self options:nil] objectAtIndex:0];
+        _loadingView = [[ITLoadingView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
         [_loadingView initLoadingContent];
-        _loadingView.bounds = self.view.bounds;
     }
-    if (descTitle !=nil)  _loadingView.progressHUD.labelText = descTitle;
-    
-    
+    _loadingView.progressHUD.labelText = (descTitle ==nil)?@"加载中" :descTitle;
+   
     [self.view addSubview:_loadingView];
     
 }
@@ -95,9 +100,14 @@
 
 -(void) onErrorBtnClicked{
 
-    if ([self respondsToSelector:@selector(onRetryPageRequest)]) {
+    
+    if ([self respondsToSelector:@selector(onRetryPageRequest)]
+        && _errorView.superview !=nil) {
+        [self dismissErrorView];
         [self onRetryPageRequest];
     }
+    
+    NSLog(@"%@",@"error btn clicked");
 }
 
 -(void)onRetryPageRequest{

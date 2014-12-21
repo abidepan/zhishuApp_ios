@@ -9,6 +9,7 @@
 #import "ITQRCodeScanHistoryView.h"
 #import "ITScanHistoryCell.h"
 #import "Constants.h"
+#import "ITScanDetailViewController.h"
 
 @implementation ITQRCodeScanHistoryView
 
@@ -49,9 +50,20 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    ITScanDetailViewController * scanDetail = [[ITScanDetailViewController alloc] initWithNibName:@"ITScanDetailViewController" bundle:nil];
+    scanDetail.dataInfo = nil; //TODO
+    
+    [self.parentNav pushViewController:scanDetail animated:YES];
+}
+
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
 
 }
+
+
+
 
 @end

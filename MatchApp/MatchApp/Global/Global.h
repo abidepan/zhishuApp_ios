@@ -20,4 +20,6 @@
 + (NSDate *) dateFromShortString:(NSString *) str;
 + (NSDate *) dateFromString:(NSString *)str Format:(NSString*)format;
 + (NSString *) stringFromDate:(NSDate *) date Format:(NSString*)format;
+
++ (NSString*) getDeviceUid;
 @end

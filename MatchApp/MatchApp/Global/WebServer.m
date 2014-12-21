@@ -57,20 +57,20 @@ dispatch_queue_t _taskDispatchQueue;
         responseCode = request.responseStatusCode;
         if (responseCode == 200 && [responseString length] > 0) {
             
-            resultData = [NSJSONSerialization JSONObjectWithData:[responseString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];//[responseString JSONValue];
+            resultData = [NSJSONSerialization JSONObjectWithData:[responseString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
             
-            if (succeedCallBack!=nil) {
-                succeedCallBack(responseCode,resultData);
-                return ;
-            }
+            
+            if (resultData == nil) {
                 
-            if (resultData) {
-                
-                succeedCallBack(responseCode,resultData);
-            }else{
-                
-                UIAlertView * alert = [[UIAlertView alloc] initWithTitle:nil message:responseString delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
-                [alert show];
+                if (failedCallBack!=nil) {
+                    failedCallBack(responseCode,nil);
+                }
+            }else
+            {
+                if (succeedCallBack!=nil) {
+                    succeedCallBack(responseCode,resultData);
+                    
+                }
             }
         }else{
             

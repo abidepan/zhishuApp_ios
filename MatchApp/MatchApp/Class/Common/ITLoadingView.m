@@ -25,7 +25,8 @@
 
 -(void)initLoadingContent{
 
-    _progressHUD = [MBProgressHUD showHUDAddedTo:self animated:YES];
+    _progressHUD = [MBProgressHUD showHUDAddedTo:self animated:NO];
+    _progressHUD.backgroundColor = kRGB(250, 250,250);
 }
 
 @end

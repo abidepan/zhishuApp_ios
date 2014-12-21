@@ -40,17 +40,10 @@
 #define kAppleBlueColor kRGB(0.0, 122.0, 255.0)
 
 
+#define kAppHostProtocal @"http"
+#define kAppHost @"itts.itrace.com.cn"
+#define kAppHostPort @"80"
 
-
-#ifdef _DEBUG
-    #define kAppHostProtocal @"http"
-    #define kAppHost @"192.168.1.52"
-    #define kAppHostPort @"9082"
-#else
-    #define kAppHostProtocal @"http"
-    #define kAppHost @"fyb365.com"
-    #define kAppHostPort @"80"
-#endif
 #define kAppApi(api) [NSString stringWithFormat:@"%@://%@:%@/%@", kAppHostProtocal, kAppHost, kAppHostPort, api]
 
 

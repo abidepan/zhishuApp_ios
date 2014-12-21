@@ -39,6 +39,9 @@
     ITScanHistoryBaseView * qrSacnView = [[ITQRCodeScanHistoryView alloc] initWithFrame:mainViewRect];
     ITScanHistoryBaseView * barSacnView = [[ITBarCodeScanHistoryView alloc] initWithFrame:mainViewRect];
     ITScanHistoryBaseView * nfcSacnView = [[ITNfcCodeScanHistoryView alloc] initWithFrame:mainViewRect];
+    qrSacnView.parentNav = self.navigationController;
+    barSacnView.parentNav = self.navigationController;
+    nfcSacnView.parentNav = self.navigationController;
     _scanHistoryViews = @[qrSacnView,barSacnView,nfcSacnView];
     
     for (int i=0; i<_scanHistoryViews.count; i++) {
