@@ -19,8 +19,6 @@
     [super viewDidLoad];
     
     self.title = @"扫码详情";
-    
-    [self loadData];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -42,7 +40,7 @@
 -(void) requestDataFromServer{
 
     NSString * url = kAppApi(@"api/product/verify.json");
-    NSDictionary * dic = @{@"data":@"text:突发非常",@"device_id":[Global getDeviceUid],@"location":@"100.0,100.0"};
+    NSDictionary * dic = @{@"data":@"01L013B001AF907BBG0EJW",@"device_id":[Global getDeviceUid],@"location":@"100.0,100.0"};
     
     [self callServerWithUrl:url param:dic successCallBack:^(NSInteger code, id data) {
 
@@ -55,6 +53,17 @@
 
 -(void) showData:(NSDictionary *) data{
 
+    UILabel * lbl = [[UILabel alloc] initWithFrame:CGRectMake(10, 80, kDeviceWidth-20, 200)];
+    lbl.numberOfLines = 0;
+    NSString * productStr = [data objectForKey:@"product"];
+    NSDictionary * product = [NSJSONSerialization JSONObjectWithData:[productStr dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+    
+    lbl.text = [NSString stringWithFormat:@"%@ = %@ ,\n %@ = %@ ,\n %@ = %@ ,\n %@ = %@ ,\n %@ = %@ ,\n", @"company_name",[product objectForKey:@"company_name"] ,@"company_addr",[product objectForKey:@"company_addr"] ,@"company_contact",[product objectForKey:@"company_contact"] ,@"product_name",[product objectForKey:@"product_name"] ,@"factory_name",[product objectForKey:@"factory_name"] ,nil];
+    
+    
+    [self.view addSubview: lbl];
+    
+    
     
 }
 

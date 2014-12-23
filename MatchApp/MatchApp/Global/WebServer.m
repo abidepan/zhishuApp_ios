@@ -31,19 +31,26 @@ dispatch_queue_t _taskDispatchQueue;
     
     dispatch_async(_taskDispatchQueue, ^(void){
         
-        ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:url]];
-        request.requestMethod = @"POST";
+        NSString * actualUrl = url;
         
         if (dict!=nil) {
             id keys = [dict allKeys];
             NSUInteger count = [keys count];
+            NSString * urlMore = @"";
             for (int i = 0; i < count; i++)
             {
                 id key = [keys objectAtIndex: i];
                 id value = [dict objectForKey: key];
-                [request setPostValue:value forKey:key];
+                urlMore = [urlMore stringByAppendingFormat:@"%@=%@&",key,value];
+                //[request setPostValue:value forKey:key];
             }
+            
+            actualUrl = [url stringByAppendingFormat:@"?%@",urlMore];
         }
+        
+        ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:actualUrl]];
+        request.requestMethod = @"GET";
+        
         [request setTimeOutSeconds:180];
         request.shouldAttemptPersistentConnection = NO;
         [request startSynchronous];
