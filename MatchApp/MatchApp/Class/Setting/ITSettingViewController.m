@@ -8,7 +8,6 @@
 
 #import "ITSettingViewController.h"
 #import "YYCommonGroup.h"
-#import "YYCommonItem.h"
 #import "YYCommonCell.h"
 #import "YYCommonSwitchItem.h"
 #import "YYCommonArrowItem.h"
@@ -27,6 +26,7 @@
     [super viewDidLoad];
     
     self.title = @"设置";
+    _scanTimeOutString = @"";
     
     // 初始化模型数据
     [self setupGroups];
@@ -81,16 +81,28 @@
     YYCommonSwitchItem *vibrateSwitch = [YYCommonSwitchItem itemWithTitle:@"震动" icon:@"setting_vibrate"];
     //findPeople.subtitle = @"扫描成功后会抽搐一下";
     
-    YYCommonItem *scantimeout = [YYCommonItem itemWithTitle:@"扫描超时" icon:@"setting_scan_timeout"];
-    scantimeout.operation = ^{
+    _scantimeout = [YYCommonItem itemWithTitle:@"扫描超时" icon:@"setting_scan_timeout"];
+    _scantimeout.operation = ^{
         
-        // NSLog(@"---------扫描超时--30s---------");
-        
-        UIAlertView * alter = [[UIAlertView alloc] initWithTitle:@"选中的行信息" message:scantimeout.title delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        UIAlertView * alter = [[UIAlertView alloc] initWithTitle:@"扫描超时" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"10秒",@"15秒", @"20秒", @"30秒", nil];
         [alter show];
     };
     
-    group.items = @[beebSwitch, vibrateSwitch, scantimeout];
+    _scantimeout.subtitle = @"30秒";
+    
+    group.items = @[beebSwitch, vibrateSwitch, _scantimeout];
+}
+
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    //该方法由UIAlertViewDelegate协议定义，在点击AlertView按钮时自动执行，
+    //所以如果这里再用alertView来弹出提示，就会死循环，不停的弹AlertView
+    _scanTimeOutString = [alertView buttonTitleAtIndex:buttonIndex];
+    NSLog(@"%@",_scanTimeOutString);
+    
+    // 不管用~
+    _scantimeout.subtitle = _scanTimeOutString;
+    
 }
 
 - (void)setupGroup1 {

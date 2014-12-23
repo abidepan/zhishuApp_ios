@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YYCommonItem.h"
 
 @interface ITSettingViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *settingTableView;
+
+
+
+@property (nonatomic,retain) YYCommonItem *scantimeout;
+@property (nonatomic,assign) NSString * scanTimeOutString;
+
 
 @end
