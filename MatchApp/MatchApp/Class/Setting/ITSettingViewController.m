@@ -75,13 +75,13 @@
     group.grougfooter = @"第0组的尾部";
     
     //3.设置组中所有行的数据
-    YYCommonSwitchItem *beebSwitch = [YYCommonSwitchItem itemWithTitle:@"提示音" icon:@"search"];
+    YYCommonSwitchItem *beebSwitch = [YYCommonSwitchItem itemWithTitle:@"提示音" icon:@"setting_beeb"];
     //hotStatus.subtitle = @"扫描成功后会“biu~”一声";
     
-    YYCommonSwitchItem *vibrateSwitch = [YYCommonSwitchItem itemWithTitle:@"震动" icon:@"search"];
+    YYCommonSwitchItem *vibrateSwitch = [YYCommonSwitchItem itemWithTitle:@"震动" icon:@"setting_vibrate"];
     //findPeople.subtitle = @"扫描成功后会抽搐一下";
     
-    YYCommonItem *scantimeout = [YYCommonItem itemWithTitle:@"扫描超时" icon:@"search"];
+    YYCommonItem *scantimeout = [YYCommonItem itemWithTitle:@"扫描超时" icon:@"setting_scan_timeout"];
     scantimeout.operation = ^{
         
         // NSLog(@"---------扫描超时--30s---------");
@@ -101,10 +101,10 @@
     //2.设置组的基本数据
     
     //3.设置组中所有行的数据
-    YYCommonArrowItem *gamecenter = [YYCommonArrowItem itemWithTitle:@"版本更新" icon:@"search"];
-    YYCommonArrowItem *near = [YYCommonArrowItem itemWithTitle:@"用户反馈" icon:@"search"];
-    YYCommonArrowItem *clearcache = [YYCommonArrowItem itemWithTitle:@"清除缓存" icon:@"search"];
-    YYCommonArrowItem *share = [YYCommonArrowItem itemWithTitle:@"软件分享" icon:@"search"];
+    YYCommonArrowItem *gamecenter = [YYCommonArrowItem itemWithTitle:@"版本更新" icon:@"setting_version"];
+    YYCommonArrowItem *near = [YYCommonArrowItem itemWithTitle:@"用户反馈" icon:@"setting_feedback"];
+    YYCommonArrowItem *clearcache = [YYCommonArrowItem itemWithTitle:@"清除缓存" icon:@"setting_help"];
+    YYCommonArrowItem *share = [YYCommonArrowItem itemWithTitle:@"软件分享" icon:@"setting_shareapp"];
     
     group.items = @[gamecenter,near,clearcache,share];
     
@@ -118,11 +118,11 @@
     //2.设置组的基本数据
     
     //3.设置组中所有行的数据
-    YYCommonArrowItem *video = [YYCommonArrowItem itemWithTitle:@"设置服务器IP" icon:@"search"];
+    YYCommonArrowItem *video = [YYCommonArrowItem itemWithTitle:@"设置服务器IP" icon:@"setting_server_ip"];
     video.destVcClass = [ITSettingIPViewController class];
-    YYCommonArrowItem *music = [YYCommonArrowItem itemWithTitle:@"使用帮助" icon:@"search"];
+    YYCommonArrowItem *music = [YYCommonArrowItem itemWithTitle:@"使用帮助" icon:@"setting_clear_cache"];
     music.destVcClass = [ITSettingIPViewController class];
-    YYCommonArrowItem *movie = [YYCommonArrowItem itemWithTitle:@"关于" icon:@"search"];
+    YYCommonArrowItem *movie = [YYCommonArrowItem itemWithTitle:@"关于" icon:@"setting_about"];
     
     group.items = @[video,music,movie];
 }
