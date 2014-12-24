@@ -48,7 +48,7 @@
 // 二维码
 - (IBAction)onQuickResponseCodeBtnClicked:(id)sender {
     
-    ITScanQRCodeViewController* sacnView =[[ITScanQRCodeViewController alloc] initWithNibName:@"ITScanQRCodeViewController" bundle:nil];
+    ITScanQRCodeViewController* sacnView =[[ITScanQRCodeViewController alloc] init];
     [self.navigationController pushViewController:sacnView animated:YES];
 }
 
@@ -71,7 +71,7 @@
 // 二维码
 - (IBAction)onScanBtnClicked:(id)sender {
     
-    ITScanQRCodeViewController* sacnView =[[ITScanQRCodeViewController alloc] initWithNibName:@"ITScanQRCodeViewController" bundle:nil];
+    ITScanQRCodeViewController* sacnView =[[ITScanQRCodeViewController alloc] init];
     [self.navigationController pushViewController:sacnView animated:YES];
 }
 

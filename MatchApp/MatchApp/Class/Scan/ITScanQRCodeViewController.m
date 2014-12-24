@@ -25,9 +25,10 @@
     
     self.title=@"二维码扫描";
     
-    _scanRect = CGRectMake(30, 80, kDeviceWidth-60, kDeviceWidth-60);
+    _scanRect = CGRectMake(30, 100, kDeviceWidth-60, kDeviceWidth-60);
     _lineRect = CGRectMake(_scanRect.origin.x+10, _scanRect.origin.y, _scanRect.size.width-20, 2);
     [self initScanView];
+    
     [self setupCamera];
 }
 
@@ -37,6 +38,7 @@
     [super viewDidAppear:animated];
     
     [_session startRunning];
+    
 }
 -(void)viewDidDisappear:(BOOL)animated
 {
@@ -51,7 +53,9 @@
     
     UILabel * labIntroudction= [[UILabel alloc] initWithFrame:CGRectMake(0, _scanRect.origin.y+_scanRect.size.height+30.0f, kDeviceWidth , 25)];
     labIntroudction.backgroundColor = [UIColor clearColor];
-    labIntroudction.font = kAppFont(13);
+    labIntroudction.font = kAppFont(15);
+    labIntroudction.minimumScaleFactor = 0.5;
+    labIntroudction.adjustsFontSizeToFitWidth = YES;
     labIntroudction.textAlignment = NSTextAlignmentCenter;
     labIntroudction.textColor=[UIColor whiteColor];
     labIntroudction.text=@"将二维码图像置于矩形方框内，即可自动扫描识别。";
@@ -68,7 +72,28 @@
     
     timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(scanAnimation) userInfo:nil repeats:YES];
 
+    [self initBlackTransparentBackground];
 }
+
+
+-(void) initBlackTransparentBackground{
+
+    UIView * vw1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, _scanRect.origin.y)];
+    UIView *vw2 = [[UIView alloc] initWithFrame:CGRectMake(0, _scanRect.origin.y, _scanRect.origin.x, _scanRect.size.height)];
+    UIView *vw3 = [[UIView alloc] initWithFrame:CGRectMake(_scanRect.size.width + _scanRect.origin.x, _scanRect.origin.y, _scanRect.origin.x, _scanRect.size.height)];
+    UIView * vw4 = [[UIView alloc] initWithFrame:CGRectMake(0, _scanRect.origin.y +_scanRect.size.height, kDeviceWidth, kDeviceHeight - _scanRect.origin.y -_scanRect.size.height)];
+    
+    [vw1 setBackgroundColor:kRGBA(0, 0, 0, 0.5)];
+    [vw2 setBackgroundColor:kRGBA(0, 0, 0, 0.5)];
+    [vw3 setBackgroundColor:kRGBA(0, 0, 0, 0.5)];
+    [vw4 setBackgroundColor:kRGBA(0, 0, 0, 0.5)];
+    
+    [self.view addSubview:vw1];
+    [self.view addSubview:vw2];
+    [self.view addSubview:vw3];
+    [self.view addSubview:vw4];
+}
+
 
 -(void)scanAnimation
 {
