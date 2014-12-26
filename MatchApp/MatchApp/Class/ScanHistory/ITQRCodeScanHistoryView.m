@@ -10,6 +10,7 @@
 #import "ITScanHistoryCell.h"
 #import "Constants.h"
 #import "ITScanDetailViewController.h"
+#import "ITDataStore.h"
 
 @implementation ITQRCodeScanHistoryView
 
@@ -26,6 +27,8 @@
     _tableView.dataSource =  self;
     [_tableView setBackgroundColor:kRGB(235, 239, 242)];
     [self addSubview:_tableView];
+    
+    
     return self;
 }
 
@@ -34,7 +37,8 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
-    return 15;
+    NSArray * arr = [[ITDataStore instance] qrCodeHistoryRecords];
+    return arr.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -46,6 +50,11 @@
 
     ITScanHistoryCell * cell = [tableView dequeueReusableCellWithIdentifier:@"QRCodeScanHistoryCell" forIndexPath:indexPath];
     
+    id data = [[[ITDataStore instance] qrCodeHistoryRecords] objectAtIndex:indexPath.row];
+    
+    cell.nameLbl.text = [data objectForKey:@"product_name"];
+    cell.timeLbl.text = [data objectForKey:@"produce_time"];
+    
     
     return cell;
 }
@@ -53,7 +62,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     ITScanDetailViewController * scanDetail = [[ITScanDetailViewController alloc] initWithNibName:@"ITScanDetailViewController" bundle:nil];
-    scanDetail.dataInfo = nil; //TODO
+    scanDetail.dataInfo = [[[ITDataStore instance] qrCodeHistoryRecords] objectAtIndex:indexPath.row];
     
     [self.parentNav pushViewController:scanDetail animated:YES];
 }

@@ -9,6 +9,7 @@
 #import "ITScanQRCodeViewController.h"
 #import "ITScanDetailViewController.h"
 #import "Constants.h"
+#import "ITInputQRCodeViewController.h"
 
 @interface ITScanQRCodeViewController ()
 {
@@ -75,7 +76,6 @@
     [self initBlackTransparentBackground];
 }
 
-
 -(void) initBlackTransparentBackground{
 
     UIView * vw1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, _scanRect.origin.y)];
@@ -92,6 +92,18 @@
     [self.view addSubview:vw2];
     [self.view addSubview:vw3];
     [self.view addSubview:vw4];
+
+    UIButton * inputBtn = [[UIButton alloc] initWithFrame:CGRectMake(_scanRect.origin.x, kDeviceHeight- 60, _scanRect.size.width/2, 40)];
+    [self.view addSubview:inputBtn];
+    [inputBtn setTitle:@"手动输入" forState:UIControlStateNormal];
+    [inputBtn addTarget:self action:@selector(onInputBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+}
+
+-(void) onInputBtnClicked{
+
+    ITInputQRCodeViewController * qrinputcode = [[ITInputQRCodeViewController alloc] initWithNibName:@"ITInputQRCodeViewController" bundle:nil];
+    [self.navigationController pushViewController:qrinputcode animated:YES];
+    
 }
 
 
@@ -169,9 +181,7 @@
     
     [scanDetail.navigationController pushViewController:scanDetail animated:YES];
     
-    
     NSLog(@"%@",stringValue);
-    
 }
 
 - (void)didReceiveMemoryWarning

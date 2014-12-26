@@ -55,8 +55,6 @@
 }
 
 
-
-
 -(void) onValueChanged:(UISegmentedControl *) segment{
 
     NSInteger newIndex = segment.selectedSegmentIndex;

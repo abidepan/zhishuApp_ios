@@ -62,7 +62,9 @@ NSString * kITNfcHistory = @"kITNfcHistory";
 }
 
 
--(void) addQrCodeRecord:(NSDictionary *)qrCodeRecord{
+-(void) addQrCodeRecord:(NSDictionary *)qrRawCodeRecord{
+    
+    NSDictionary * qrCodeRecord  = [self filterNullPointerValues:qrRawCodeRecord];
     
     [_qrCodeHistoryRecords insertObject:qrCodeRecord atIndex:0];
     
@@ -130,6 +132,26 @@ NSString * kITNfcHistory = @"kITNfcHistory";
     
     [[NSUserDefaults standardUserDefaults] setObject:_nfcHistoryRecords forKey:kITNfcHistory];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
+
+-(NSDictionary *) filterNullPointerValues:(NSDictionary * )dic{
+
+    NSMutableDictionary * mDic = [[NSMutableDictionary alloc] init];
+    for (NSString * key in [dic allKeys]) {
+        
+        id v =[dic objectForKey:key];
+        
+        if (v==nil || v==[NSNull null]) {
+            [mDic setObject:@"" forKey:key];
+        }else
+        {
+            [mDic setObject:v forKey:key];
+        }
+    }
+
+    return [NSDictionary dictionaryWithDictionary:mDic];
 }
 
 
