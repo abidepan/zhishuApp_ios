@@ -31,6 +31,16 @@
     return self;
 }
 
+-(void) onHistoryViewAppear{
+    
+    if([[ITDataStore instance] barCodeHistoryRecords].count ==0)
+        self.tableView.tableFooterView = self.noRecordsLbl;
+    else
+        [self.noRecordsLbl removeFromSuperview ];
+}
+
+-(void) onHistoryViewDisappear{}
+
 #pragma marks === tableView Delegate Methods===
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

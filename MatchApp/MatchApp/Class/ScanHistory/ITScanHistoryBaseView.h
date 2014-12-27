@@ -14,4 +14,8 @@
 @property (nonatomic,assign) NSString * title;
 @property (nonatomic,strong) UINavigationController * parentNav;
 
+@property (nonatomic,strong) UILabel * noRecordsLbl;
+
+-(void) onHistoryViewAppear;
+-(void) onHistoryViewDisappear;
 @end

@@ -12,6 +12,7 @@
 #import "ITScanDetailViewController.h"
 #import "ITDataStore.h"
 
+
 @implementation ITQRCodeScanHistoryView
 
 
@@ -29,8 +30,21 @@
     [self addSubview:_tableView];
     
     
+    NSArray * arr = [[ITDataStore instance] qrCodeHistoryRecords];
+    
     return self;
 }
+
+
+-(void) onHistoryViewAppear{
+
+    if([[ITDataStore instance] qrCodeHistoryRecords].count ==0)
+        self.tableView.tableFooterView = self.noRecordsLbl;
+    else
+        [self.noRecordsLbl removeFromSuperview ];
+}
+
+-(void) onHistoryViewDisappear{}
 
 
 #pragma marks === tableView Delegate Methods===
@@ -38,6 +52,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
 
     NSArray * arr = [[ITDataStore instance] qrCodeHistoryRecords];
+    
     return arr.count;
 }
 

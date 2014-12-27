@@ -34,13 +34,12 @@
 }
 
 
--(void)viewDidAppear:(BOOL)animated
+-(void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
-    
     [_session startRunning];
-    
+    [super viewWillAppear:animated];
 }
+
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
@@ -95,6 +94,10 @@
 
     UIButton * inputBtn = [[UIButton alloc] initWithFrame:CGRectMake(_scanRect.origin.x, kDeviceHeight- 60, _scanRect.size.width/2, 40)];
     [self.view addSubview:inputBtn];
+    inputBtn.layer.borderColor = [UIColor whiteColor].CGColor;
+    inputBtn.layer.borderWidth = 1;
+    inputBtn.layer.cornerRadius = 20;
+    
     [inputBtn setTitle:@"手动输入" forState:UIControlStateNormal];
     [inputBtn addTarget:self action:@selector(onInputBtnClicked) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -179,7 +182,7 @@
     scanDetail.code = stringValue;
     scanDetail.codeType = CodeTypeQR;
     
-    [scanDetail.navigationController pushViewController:scanDetail animated:YES];
+    [self.navigationController pushViewController:scanDetail animated:YES];
     
     NSLog(@"%@",stringValue);
 }

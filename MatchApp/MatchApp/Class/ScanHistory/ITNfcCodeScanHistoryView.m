@@ -9,6 +9,7 @@
 #import "ITNfcCodeScanHistoryView.h"
 #import "ITScanHistoryCell.h"
 #import "Constants.h"
+#import "ITDataStore.h"
 
 @implementation ITNfcCodeScanHistoryView
 
@@ -26,6 +27,16 @@
     [self addSubview:_tableView];
     return self;
 }
+
+-(void) onHistoryViewAppear{
+    
+    if([[ITDataStore instance] nfcHistoryRecords].count ==0)
+        self.tableView.tableFooterView = self.noRecordsLbl;
+    else
+        [self.noRecordsLbl removeFromSuperview ];
+}
+
+-(void) onHistoryViewDisappear{}
 
 #pragma marks === tableView Delegate Methods===
 

@@ -55,6 +55,19 @@
 }
 
 
+-(void)viewWillAppear:(BOOL)animated{
+
+    [super viewWillAppear:animated];
+    [[_scanHistoryViews objectAtIndex:_segment.selectedSegmentIndex] onHistoryViewAppear];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+    [[_scanHistoryViews objectAtIndex:_segment.selectedSegmentIndex] onHistoryViewDisappear];
+}
+
+
 -(void) onValueChanged:(UISegmentedControl *) segment{
 
     NSInteger newIndex = segment.selectedSegmentIndex;
@@ -63,21 +76,21 @@
     if(_currentSelectedIndex != newIndex){
     
         
-        UIView * oldView = [_scanHistoryViews objectAtIndex:_currentSelectedIndex];
-        UIView * newView = [_scanHistoryViews objectAtIndex:newIndex];
+        ITScanHistoryBaseView * oldView = [_scanHistoryViews objectAtIndex:_currentSelectedIndex];
+        ITScanHistoryBaseView * newView = [_scanHistoryViews objectAtIndex:newIndex];
         
         BOOL right =  newIndex > _currentSelectedIndex;
-        
         [newView setFrame:CGRectMake(right ? kDeviceWidth : -kDeviceWidth, y, kDeviceWidth, kDeviceHeight-y)];
-        
         [self.view addSubview: newView];
         
+        [oldView onHistoryViewDisappear];
         [UIView animateWithDuration:0.35 animations:^{
             [oldView setFrame:CGRectMake(right ?-kDeviceWidth:kDeviceWidth, y, kDeviceWidth, kDeviceHeight-y)];
             [newView setFrame:CGRectMake(0, y, kDeviceWidth, kDeviceHeight-y)];
             
         } completion:^(BOOL finished) {
             [oldView removeFromSuperview];
+            [newView onHistoryViewAppear];
             
         }];
         _currentSelectedIndex = newIndex;
