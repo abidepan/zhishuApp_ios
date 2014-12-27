@@ -14,6 +14,7 @@
 
 @property(nonatomic,strong) NSString * code;
 @property(nonatomic,assign) CodeType codeType;
-
 @property (nonatomic,strong) NSDictionary * dataInfo;
+
+@property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
 @end

@@ -37,6 +37,13 @@
     }
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+
+    [super viewDidAppear:animated];
+    
+    _bgScrollView.contentSize = CGSizeMake(kDeviceWidth, kDeviceHeight +100);
+}
+
 
 -(void) requestDataFromServer{
     
@@ -70,7 +77,7 @@
     lbl.text = [NSString stringWithFormat:@"%@ = %@ ,\n %@ = %@ ,\n %@ = %@ ,\n %@ = %@ ,\n %@ = %@ ,\n", @"company_name",[product objectForKey:@"company_name"] ,@"company_addr",[product objectForKey:@"company_addr"] ,@"company_contact",[product objectForKey:@"company_contact"] ,@"product_name",[product objectForKey:@"product_name"] ,@"factory_name",[product objectForKey:@"factory_name"] ,nil];
     
     
-    [self.view addSubview: lbl];
+    //[self.view addSubview: lbl];
 
 }
 
