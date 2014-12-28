@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ITInputCodeBaseViewController.h"
 
-@interface ITInputQRCodeViewController : UIViewController
-- (IBAction)onSearchBtnClicked:(id)sender;
-@property (weak, nonatomic) IBOutlet UITextField *qrCodeTxtField;
+@interface ITInputQRCodeViewController : ITInputCodeBaseViewController
 
 @end

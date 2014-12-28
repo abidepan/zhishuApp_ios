@@ -39,6 +39,8 @@
 
 #define kAppleBlueColor kRGB(0.0, 122.0, 255.0)
 
+#define kLightBlueColor kRGB(43.0, 142.0, 216.0)
+
 
 #define kAppHostProtocal @"http"
 #define kAppHost @"itts.itrace.com.cn"

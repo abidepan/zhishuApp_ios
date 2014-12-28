@@ -7,19 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AVFoundation/AVFoundation.h>
-#import "UIBaseViewController.h"
+#import "ITScanCodeBaseViewController.h"
 
-@interface ITScanQRCodeViewController : UIBaseViewController<AVCaptureMetadataOutputObjectsDelegate>
-{
-    int num;
-    NSTimer * timer;
-}
-@property (strong,nonatomic)AVCaptureDevice * device;
-@property (strong,nonatomic)AVCaptureDeviceInput * input;
-@property (strong,nonatomic)AVCaptureMetadataOutput * output;
-@property (strong,nonatomic)AVCaptureSession * session;
-@property (strong,nonatomic)AVCaptureVideoPreviewLayer * preview;
-@property (nonatomic, retain) UIImageView * line;
+@interface ITScanQRCodeViewController : ITScanCodeBaseViewController
 @end
 

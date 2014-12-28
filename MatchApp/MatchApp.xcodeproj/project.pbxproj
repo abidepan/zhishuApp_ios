@@ -30,6 +30,11 @@
 		31DC1E2F1A480B81009BB238 /* setting_vibrate.png in Resources */ = {isa = PBXBuildFile; fileRef = 31DC1E251A480B81009BB238 /* setting_vibrate.png */; };
 		31E835FB1A3E932300B661C9 /* splash_background-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31E835F91A3E932300B661C9 /* splash_background-568h@2x.png */; };
 		31E835FC1A3E932300B661C9 /* splash_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31E835FA1A3E932300B661C9 /* splash_background@2x.png */; };
+		404EB3111A4FC5C600CFA66E /* ITScanCodeBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB3101A4FC5C600CFA66E /* ITScanCodeBaseViewController.m */; };
+		404EB3141A4FCC5900CFA66E /* ITScanBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB3131A4FCC5900CFA66E /* ITScanBarCodeViewController.m */; };
+		404EB31B1A4FCD0700CFA66E /* ITInputCodeBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB3191A4FCD0700CFA66E /* ITInputCodeBaseViewController.m */; };
+		404EB31C1A4FCD0700CFA66E /* ITInputCodeBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 404EB31A1A4FCD0700CFA66E /* ITInputCodeBaseViewController.xib */; };
+		404EB31F1A4FCED000CFA66E /* ITInputBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB31E1A4FCED000CFA66E /* ITInputBarCodeViewController.m */; };
 		404ECCD41A45679C001C1658 /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 404ECCD21A45679C001C1658 /* line@2x.png */; };
 		404ECCD51A45679C001C1658 /* pick_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 404ECCD31A45679C001C1658 /* pick_bg@2x.png */; };
 		405D51261A348DF600A8C803 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D50471A348DF600A8C803 /* AppDelegate.m */; };
@@ -105,7 +110,6 @@
 		405D51BA1A37373600A8C803 /* ITSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 405D51B81A37373600A8C803 /* ITSettingViewController.xib */; };
 		4062CAAA1A3B27F3002C343C /* ITDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4062CAA91A3B27F3002C343C /* ITDataStore.m */; };
 		409B59B31A4C570B00F2499B /* ITInputQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 409B59B11A4C570B00F2499B /* ITInputQRCodeViewController.m */; };
-		409B59B41A4C570B00F2499B /* ITInputQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 409B59B21A4C570B00F2499B /* ITInputQRCodeViewController.xib */; };
 		40B8D09F1A46EE2200FA2B3E /* ITScanDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40B8D09D1A46EE2200FA2B3E /* ITScanDetailViewController.m */; };
 		40B8D0A01A46EE2200FA2B3E /* ITScanDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40B8D09E1A46EE2200FA2B3E /* ITScanDetailViewController.xib */; };
 		40E1B3F21A389AB100111867 /* ITErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E1B3F11A389AB100111867 /* ITErrorView.m */; };
@@ -177,6 +181,15 @@
 		31E835F91A3E932300B661C9 /* splash_background-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_background-568h@2x.png"; sourceTree = "<group>"; };
 		31E835FA1A3E932300B661C9 /* splash_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_background@2x.png"; sourceTree = "<group>"; };
 		4049099B1A15D8650053B1C5 /* MatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		404EB30F1A4FC5C600CFA66E /* ITScanCodeBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanCodeBaseViewController.h; sourceTree = "<group>"; };
+		404EB3101A4FC5C600CFA66E /* ITScanCodeBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanCodeBaseViewController.m; sourceTree = "<group>"; };
+		404EB3121A4FCC5900CFA66E /* ITScanBarCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanBarCodeViewController.h; sourceTree = "<group>"; };
+		404EB3131A4FCC5900CFA66E /* ITScanBarCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanBarCodeViewController.m; sourceTree = "<group>"; };
+		404EB3181A4FCD0700CFA66E /* ITInputCodeBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITInputCodeBaseViewController.h; sourceTree = "<group>"; };
+		404EB3191A4FCD0700CFA66E /* ITInputCodeBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITInputCodeBaseViewController.m; sourceTree = "<group>"; };
+		404EB31A1A4FCD0700CFA66E /* ITInputCodeBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITInputCodeBaseViewController.xib; sourceTree = "<group>"; };
+		404EB31D1A4FCED000CFA66E /* ITInputBarCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITInputBarCodeViewController.h; sourceTree = "<group>"; };
+		404EB31E1A4FCED000CFA66E /* ITInputBarCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITInputBarCodeViewController.m; sourceTree = "<group>"; };
 		404ECCD21A45679C001C1658 /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line@2x.png"; sourceTree = "<group>"; };
 		404ECCD31A45679C001C1658 /* pick_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pick_bg@2x.png"; sourceTree = "<group>"; };
 		405D50461A348DF600A8C803 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -302,7 +315,6 @@
 		4062CAA91A3B27F3002C343C /* ITDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITDataStore.m; sourceTree = "<group>"; };
 		409B59B01A4C570B00F2499B /* ITInputQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITInputQRCodeViewController.h; sourceTree = "<group>"; };
 		409B59B11A4C570B00F2499B /* ITInputQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITInputQRCodeViewController.m; sourceTree = "<group>"; };
-		409B59B21A4C570B00F2499B /* ITInputQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITInputQRCodeViewController.xib; sourceTree = "<group>"; };
 		40B8D09C1A46EE2200FA2B3E /* ITScanDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanDetailViewController.h; sourceTree = "<group>"; };
 		40B8D09D1A46EE2200FA2B3E /* ITScanDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanDetailViewController.m; sourceTree = "<group>"; };
 		40B8D09E1A46EE2200FA2B3E /* ITScanDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITScanDetailViewController.xib; sourceTree = "<group>"; };
@@ -753,11 +765,19 @@
 		40E2F1751A3C833400ADE4B1 /* Scan */ = {
 			isa = PBXGroup;
 			children = (
+				404EB30F1A4FC5C600CFA66E /* ITScanCodeBaseViewController.h */,
+				404EB3101A4FC5C600CFA66E /* ITScanCodeBaseViewController.m */,
 				40E2F1761A3C833400ADE4B1 /* ITScanQRCodeViewController.h */,
 				40E2F1771A3C833400ADE4B1 /* ITScanQRCodeViewController.m */,
+				404EB3121A4FCC5900CFA66E /* ITScanBarCodeViewController.h */,
+				404EB3131A4FCC5900CFA66E /* ITScanBarCodeViewController.m */,
+				404EB3181A4FCD0700CFA66E /* ITInputCodeBaseViewController.h */,
+				404EB3191A4FCD0700CFA66E /* ITInputCodeBaseViewController.m */,
+				404EB31A1A4FCD0700CFA66E /* ITInputCodeBaseViewController.xib */,
 				409B59B01A4C570B00F2499B /* ITInputQRCodeViewController.h */,
 				409B59B11A4C570B00F2499B /* ITInputQRCodeViewController.m */,
-				409B59B21A4C570B00F2499B /* ITInputQRCodeViewController.xib */,
+				404EB31D1A4FCED000CFA66E /* ITInputBarCodeViewController.h */,
+				404EB31E1A4FCED000CFA66E /* ITInputBarCodeViewController.m */,
 			);
 			path = Scan;
 			sourceTree = "<group>";
@@ -964,6 +984,7 @@
 				405D517C1A348DF600A8C803 /* Default-6.png in Resources */,
 				405D51291A348DF600A8C803 /* UIBaseViewController.xib in Resources */,
 				31D194EA1A383E570075CDB7 /* tab_me_selected@2x.png in Resources */,
+				404EB31C1A4FCD0700CFA66E /* ITInputCodeBaseViewController.xib in Resources */,
 				405D518C1A348DF600A8C803 /* CycleScrollViewCell.xib in Resources */,
 				405D51A61A3734F000A8C803 /* main_qrcode@2x.png in Resources */,
 				40E2F8601A452C1C00ADE4B1 /* zbar-back.png in Resources */,
@@ -1002,7 +1023,6 @@
 				40E2F18C1A3C838100ADE4B1 /* ITUserCenterViewController.xib in Resources */,
 				405D519E1A372AFB00A8C803 /* tab_setting@2x.png in Resources */,
 				405D51331A348DF600A8C803 /* LaunchScreen.xib in Resources */,
-				409B59B41A4C570B00F2499B /* ITInputQRCodeViewController.xib in Resources */,
 				405D51AD1A37355700A8C803 /* main_history@2x.png in Resources */,
 				31DC1E2E1A480B81009BB238 /* setting_version.png in Resources */,
 				405D517D1A348DF600A8C803 /* Default-Ipad.png in Resources */,
@@ -1026,6 +1046,7 @@
 				31CE94171A42DAA50038480E /* ITSettingIPViewController.m in Sources */,
 				40E2F1901A3C908F00ADE4B1 /* ITScanHistoryCell.m in Sources */,
 				40E2F18B1A3C838100ADE4B1 /* ITUserCenterViewController.m in Sources */,
+				404EB3141A4FCC5900CFA66E /* ITScanBarCodeViewController.m in Sources */,
 				405D51651A348DF600A8C803 /* UIColor+iOS7Colors.m in Sources */,
 				405D51761A348DF600A8C803 /* UIView+WebCacheOperation.m in Sources */,
 				40E2F1971A3D7A6200ADE4B1 /* ITQRCodeScanHistoryView.m in Sources */,
@@ -1033,6 +1054,7 @@
 				40E1B3F51A389AC900111867 /* ITLoadingView.m in Sources */,
 				405D51621A348DF600A8C803 /* ASIWebPageRequest.m in Sources */,
 				40E2F85C1A452C1C00ADE4B1 /* qrspec.m in Sources */,
+				404EB3111A4FC5C600CFA66E /* ITScanCodeBaseViewController.m in Sources */,
 				405D51591A348DF600A8C803 /* WebServer.m in Sources */,
 				405D515E1A348DF600A8C803 /* ASIFormDataRequest.m in Sources */,
 				405D51631A348DF600A8C803 /* Reachability.m in Sources */,
@@ -1061,10 +1083,12 @@
 				405D515F1A348DF600A8C803 /* ASIHTTPRequest.m in Sources */,
 				405D51701A348DF600A8C803 /* UIButton+WebCache.m in Sources */,
 				405D51611A348DF600A8C803 /* ASINetworkQueue.m in Sources */,
+				404EB31B1A4FCD0700CFA66E /* ITInputCodeBaseViewController.m in Sources */,
 				405D51281A348DF600A8C803 /* UIBaseViewController.m in Sources */,
 				40E2F8581A452C1C00ADE4B1 /* mask.m in Sources */,
 				40E2F17D1A3C833400ADE4B1 /* ITScanQRCodeViewController.m in Sources */,
 				405D516C1A348DF600A8C803 /* SDWebImageDownloader.m in Sources */,
+				404EB31F1A4FCED000CFA66E /* ITInputBarCodeViewController.m in Sources */,
 				31CE94101A42D5C10038480E /* YYCommonCell.m in Sources */,
 				405D51731A348DF600A8C803 /* UIImage+WebP.m in Sources */,
 				405D515C1A348DF600A8C803 /* ASIDataDecompressor.m in Sources */,
