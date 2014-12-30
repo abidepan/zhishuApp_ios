@@ -12,6 +12,7 @@
 #import "ITScanQRCodeViewController.h"
 #import "ITMakeCodeViewController.h"
 #import "ITUserCenterViewController.h"
+#import "ITScanNfcCodeViewController.h"
 
 @interface MainViewController ()
 
@@ -81,5 +82,11 @@
     ITSettingViewController * settingView =[[ITSettingViewController alloc] initWithNibName:@"ITSettingViewController" bundle:nil];
     [self.navigationController pushViewController:settingView animated:YES];
 
+}
+
+- (IBAction)onNFCBtnClicked:(id)sender {
+    
+    ITScanNfcCodeViewController* nfcView = [[ITScanNfcCodeViewController alloc] initWithNibName:@"ITScanNfcCodeViewController" bundle:nil];
+    [self.navigationController pushViewController:nfcView animated:YES];
 }
 @end

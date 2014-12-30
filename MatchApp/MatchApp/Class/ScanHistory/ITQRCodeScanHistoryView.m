@@ -84,7 +84,11 @@
 
 
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    
+    id data = [[[ITDataStore instance] qrCodeHistoryRecords] objectAtIndex:indexPath.row];
+    [[ITDataStore instance] removeQrRecord:data];
+    
+    [self.tableView reloadData];
 }
 
 

@@ -35,6 +35,8 @@
 		404EB31B1A4FCD0700CFA66E /* ITInputCodeBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB3191A4FCD0700CFA66E /* ITInputCodeBaseViewController.m */; };
 		404EB31C1A4FCD0700CFA66E /* ITInputCodeBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 404EB31A1A4FCD0700CFA66E /* ITInputCodeBaseViewController.xib */; };
 		404EB31F1A4FCED000CFA66E /* ITInputBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB31E1A4FCED000CFA66E /* ITInputBarCodeViewController.m */; };
+		404EB3291A517BD500CFA66E /* ITScanNfcCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB3271A517BD500CFA66E /* ITScanNfcCodeViewController.m */; };
+		404EB32A1A517BD500CFA66E /* ITScanNfcCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 404EB3281A517BD500CFA66E /* ITScanNfcCodeViewController.xib */; };
 		404ECCD41A45679C001C1658 /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 404ECCD21A45679C001C1658 /* line@2x.png */; };
 		404ECCD51A45679C001C1658 /* pick_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 404ECCD31A45679C001C1658 /* pick_bg@2x.png */; };
 		405D51261A348DF600A8C803 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D50471A348DF600A8C803 /* AppDelegate.m */; };
@@ -190,6 +192,9 @@
 		404EB31A1A4FCD0700CFA66E /* ITInputCodeBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITInputCodeBaseViewController.xib; sourceTree = "<group>"; };
 		404EB31D1A4FCED000CFA66E /* ITInputBarCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITInputBarCodeViewController.h; sourceTree = "<group>"; };
 		404EB31E1A4FCED000CFA66E /* ITInputBarCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITInputBarCodeViewController.m; sourceTree = "<group>"; };
+		404EB3261A517BD500CFA66E /* ITScanNfcCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanNfcCodeViewController.h; sourceTree = "<group>"; };
+		404EB3271A517BD500CFA66E /* ITScanNfcCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanNfcCodeViewController.m; sourceTree = "<group>"; };
+		404EB3281A517BD500CFA66E /* ITScanNfcCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITScanNfcCodeViewController.xib; sourceTree = "<group>"; };
 		404ECCD21A45679C001C1658 /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line@2x.png"; sourceTree = "<group>"; };
 		404ECCD31A45679C001C1658 /* pick_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pick_bg@2x.png"; sourceTree = "<group>"; };
 		405D50461A348DF600A8C803 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -778,6 +783,9 @@
 				409B59B11A4C570B00F2499B /* ITInputQRCodeViewController.m */,
 				404EB31D1A4FCED000CFA66E /* ITInputBarCodeViewController.h */,
 				404EB31E1A4FCED000CFA66E /* ITInputBarCodeViewController.m */,
+				404EB3261A517BD500CFA66E /* ITScanNfcCodeViewController.h */,
+				404EB3271A517BD500CFA66E /* ITScanNfcCodeViewController.m */,
+				404EB3281A517BD500CFA66E /* ITScanNfcCodeViewController.xib */,
 			);
 			path = Scan;
 			sourceTree = "<group>";
@@ -995,6 +1003,7 @@
 				405D51AE1A37355700A8C803 /* main_makecode@2x.png in Resources */,
 				40B8D0A01A46EE2200FA2B3E /* ITScanDetailViewController.xib in Resources */,
 				404ECCD41A45679C001C1658 /* line@2x.png in Resources */,
+				404EB32A1A517BD500CFA66E /* ITScanNfcCodeViewController.xib in Resources */,
 				405D517A1A348DF600A8C803 /* Default-568h@2x.png in Resources */,
 				405D51801A348DF600A8C803 /* Default@2x.png in Resources */,
 				31DC1E2F1A480B81009BB238 /* setting_vibrate.png in Resources */,
@@ -1066,6 +1075,7 @@
 				31CE94111A42D5C10038480E /* YYCommonGroup.m in Sources */,
 				40E2F8591A452C1C00ADE4B1 /* QRCodeGenerator.m in Sources */,
 				405D51671A348DF600A8C803 /* MKAnnotationView+WebCache.m in Sources */,
+				404EB3291A517BD500CFA66E /* ITScanNfcCodeViewController.m in Sources */,
 				405D51661A348DF600A8C803 /* MBProgressHUD.m in Sources */,
 				405D516E1A348DF600A8C803 /* SDWebImageManager.m in Sources */,
 				40E2F1941A3D79EA00ADE4B1 /* ITScanHistoryBaseView.m in Sources */,

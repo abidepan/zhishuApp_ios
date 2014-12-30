@@ -29,6 +29,7 @@
 - (IBAction)onMineBtnClicked:(id)sender;
 - (IBAction)onScanBtnClicked:(id)sender;
 - (IBAction)onSettingBtnClicked:(id)sender;
+- (IBAction)onNFCBtnClicked:(id)sender;
 
 @end
 

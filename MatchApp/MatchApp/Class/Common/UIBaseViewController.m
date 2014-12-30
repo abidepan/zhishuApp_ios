@@ -66,7 +66,7 @@
         [_errorView.errorBtn addTarget:self action:@selector(onErrorBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     }
     
-    _errorView.bounds = self.view.bounds;
+    _errorView.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
     
     _errorView.errorTitleLbl.text = (descTitle==nil)?@"网络访问出错，请点击重试！":descTitle;
     if (image!=nil) [_errorView.errorImgView setImage:image];
