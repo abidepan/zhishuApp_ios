@@ -17,4 +17,18 @@
 @property (nonatomic,strong) NSDictionary * dataInfo;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
+
+@property (weak, nonatomic) IBOutlet UILabel *productNameLabelView;
+@property (weak, nonatomic) IBOutlet UILabel *brandNameLabelView;
+@property (weak, nonatomic) IBOutlet UILabel *produceTimeLabelView;
+@property (weak, nonatomic) IBOutlet UILabel *batchNameLabelView;
+
+@property (weak, nonatomic) IBOutlet UILabel *factoryNameLabelView;
+@property (weak, nonatomic) IBOutlet UILabel *factoryAddrLabelView;
+@property (weak, nonatomic) IBOutlet UILabel *factoryContactLabelView;
+
+
+
+
+
 @end

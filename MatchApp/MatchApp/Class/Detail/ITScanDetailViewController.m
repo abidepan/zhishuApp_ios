@@ -77,6 +77,16 @@
     lbl.text = [NSString stringWithFormat:@"%@ = %@ ,\n %@ = %@ ,\n %@ = %@ ,\n %@ = %@ ,\n %@ = %@ ,\n", @"company_name",[product objectForKey:@"company_name"] ,@"company_addr",[product objectForKey:@"company_addr"] ,@"company_contact",[product objectForKey:@"company_contact"] ,@"product_name",[product objectForKey:@"product_name"] ,@"factory_name",[product objectForKey:@"factory_name"] ,nil];
     
     //[self.view addSubview: lbl];
+    
+    _productNameLabelView.text = [NSString stringWithFormat:@"产品名称：%@",  [product objectForKey:@"company_name"]];
+    _brandNameLabelView.text = [NSString stringWithFormat:@"品牌名称：%@",  [product objectForKey:@"brand_name"]];
+    _produceTimeLabelView.text = [NSString stringWithFormat:@"生产时间：%@",  [product objectForKey:@"produce_time"]];
+    _batchNameLabelView.text = [NSString stringWithFormat:@"批次编号：%@",  [product objectForKey:@"batch_name"]];
+    
+    _factoryNameLabelView.text = [NSString stringWithFormat:@"厂商名称：%@",  [product objectForKey:@"factory_name"]];
+    _factoryAddrLabelView.text = [NSString stringWithFormat:@"厂商地址：%@",  [product objectForKey:@"factory_addr"]];
+    _factoryContactLabelView.text = [NSString stringWithFormat:@"联系方式：%@",  [product objectForKey:@"company_contact"]];
+
 }
 
 
