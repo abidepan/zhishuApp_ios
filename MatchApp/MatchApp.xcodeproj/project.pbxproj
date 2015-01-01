@@ -37,6 +37,7 @@
 		404EB31F1A4FCED000CFA66E /* ITInputBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB31E1A4FCED000CFA66E /* ITInputBarCodeViewController.m */; };
 		404EB3291A517BD500CFA66E /* ITScanNfcCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB3271A517BD500CFA66E /* ITScanNfcCodeViewController.m */; };
 		404EB32A1A517BD500CFA66E /* ITScanNfcCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 404EB3281A517BD500CFA66E /* ITScanNfcCodeViewController.xib */; };
+		404EB35E1A55026700CFA66E /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 404EB35D1A55026700CFA66E /* sound.mp3 */; };
 		404ECCD41A45679C001C1658 /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 404ECCD21A45679C001C1658 /* line@2x.png */; };
 		404ECCD51A45679C001C1658 /* pick_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 404ECCD31A45679C001C1658 /* pick_bg@2x.png */; };
 		405D51261A348DF600A8C803 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D50471A348DF600A8C803 /* AppDelegate.m */; };
@@ -195,6 +196,7 @@
 		404EB3261A517BD500CFA66E /* ITScanNfcCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanNfcCodeViewController.h; sourceTree = "<group>"; };
 		404EB3271A517BD500CFA66E /* ITScanNfcCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanNfcCodeViewController.m; sourceTree = "<group>"; };
 		404EB3281A517BD500CFA66E /* ITScanNfcCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITScanNfcCodeViewController.xib; sourceTree = "<group>"; };
+		404EB35D1A55026700CFA66E /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
 		404ECCD21A45679C001C1658 /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line@2x.png"; sourceTree = "<group>"; };
 		404ECCD31A45679C001C1658 /* pick_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pick_bg@2x.png"; sourceTree = "<group>"; };
 		405D50461A348DF600A8C803 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -641,6 +643,7 @@
 		405D50F31A348DF600A8C803 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				404EB35D1A55026700CFA66E /* sound.mp3 */,
 				405D50F41A348DF600A8C803 /* Default-568h@2x.png */,
 				405D50F51A348DF600A8C803 /* Default-6-568h@2x.png */,
 				405D50F61A348DF600A8C803 /* Default-6.png */,
@@ -995,6 +998,7 @@
 				404EB31C1A4FCD0700CFA66E /* ITInputCodeBaseViewController.xib in Resources */,
 				405D518C1A348DF600A8C803 /* CycleScrollViewCell.xib in Resources */,
 				405D51A61A3734F000A8C803 /* main_qrcode@2x.png in Resources */,
+				404EB35E1A55026700CFA66E /* sound.mp3 in Resources */,
 				40E2F8601A452C1C00ADE4B1 /* zbar-back.png in Resources */,
 				405D51811A348DF600A8C803 /* grayarrowright@2x.png in Resources */,
 				40E2F18A1A3C838100ADE4B1 /* ITMakeCodeViewController.xib in Resources */,

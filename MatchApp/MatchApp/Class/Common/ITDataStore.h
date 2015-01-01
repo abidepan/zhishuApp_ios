@@ -43,11 +43,11 @@ typedef enum {
 -(void) addNfcRecord:(NSDictionary *)nfcRecord;
 -(void) removeNfcRecord:(NSDictionary *)nfcRecord;
 
--(void) saveSettingIsScanVoice:(NSString *) settingVoice;
--(NSString *) getSettingIsScanVoice;
+-(void) saveSettingIsScanVoice:(BOOL) settingVoice;
+-(BOOL) getSettingIsScanVoice;
 
--(void) saveSettingIsScanShake:(NSString *) settingShake;
--(NSString *) getSettingIsScanShake;
+-(void) saveSettingIsScanShake:(BOOL) settingShake;
+-(BOOL) getSettingIsScanShake;
 
 -(void) saveSettingScanTimeOut:(NSString *) settingScanTimeOut;
 -(NSString *) getSettingScanTimeOut;

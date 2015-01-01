@@ -156,28 +156,33 @@ NSString * kITSettingScanTimeOut = @"kITSettingScanTimeOut";
     return [NSDictionary dictionaryWithDictionary:mDic];
 }
 
--(void) saveSettingIsScanVoice:(NSString *) settingVoice{
+-(void) saveSettingIsScanVoice:(BOOL) settingVoice{
 
-    [self.setting setObject:settingVoice forKey:kITSettingIsScanVoice];
+    [self.setting setObject:[NSNumber numberWithBool:settingVoice] forKey:kITSettingIsScanVoice];
     [[NSUserDefaults standardUserDefaults] setObject:self.setting forKey:kITSetting];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
--(NSString *) getSettingIsScanVoice{
+-(BOOL) getSettingIsScanVoice{
 
-    return [self.setting objectForKey:kITSettingIsScanVoice];
+    id data =[self.setting objectForKey:kITSettingIsScanVoice];
+    if (data!=nil && [data boolValue]) return YES;
+    return NO;
 }
 
--(void) saveSettingIsScanShake:(NSString *) settingShake{
+-(void) saveSettingIsScanShake:(BOOL) settingShake{
 
-    [self.setting setObject:settingShake forKey:kITSettingIsScanShake];
+    [self.setting setObject:[NSNumber numberWithBool:settingShake] forKey:kITSettingIsScanShake];
     [[NSUserDefaults standardUserDefaults] setObject:self.setting forKey:kITSetting];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
--(NSString *) getSettingIsScanShake{
+-(BOOL) getSettingIsScanShake{
 
-    return [self.setting objectForKey:kITSettingIsScanShake];
+    id data =[self.setting objectForKey:kITSettingIsScanShake];
+    if (data!=nil && [data boolValue]) return YES;
+    return NO;
+    
 }
 
 -(void) saveSettingScanTimeOut:(NSString *) settingScanTimeOut{

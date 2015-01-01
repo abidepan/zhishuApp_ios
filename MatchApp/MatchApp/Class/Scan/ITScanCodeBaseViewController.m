@@ -10,6 +10,7 @@
 #import "ITScanDetailViewController.h"
 #import "Constants.h"
 #import "ITInputQRCodeViewController.h"
+#import "ITDataStore.h"
 
 @interface ITScanCodeBaseViewController ()
 {
@@ -59,7 +60,7 @@
     [self initBlackTransparentBackground];
     self.view.backgroundColor = [UIColor clearColor];
     
-    _labIntroudction= [[UILabel alloc] initWithFrame:CGRectMake(0, _scanRect.origin.y+_scanRect.size.height+30.0f, kDeviceWidth , 25)];
+    _labIntroudction= [[UILabel alloc] initWithFrame:CGRectMake(10, _scanRect.origin.y+_scanRect.size.height+30.0f, kDeviceWidth-20 , 25)];
     _labIntroudction.backgroundColor = [UIColor clearColor];
     _labIntroudction.font = kAppFont(15);
     _labIntroudction.minimumScaleFactor = 0.5;
@@ -98,8 +99,8 @@
     [self.view addSubview:vw3];
     [self.view addSubview:vw4];
     
-    
-    double startY = kDeviceHeight- (IOS7?60:124);
+    double t = (kDeviceHeight- _scanRect.origin.y-_scanRect.size.height-50.0f)*2/3;
+    double startY = kDeviceHeight-MAX(t, 60) - (IOS7?0:64);
     
     UIView * moreBtnsView = [[UIView alloc] initWithFrame:CGRectMake(_scanRect.origin.x, startY+5, _scanRect.size.width, 30)];
     
@@ -224,6 +225,9 @@
         AVMetadataMachineReadableCodeObject * metadataObject = [metadataObjects objectAtIndex:0];
         stringValue = metadataObject.stringValue;
     }
+    
+    [self playSoundAndShake];
+    
     [_session stopRunning];
     
     ITScanDetailViewController * scanDetail = [[ITScanDetailViewController alloc] initWithNibName:@"ITScanDetailViewController" bundle:nil];
@@ -233,6 +237,25 @@
     
     NSLog(@"%@",stringValue);
 }
+
+
+-(void) playSoundAndShake{
+
+    if (![[ITDataStore instance] getSettingIsScanShake]) {
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    }
+    
+    if ([[ITDataStore instance] getSettingIsScanShake]) {
+    
+        static SystemSoundID soundIDTest = 0;
+        NSString * path = [[NSBundle mainBundle] pathForResource:@"sound" ofType:@"mp3"];
+        if (path) {
+            AudioServicesCreateSystemSoundID( (__bridge CFURLRef)[NSURL fileURLWithPath:path], &soundIDTest );
+        }
+        AudioServicesPlaySystemSound( soundIDTest );
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {
