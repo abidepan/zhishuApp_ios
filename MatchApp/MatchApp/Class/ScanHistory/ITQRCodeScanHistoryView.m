@@ -29,23 +29,25 @@
     [_tableView setBackgroundColor:kRGB(235, 239, 242)];
     [self addSubview:_tableView];
     
-    
-    NSArray * arr = [[ITDataStore instance] qrCodeHistoryRecords];
-    
     return self;
 }
 
 
 -(void) onHistoryViewAppear{
 
+    [self showNoResult];
+}
+
+-(void) onHistoryViewDisappear{}
+
+
+-(void) showNoResult{
+
     if([[ITDataStore instance] qrCodeHistoryRecords].count ==0)
         self.tableView.tableFooterView = self.noRecordsLbl;
     else
         [self.noRecordsLbl removeFromSuperview ];
 }
-
--(void) onHistoryViewDisappear{}
-
 
 #pragma marks === tableView Delegate Methods===
 
@@ -70,12 +72,13 @@
     cell.nameLbl.text = [data objectForKey:@"product_name"];
     cell.timeLbl.text = [data objectForKey:@"produce_time"];
     
-    
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
+    [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
+    
     ITScanDetailViewController * scanDetail = [[ITScanDetailViewController alloc] initWithNibName:@"ITScanDetailViewController" bundle:nil];
     scanDetail.dataInfo = [[[ITDataStore instance] qrCodeHistoryRecords] objectAtIndex:indexPath.row];
     
@@ -88,7 +91,9 @@
     id data = [[[ITDataStore instance] qrCodeHistoryRecords] objectAtIndex:indexPath.row];
     [[ITDataStore instance] removeQrRecord:data];
     
+    
     [self.tableView reloadData];
+    [self showNoResult];
 }
 
 

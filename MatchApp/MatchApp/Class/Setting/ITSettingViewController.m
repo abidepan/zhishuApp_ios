@@ -11,7 +11,7 @@
 #import "YYCommonCell.h"
 #import "YYCommonSwitchItem.h"
 #import "YYCommonArrowItem.h"
-
+#import "ITDataStore.h"
 #import "ITSettingIPViewController.h"
 
 @interface ITSettingViewController ()
@@ -82,13 +82,17 @@
     //findPeople.subtitle = @"扫描成功后会抽搐一下";
     
     _scantimeout = [YYCommonItem itemWithTitle:@"扫描超时" icon:@"setting_scan_timeout"];
+    
+    ITSettingViewController * _weakSelf = self;
+    
     _scantimeout.operation = ^{
-        
-        UIAlertView * alter = [[UIAlertView alloc] initWithTitle:@"扫描超时" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"10秒",@"15秒", @"20秒", @"30秒", nil];
+        UIAlertView * alter = [[UIAlertView alloc] initWithTitle:@"扫描超时" message:@"" delegate:_weakSelf cancelButtonTitle:@"取消" otherButtonTitles:@"10秒",@"15秒", @"20秒", @"30秒", nil];
         [alter show];
     };
     
-    _scantimeout.subtitle = @"30秒";
+    //读取扫描超时时间
+    NSString * scanTimeOut =[[ITDataStore instance] getSettingScanTimeOut];
+    _scantimeout.subtitle = scanTimeOut?scanTimeOut:@"30秒";
     
     group.items = @[beebSwitch, vibrateSwitch, _scantimeout];
 }
@@ -98,11 +102,16 @@
     //该方法由UIAlertViewDelegate协议定义，在点击AlertView按钮时自动执行，
     //所以如果这里再用alertView来弹出提示，就会死循环，不停的弹AlertView
     _scanTimeOutString = [alertView buttonTitleAtIndex:buttonIndex];
-    NSLog(@"%@",_scanTimeOutString);
     
-    // 不管用~
+    if ([_scanTimeOutString isEqualToString:@"取消"]) { return;}
+    
+    NSLog(@"%@",_scanTimeOutString);
     _scantimeout.subtitle = _scanTimeOutString;
     
+    //保存扫描超时时间
+    [[ITDataStore instance] saveSettingScanTimeOut:_scanTimeOutString];
+    
+    [_settingTableView reloadData];
 }
 
 - (void)setupGroup1 {
@@ -165,6 +174,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
     //1.取出这行对应的item模型
     YYCommonGroup *group = self.groups[indexPath.section];
     YYCommonItem *item = group.items[indexPath.row];

@@ -15,9 +15,13 @@ NSString * kITUserInfo = @"kITUserInfo";
 NSString * kITQrCodeHistory = @"kITQrCodeHistory";
 NSString * kITBarCodeHistory = @"kITBarCodeHistory";
 NSString * kITNfcHistory = @"kITNfcHistory";
+NSString * kITSetting = @"kITSetting";
+
+NSString * kITSettingIsScanVoice = @"kITSettingIsScanVoice";
+NSString * kITSettingIsScanShake = @"kITSettingIsScanShake";
+NSString * kITSettingScanTimeOut = @"kITSettingScanTimeOut";
 
 @implementation ITDataStore
-
 
 +(ITDataStore *) instance{
     
@@ -36,10 +40,10 @@ NSString * kITNfcHistory = @"kITNfcHistory";
         
         itDataStore.lastScanType = [[NSUserDefaults standardUserDefaults] boolForKey:kITLastScanType];
         
+        itDataStore.setting = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:kITSetting]];
     });
     return itDataStore;
 }
-
 
 -(void) saveUserInfo:(NSDictionary *) userInfoData{
 
@@ -134,8 +138,6 @@ NSString * kITNfcHistory = @"kITNfcHistory";
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-
-
 -(NSDictionary *) filterNullPointerValues:(NSDictionary * )dic{
 
     NSMutableDictionary * mDic = [[NSMutableDictionary alloc] init];
@@ -154,6 +156,41 @@ NSString * kITNfcHistory = @"kITNfcHistory";
     return [NSDictionary dictionaryWithDictionary:mDic];
 }
 
+-(void) saveSettingIsScanVoice:(NSString *) settingVoice{
+
+    [self.setting setObject:settingVoice forKey:kITSettingIsScanVoice];
+    [[NSUserDefaults standardUserDefaults] setObject:self.setting forKey:kITSetting];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+-(NSString *) getSettingIsScanVoice{
+
+    return [self.setting objectForKey:kITSettingIsScanVoice];
+}
+
+-(void) saveSettingIsScanShake:(NSString *) settingShake{
+
+    [self.setting setObject:settingShake forKey:kITSettingIsScanShake];
+    [[NSUserDefaults standardUserDefaults] setObject:self.setting forKey:kITSetting];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+-(NSString *) getSettingIsScanShake{
+
+    return [self.setting objectForKey:kITSettingIsScanShake];
+}
+
+-(void) saveSettingScanTimeOut:(NSString *) settingScanTimeOut{
+
+    [self.setting setObject:settingScanTimeOut forKey:kITSettingScanTimeOut];
+    [[NSUserDefaults standardUserDefaults] setObject:self.setting forKey:kITSetting];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+-(NSString *) getSettingScanTimeOut{
+
+    return [self.setting objectForKey:kITSettingScanTimeOut];
+}
 
 
 @end

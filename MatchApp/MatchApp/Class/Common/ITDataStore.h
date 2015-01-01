@@ -18,7 +18,7 @@ typedef enum {
 @interface ITDataStore : NSObject
 
 @property (nonatomic,strong) NSMutableDictionary * userInfo;
-
+@property (nonatomic,strong) NSMutableDictionary * setting;
 @property (nonatomic,strong) NSMutableArray * qrCodeHistoryRecords;
 @property (nonatomic,strong) NSMutableArray * barCodeHistoryRecords;
 @property (nonatomic,strong) NSMutableArray * nfcHistoryRecords;
@@ -42,6 +42,15 @@ typedef enum {
 
 -(void) addNfcRecord:(NSDictionary *)nfcRecord;
 -(void) removeNfcRecord:(NSDictionary *)nfcRecord;
+
+-(void) saveSettingIsScanVoice:(NSString *) settingVoice;
+-(NSString *) getSettingIsScanVoice;
+
+-(void) saveSettingIsScanShake:(NSString *) settingShake;
+-(NSString *) getSettingIsScanShake;
+
+-(void) saveSettingScanTimeOut:(NSString *) settingScanTimeOut;
+-(NSString *) getSettingScanTimeOut;
 
 
 @end

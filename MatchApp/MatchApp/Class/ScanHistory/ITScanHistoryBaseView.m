@@ -16,8 +16,8 @@
     self =[super initWithFrame:frame];
     if (self) {
         
-        _noRecordsLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, 50)];
-        _noRecordsLbl.font = kAppFont(15);
+        _noRecordsLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, 80)];
+        _noRecordsLbl.font = kAppFont(18);
         _noRecordsLbl.textColor = [UIColor lightGrayColor];
         _noRecordsLbl.textAlignment = NSTextAlignmentCenter;
         _noRecordsLbl.text = @"暂无相关历史纪录";
