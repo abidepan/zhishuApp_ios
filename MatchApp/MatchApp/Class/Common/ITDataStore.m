@@ -38,7 +38,7 @@ NSString * kITSettingScanTimeOut = @"kITSettingScanTimeOut";
         
         itDataStore.nfcHistoryRecords = [NSMutableArray arrayWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:kITNfcHistory]];
         
-        itDataStore.lastScanType = [[NSUserDefaults standardUserDefaults] boolForKey:kITLastScanType];
+        itDataStore.lastScanType = (ITScanType)[[NSUserDefaults standardUserDefaults] integerForKey:kITLastScanType];
         
         itDataStore.setting = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:kITSetting]];
     });
@@ -61,7 +61,7 @@ NSString * kITSettingScanTimeOut = @"kITSettingScanTimeOut";
 
 -(void) saveLastScanType:(ITScanType) lastType{
 
-    [[NSUserDefaults standardUserDefaults] setBool:lastType forKey:kITLastScanType];
+    [[NSUserDefaults standardUserDefaults] setInteger:lastType forKey:kITLastScanType];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

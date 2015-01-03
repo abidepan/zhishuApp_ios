@@ -31,6 +31,7 @@ typedef enum {
 -(void) removeUserInfo:(NSDictionary *) userInfoRecord;
 
 -(void) saveLastScanType:(ITScanType) lastType;
+-(NSInteger) getLastScanType;
 
 -(void) addQrCodeRecord:(NSDictionary *)qrCodeRecord;
 -(void) removeQrRecord:(NSDictionary *)barRecord;

@@ -10,8 +10,9 @@
 #import <AVFoundation/AVFoundation.h>
 #import "UIBaseViewController.h"
 
-@interface ITScanCodeBaseViewController :  UIBaseViewController<AVCaptureMetadataOutputObjectsDelegate>
+@interface ITScanCodeBaseViewController :  UIBaseViewController<AVCaptureMetadataOutputObjectsDelegate,UIAlertViewDelegate>
 {
+    double timeoutCount;
     int num;
     NSTimer * timer;
 }

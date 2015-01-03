@@ -72,6 +72,8 @@
 
     NSInteger newIndex = segment.selectedSegmentIndex;
     
+    [[ITDataStore instance] saveLastScanType:(ITScanType)newIndex];
+    
     double y = (IOS7?64:0)+44;
     if(_currentSelectedIndex != newIndex){
     

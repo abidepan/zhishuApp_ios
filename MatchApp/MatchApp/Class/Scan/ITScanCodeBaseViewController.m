@@ -74,6 +74,7 @@
     imageView.image = [UIImage imageNamed:@"pick_bg"];
     [self.view addSubview:imageView];
     
+    timeoutCount=0.0f;
     num =0;
     _line = [[UIImageView alloc] initWithFrame:_lineRect];
     _line.image = [UIImage imageNamed:@"line.png"];
@@ -156,12 +157,27 @@
 -(void) onInputBtnClicked{
     
     [self onInputScanCodeBtnClicked];
-    
 }
-
 
 -(void)scanAnimation
 {
+    //处理超时
+    timeoutCount += 0.02;
+    NSString * scanTimeOut = [[ITDataStore instance] getSettingScanTimeOut] ;
+    if (!scanTimeOut) scanTimeOut = @"30秒";
+    
+    NSInteger timeout =  [[scanTimeOut stringByReplacingOccurrencesOfString:@"秒" withString:@""] integerValue];
+    if (timeoutCount >= timeout) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:@"扫描超时啦~~" delegate:self cancelButtonTitle:@"继续扫码" otherButtonTitles:@"手动输入", nil];
+        alert.delegate = self;
+        alert.tag = 999;
+        [alert show];
+        timeoutCount = 0;
+        [timer invalidate];
+        [_session stopRunning];
+    }
+    
+    //处理扫描动画
     num ++;
     if (2*num >= _scanRect.size.height) {
         _line.frame = _lineRect;
@@ -173,7 +189,6 @@
 
 - (void)setupCamera
 {
-    
     if (![self isCameraAvailable]) {
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:@"未检测到摄像头,请检查。" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
         [alert show];
@@ -241,7 +256,7 @@
 
 -(void) playSoundAndShake{
 
-    if (![[ITDataStore instance] getSettingIsScanShake]) {
+    if ([[ITDataStore instance] getSettingIsScanShake]) {
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     }
     
@@ -262,6 +277,25 @@
     [super didReceiveMemoryWarning];
 }
 
+
+#pragma mark ===== alertview delegate =====
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+
+    if (alertView.tag == 999) {
+        if (buttonIndex == 0) {
+            
+            [_session startRunning];
+            
+            timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(scanAnimation) userInfo:nil repeats:YES];
+        }
+        else
+        {
+            [self onInputScanCodeBtnClicked];
+            
+        }
+    }
+}
 
 #pragma mark ====== scan code delegate ======
 
