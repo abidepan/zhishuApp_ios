@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *settingTableView;
 
 
-
 @property (nonatomic,retain) YYCommonItem *scantimeout;
 @property (nonatomic,assign) NSString * scanTimeOutString;
 
