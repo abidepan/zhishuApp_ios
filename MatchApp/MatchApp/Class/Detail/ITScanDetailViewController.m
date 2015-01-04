@@ -8,11 +8,14 @@
 
 #import "ITScanDetailViewController.h"
 #import "Global.h"
+#import "Constants.h"
 #import "ITDataStore.h"
 
 @interface ITScanDetailViewController ()
 
 @end
+
+NSString * rc_illegal_prompt = nil;
 
 @implementation ITScanDetailViewController
 
@@ -30,7 +33,7 @@
 -(void) loadData{
 
     if (_dataInfo ) {
-        [self showData:_dataInfo];
+        [self initComponent4LegalScan:_dataInfo];
     }else
     {
         [self requestDataFromServer];
@@ -62,23 +65,64 @@
 }
 
 -(void) showRemoteData:(NSDictionary *) data{
+    
+    if(data == nil){
+        return;
+    }
 
     NSString * productStr = [data objectForKey:@"product"];
-    NSDictionary * product = [NSJSONSerialization JSONObjectWithData:[productStr dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
-    [self showData:product];
-    [[ITDataStore instance] addQrCodeRecord:product];
+    NSDictionary * product = nil;
+    
+    if(productStr != nil){
+        
+      product = [NSJSONSerialization JSONObjectWithData:[productStr dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+    }
+    
+    int scan_result_state = [[data objectForKey:@"result"]intValue];
+    switch (scan_result_state) {
+        case ScanResultLegal :   // 平台合法商品扫描详情
+            
+            [self initComponent4LegalScan:product];
+            [[ITDataStore instance] addQrCodeRecord:product];
+            break;
+            
+        case ScanResultIllegalNoCompany :  // 平台验证失败商品扫描详情
+        case ScanResultIllegalNoProduct :
+            [self initComponent4Illegal:scan_result_state];
+            break;
+            
+        case ScanResultIllegalError :
+            rc_illegal_prompt = [product objectForKey:@"product_name"];
+            [self initComponent4Illegal:scan_result_state];
+            break;
+            
+        case ScanResultIllegalOther :       // 非平台商品扫描详情
+            //initComponent4IllegalOther(product_data);
+            break;
+            
+        default:
+            break;
+    }
 }
 
-
--(void) showData:(NSDictionary *) product{
+// 平台合法商品扫描详情
+-(void) initComponent4LegalScan:(NSDictionary *) product{
     
-    UILabel * lbl = [[UILabel alloc] initWithFrame:CGRectMake(10, 80, kDeviceWidth-20, 200)];
-    lbl.numberOfLines = 0;
-    lbl.text = [NSString stringWithFormat:@"%@ = %@ ,\n %@ = %@ ,\n %@ = %@ ,\n %@ = %@ ,\n %@ = %@ ,\n", @"company_name",[product objectForKey:@"company_name"] ,@"company_addr",[product objectForKey:@"company_addr"] ,@"company_contact",[product objectForKey:@"company_contact"] ,@"product_name",[product objectForKey:@"product_name"] ,@"factory_name",[product objectForKey:@"factory_name"] ,nil];
+    _resultValidateLabelView.text = [NSString stringWithFormat:@"您查询的 %@ 已被验证为合法正品",  [product objectForKey:@"product_name"]];
     
-    //[self.view addSubview: lbl];
+    int query_num = [[product objectForKey:@"query_num"]intValue];
+    _resultValidateNumLabelView.text = [NSString stringWithFormat:@"该产品已被验证 %d 次",  query_num];
     
-    _productNameLabelView.text = [NSString stringWithFormat:@"产品名称：%@",  [product objectForKey:@"company_name"]];
+    NSString * query_num_prompt = nil;
+    if (query_num > 1) {
+        query_num_prompt = @"若您是购买后首次验证, 请注意假冒风险";
+    } else {
+        query_num_prompt = @"该产品为首次验证, 请放心使用";
+    }
+    _resultValidatePromptLabelView.text = query_num_prompt;
+    
+    
+    _productNameLabelView.text = [NSString stringWithFormat:@"产品名称：%@",  [product objectForKey:@"product_name"]];
     _brandNameLabelView.text = [NSString stringWithFormat:@"品牌名称：%@",  [product objectForKey:@"brand_name"]];
     _produceTimeLabelView.text = [NSString stringWithFormat:@"生产时间：%@",  [product objectForKey:@"produce_time"]];
     _batchNameLabelView.text = [NSString stringWithFormat:@"批次编号：%@",  [product objectForKey:@"batch_name"]];
@@ -89,7 +133,50 @@
 
 }
 
+// 平台验证失败商品扫描详情
+-(void) initComponent4Illegal:(int)scan_result_state {
+    NSString *prompt_text = nil;
+    
+    // 验证结果
+    switch (scan_result_state) {
+        case ScanResultIllegalNoCompany:
+            prompt_text = @"您查询的产品被验证为伪冒品, 请注意假冒风险";
+            break;
+            
+        case ScanResultIllegalNoProduct:
+            prompt_text = @"您查询的产品在平台数据库中不存在, 请注意假冒风险";
+            break;
+            
+        case ScanResultIllegalError:
+            prompt_text = rc_illegal_prompt;
+            break;
+            
+        default:
+            prompt_text = @"您查询的产品被验证为伪冒品, 请注意假冒风险";
+            break;
+    }
+    
+    _resultValidateLabelView.text = prompt_text;
 
+    [self setUIVisibility];
+}
+
+// 非平台商品扫描详情
+-(void) initComponent4IllegalOther:(int)scan_result_state {
+    
+    _resultValidateLabelView.text = [NSString stringWithFormat:@"您查询的 %@ 非平台接入产品, 请注意假冒风险", rc_illegal_prompt];
+    
+    [self setUIVisibility];
+}
+
+-(void) setUIVisibility{
+    
+    _detailView.hidden = YES;
+    _resultValidatePromptLabelView.hidden = YES;
+    _resultValidateNumLabelView.hidden = YES;
+    _productImageView.hidden = YES;
+    _imagePromptLabelView.hidden = YES;
+}
 
 -(void)onRetryPageRequest{
     

@@ -78,7 +78,7 @@ typedef enum {
 
 typedef enum {
     
-    ScanResultFailed,
+    ScanResultFailed = -1,
     ScanResultLegal,
     ScanResultIllegalNoCompany,
     ScanResultIllegalNoProduct,
