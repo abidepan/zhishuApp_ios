@@ -11,6 +11,7 @@
 #import "Constants.h"
 #import "ITScanDetailViewController.h"
 #import "ITDataStore.h"
+#import "UIImageView+WebCache.h"
 
 
 @implementation ITQRCodeScanHistoryView
@@ -71,6 +72,25 @@
     
     cell.nameLbl.text = [data objectForKey:@"product_name"];
     cell.timeLbl.text = [data objectForKey:@"produce_time"];
+    
+    id urlList = [data objectForKey:@"product_img_url_list"];
+    if (urlList!=nil) {
+        
+        NSString * strUrl;
+        if ([urlList isKindOfClass:[NSArray class]] ) {
+            strUrl = [urlList objectAtIndex:0];
+        }else if([urlList isKindOfClass:[NSString class]]){
+            strUrl = urlList;
+        }
+        
+        if (strUrl) {
+            if (![strUrl hasPrefix:@"http://"]) {
+                strUrl = kAppApi(strUrl);
+            }
+            [cell.infoImgView sd_setImageWithURL:[NSURL URLWithString:strUrl]];
+        }
+        
+    }
     
     return cell;
 }

@@ -11,6 +11,7 @@
 #import "Constants.h"
 #import "ITInputQRCodeViewController.h"
 #import "ITDataStore.h"
+#import "ITScanRectView.h"
 
 @interface ITScanCodeBaseViewController ()
 {
@@ -70,9 +71,9 @@
     _labIntroudction.text=@"将二维码图像置于矩形方框内，即可自动扫描识别。";
     [self.view addSubview:_labIntroudction];
     
-    UIImageView * imageView = [[UIImageView alloc]initWithFrame:_scanRect];
-    imageView.image = [UIImage imageNamed:@"pick_bg"];
-    [self.view addSubview:imageView];
+    
+    ITScanRectView * scanRect = [[ITScanRectView alloc] initWithFrame:_scanRect];
+    [self.view addSubview:scanRect];
     
     timeoutCount=0.0f;
     num =0;
