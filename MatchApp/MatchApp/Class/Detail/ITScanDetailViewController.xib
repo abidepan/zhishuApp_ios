@@ -10,11 +10,17 @@
                 <outlet property="batchNameLabelView" destination="KXe-6P-Oz7" id="9Q1-V9-rdQ"/>
                 <outlet property="bgScrollView" destination="x1g-6V-mxv" id="edX-X7-wOx"/>
                 <outlet property="brandNameLabelView" destination="4YF-Wd-KYs" id="djV-x7-ZXy"/>
+                <outlet property="detailView" destination="Hye-KY-DDp" id="bdi-6a-cuk"/>
                 <outlet property="factoryAddrLabelView" destination="73R-8R-Ly2" id="GEe-hO-PQu"/>
                 <outlet property="factoryContactLabelView" destination="raj-4u-kSI" id="hx2-8P-yBo"/>
                 <outlet property="factoryNameLabelView" destination="r3v-AI-jVp" id="L3y-RI-zqZ"/>
+                <outlet property="imagePromptLabelView" destination="C52-az-uDJ" id="CSb-xm-aNa"/>
                 <outlet property="produceTimeLabelView" destination="kak-GB-I2j" id="B1i-qu-GOY"/>
+                <outlet property="productImageView" destination="Sdu-PX-cEw" id="e1j-vC-e05"/>
                 <outlet property="productNameLabelView" destination="rLE-gb-OSC" id="64g-L8-Kqt"/>
+                <outlet property="resultValidateLabelView" destination="NFa-xE-Olc" id="EHa-Dm-RyB"/>
+                <outlet property="resultValidateNumLabelView" destination="T69-nK-R59" id="OFM-78-KGW"/>
+                <outlet property="resultValidatePromptLabelView" destination="3aI-Kw-PFu" id="TSY-VK-rHe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -47,14 +53,21 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="该产品已被验证N次" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T69-nK-R59">
-                                    <rect key="frame" x="0.0" y="80" width="320" height="21"/>
+                                    <rect key="frame" x="0.0" y="75" width="320" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="若您是购买后首次验证，请注意假冒风险" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3aI-Kw-PFu">
+                                    <rect key="frame" x="0.0" y="90" width="320" height="21"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_shop.png" id="Sdu-PX-cEw">
-                                    <rect key="frame" x="80" y="120" width="160" height="160"/>
+                                    <rect key="frame" x="80" y="130" width="160" height="160"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.92731697767642363" green="1" blue="0.93577470324606926" alpha="1" colorSpace="calibratedRGB"/>
                                 </imageView>

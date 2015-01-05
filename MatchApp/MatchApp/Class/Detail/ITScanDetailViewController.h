@@ -18,6 +18,14 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *bgScrollView;
 
+@property (weak, nonatomic) IBOutlet UILabel *resultValidateLabelView;
+@property (weak, nonatomic) IBOutlet UILabel *resultValidateNumLabelView;
+@property (weak, nonatomic) IBOutlet UILabel *resultValidatePromptLabelView;
+@property (weak, nonatomic) IBOutlet UIImageView *productImageView;
+@property (weak, nonatomic) IBOutlet UILabel *imagePromptLabelView;
+
+
+
 @property (weak, nonatomic) IBOutlet UILabel *productNameLabelView;
 @property (weak, nonatomic) IBOutlet UILabel *brandNameLabelView;
 @property (weak, nonatomic) IBOutlet UILabel *produceTimeLabelView;
@@ -27,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *factoryAddrLabelView;
 @property (weak, nonatomic) IBOutlet UILabel *factoryContactLabelView;
 
+@property (weak, nonatomic) IBOutlet UIView *detailView;
 
 
 

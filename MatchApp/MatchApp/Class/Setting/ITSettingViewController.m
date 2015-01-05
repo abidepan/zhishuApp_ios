@@ -75,11 +75,9 @@
     group.grougfooter = @"第0组的尾部";
     
     //3.设置组中所有行的数据
-    YYCommonSwitchItem *beebSwitch = [YYCommonSwitchItem itemWithTitle:@"提示音" icon:@"setting_beeb"];
-    //hotStatus.subtitle = @"扫描成功后会“biu~”一声";
+    YYCommonItem *beebSwitch = [YYCommonItem itemWithTitle:@"提示音" icon:@"setting_beeb"];
     
-    YYCommonSwitchItem *vibrateSwitch = [YYCommonSwitchItem itemWithTitle:@"震动" icon:@"setting_vibrate"];
-    //findPeople.subtitle = @"扫描成功后会抽搐一下";
+    YYCommonItem *vibrateSwitch = [YYCommonItem itemWithTitle:@"震动" icon:@"setting_vibrate"];
     
     _scantimeout = [YYCommonItem itemWithTitle:@"扫描超时" icon:@"setting_scan_timeout"];
     
@@ -168,6 +166,30 @@
     cell.item = item;
     
     [cell setindexPath:indexPath rowsInSection:group.items.count];
+    
+    // 提示音
+    if(indexPath.section == 0 && indexPath.row == 0){
+        UISwitch *switchView = [[UISwitch alloc] initWithFrame:CGRectZero];
+        
+        BOOL isScanVoice =[[ITDataStore instance] getSettingIsScanVoice];
+        [switchView setOn:isScanVoice animated:NO];
+        
+        [switchView addTarget:self action:@selector(beebSwitchChanged:) forControlEvents:UIControlEventValueChanged];
+        cell.accessoryView = switchView;
+    }
+    
+    // 振动
+    if(indexPath.section == 0 && indexPath.row == 1){
+        UISwitch *switchView = [[UISwitch alloc] initWithFrame:CGRectZero];
+        
+        BOOL isScanShake =[[ITDataStore instance] getSettingIsScanShake];
+        [switchView setOn:isScanShake animated:NO];
+        
+        [switchView addTarget:self action:@selector(shakeSwitchChanged:) forControlEvents:UIControlEventValueChanged];
+        cell.accessoryView = switchView;
+    }
+
+    
     //3.返回cell
     return cell;
 }
@@ -191,6 +213,22 @@
         item.operation();
     }
     
+}
+
+// 提示音
+- (void) beebSwitchChanged:(id)sender {
+    UISwitch* switchControl = sender;
+    NSLog( @"The beebSwitchChanged is %@", switchControl.on ? @"ON" : @"OFF" );
+    
+    [[ITDataStore instance] saveSettingIsScanVoice:switchControl.on];
+}
+
+// 振动
+- (void) shakeSwitchChanged:(id)sender {
+    UISwitch* switchControl = sender;
+    NSLog( @"The shakeSwitchChanged is %@", switchControl.on ? @"ON" : @"OFF" );
+    
+    [[ITDataStore instance] saveSettingIsScanShake:switchControl.on];
 }
 
 @end

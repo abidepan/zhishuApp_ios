@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JCTopic.h"
 
-@interface MainViewController : UIViewController
+@interface MainViewController : UIViewController<JCTopicDelegate>
+
+@property(nonatomic,strong)JCTopic * Topic;
+@property (strong, nonatomic) IBOutlet UIPageControl *page;
 
 @property (weak, nonatomic) IBOutlet UIView *qickResponseCodeVW;
 @property (weak, nonatomic) IBOutlet UIView *newsVM;
@@ -17,14 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIView *historyVM;
 @property (weak, nonatomic) IBOutlet UIView *makeCodeVM;
 
-
-
 - (IBAction)onQuickResponseCodeBtnClicked:(id)sender;
 - (IBAction)onScanHistoryBtnClicked:(id)sender;
-
-
-
-
 
 - (IBAction)onMineBtnClicked:(id)sender;
 - (IBAction)onScanBtnClicked:(id)sender;
