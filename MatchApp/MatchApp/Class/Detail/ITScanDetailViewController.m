@@ -97,7 +97,8 @@ NSString * rc_illegal_prompt = nil;
             break;
             
         case ScanResultIllegalOther :       // 非平台商品扫描详情
-            //initComponent4IllegalOther(product_data);
+            rc_illegal_prompt = [product objectForKey:@"product_name"];
+            [self initComponent4IllegalOther:scan_result_state];
             break;
             
         default:
