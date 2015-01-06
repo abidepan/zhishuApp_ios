@@ -65,6 +65,11 @@ NSString * kITSettingScanTimeOut = @"kITSettingScanTimeOut";
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+-(NSInteger) getLastScanType{
+
+    return (ITScanType)[[NSUserDefaults standardUserDefaults] integerForKey:kITLastScanType];
+}
+
 
 -(void) addQrCodeRecord:(NSDictionary *)qrRawCodeRecord{
     

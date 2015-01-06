@@ -10,6 +10,7 @@
 #import "Global.h"
 #import "Constants.h"
 #import "ITDataStore.h"
+#import "UIImageView+WebCache.h"
 
 @interface ITScanDetailViewController ()
 
@@ -131,6 +132,28 @@ NSString * rc_illegal_prompt = nil;
     _factoryNameLabelView.text = [NSString stringWithFormat:@"厂商名称：%@",  [product objectForKey:@"factory_name"]];
     _factoryAddrLabelView.text = [NSString stringWithFormat:@"厂商地址：%@",  [product objectForKey:@"factory_addr"]];
     _factoryContactLabelView.text = [NSString stringWithFormat:@"联系方式：%@",  [product objectForKey:@"company_contact"]];
+    
+    
+    id urlList = [product objectForKey:@"product_img_url_list"];
+    if (urlList!=nil && ![urlList isEqual: @""]) {
+        
+        NSString * strUrl;
+        if ([urlList isKindOfClass:[NSArray class]] ) {
+            strUrl = [urlList objectAtIndex:0];
+        }else if([urlList isKindOfClass:[NSString class]]){
+            strUrl = urlList;
+        }
+        
+        if (strUrl) {
+            if (![strUrl hasPrefix:@"http://"]) {
+                strUrl = kAppApi(strUrl);
+            }
+            [_productImageView sd_setImageWithURL:[NSURL URLWithString:strUrl]];
+        }
+    } else {
+        
+        [_productImageView setImage:[UIImage imageNamed:@"history_merchant_img.png"]];
+    }
 
 }
 
