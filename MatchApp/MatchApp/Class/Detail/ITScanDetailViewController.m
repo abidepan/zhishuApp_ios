@@ -110,20 +110,38 @@ NSString * rc_illegal_prompt = nil;
 // 平台合法商品扫描详情
 -(void) initComponent4LegalScan:(NSDictionary *) product{
     
-    _resultValidateLabelView.text = [NSString stringWithFormat:@"您查询的 %@ 已被验证为合法正品",  [product objectForKey:@"product_name"]];
+    //
+    NSString *product_name = [product objectForKey:@"product_name"];
+    NSString *resultValidate = [NSString stringWithFormat:@"您查询的 %@ 已被验证为合法正品", product_name];
     
+    NSMutableAttributedString *resultValidateAttributedStr = [[NSMutableAttributedString alloc]initWithString:resultValidate];
+    [resultValidateAttributedStr addAttribute:NSForegroundColorAttributeName
+                          value:[UIColor redColor]
+                          range:NSMakeRange(5, product_name.length)];
+    
+    _resultValidateLabelView.attributedText = resultValidateAttributedStr;
+    
+    //
     int query_num = [[product objectForKey:@"query_num"]intValue];
-    _resultValidateNumLabelView.text = [NSString stringWithFormat:@"该产品已被验证 %d 次",  query_num];
     
-    NSString * query_num_prompt = nil;
     if (query_num > 1) {
-        query_num_prompt = @"若您是购买后首次验证, 请注意假冒风险";
+        NSString *query_num_s = [NSString stringWithFormat:@"%d",query_num];
+        NSString *resultValidateNum = [NSString stringWithFormat:@"该产品已被验证 %d 次",  query_num];
+        
+        NSMutableAttributedString *resultValidateNumAttributedStr = [[NSMutableAttributedString alloc]initWithString:resultValidateNum];
+        [resultValidateNumAttributedStr addAttribute:NSForegroundColorAttributeName
+                                               value:[UIColor redColor]
+                                               range:NSMakeRange(8, query_num_s.length)];
+        
+        _resultValidateNumLabelView.attributedText = resultValidateNumAttributedStr;
+        _resultValidatePromptLabelView.text = @"若您是购买后首次验证, 请注意假冒风险";
+        
     } else {
-        query_num_prompt = @"该产品为首次验证, 请放心使用";
+        
+        _resultValidateNumLabelView.hidden = YES;
+        _resultValidatePromptLabelView.text = @"该产品为首次验证, 请放心使用";
     }
-    _resultValidatePromptLabelView.text = query_num_prompt;
-    
-    
+
     _productNameLabelView.text = [NSString stringWithFormat:@"产品名称：%@",  [product objectForKey:@"product_name"]];
     _brandNameLabelView.text = [NSString stringWithFormat:@"品牌名称：%@",  [product objectForKey:@"brand_name"]];
     _produceTimeLabelView.text = [NSString stringWithFormat:@"生产时间：%@",  [product objectForKey:@"produce_time"]];
