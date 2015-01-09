@@ -261,7 +261,7 @@
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     }
     
-    if ([[ITDataStore instance] getSettingIsScanShake]) {
+    if ([[ITDataStore instance] getSettingIsScanVoice]) {
     
         static SystemSoundID soundIDTest = 0;
         NSString * path = [[NSBundle mainBundle] pathForResource:@"sound" ofType:@"mp3"];

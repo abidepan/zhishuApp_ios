@@ -57,12 +57,13 @@ NSString * rc_illegal_prompt = nil;
     // 01L013B001AF907BBG0EJW
     NSDictionary * dic = @{@"data":_code,@"device_id":[Global getDeviceUid],@"location":@"100.0,100.0"};
     
+    NSDictionary *failmsg = @{@"title":@"产品查询请求失败,请确认网络状态是否正常!"};
+    
     [self callServerWithUrl:url param:dic successCallBack:^(NSInteger code, id data) {
         
-        [self showRemoteData:data];
+        [self showRemoteData:data];        
         
-        
-    } loadingOptions:nil failOptions:nil];
+    } loadingOptions:nil failOptions:failmsg];
 }
 
 -(void) showRemoteData:(NSDictionary *) data{
@@ -80,6 +81,10 @@ NSString * rc_illegal_prompt = nil;
     }
     
     int scan_result_state = [[data objectForKey:@"result"]intValue];
+    if (scan_result_state < ScanResultFailed || scan_result_state > ScanResultIllegalOther) {
+        scan_result_state = ScanResultFailed;
+    }
+    
     switch (scan_result_state) {
         case ScanResultLegal :   // 平台合法商品扫描详情
             
@@ -100,6 +105,10 @@ NSString * rc_illegal_prompt = nil;
         case ScanResultIllegalOther :       // 非平台商品扫描详情
             rc_illegal_prompt = [product objectForKey:@"product_name"];
             [self initComponent4IllegalOther:scan_result_state];
+            break;
+            
+        case ScanResultFailed:              // 返回 -1
+            [self initComponent4IllegalFailed:scan_result_state];
             break;
             
         default:
@@ -207,6 +216,14 @@ NSString * rc_illegal_prompt = nil;
 -(void) initComponent4IllegalOther:(int)scan_result_state {
     
     _resultValidateLabelView.text = [NSString stringWithFormat:@"您查询的 %@ 非平台接入产品, 请注意假冒风险", rc_illegal_prompt];
+    
+    [self setUIVisibility];
+}
+
+// 返回 -1
+-(void) initComponent4IllegalFailed:(int)scan_result_state {
+    
+    _resultValidateLabelView.text = [NSString stringWithFormat:@"产品查询请求失败,请确认网络状态是否正常!"];
     
     [self setUIVisibility];
 }
