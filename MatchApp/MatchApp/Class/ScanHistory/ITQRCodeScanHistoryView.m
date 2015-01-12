@@ -74,7 +74,7 @@
     cell.timeLbl.text = [data objectForKey:@"produce_time"];
     
     id urlList = [data objectForKey:@"product_img_url_list"];
-    if (urlList!=nil) {
+    if (urlList!=nil && ![urlList isEqual: @""]) {
         
         NSString * strUrl;
         if ([urlList isKindOfClass:[NSArray class]] ) {
@@ -90,6 +90,9 @@
             [cell.infoImgView sd_setImageWithURL:[NSURL URLWithString:strUrl]];
         }
         
+    } else {
+        
+       [cell.infoImgView setImage:[UIImage imageNamed:@"history_merchant_img.png"]];
     }
     
     return cell;

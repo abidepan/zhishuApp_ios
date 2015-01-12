@@ -10,6 +10,7 @@
 #import "Global.h"
 #import "Constants.h"
 #import "ITDataStore.h"
+#import "UIImageView+WebCache.h"
 
 @interface ITScanDetailViewController ()
 
@@ -56,12 +57,13 @@ NSString * rc_illegal_prompt = nil;
     // 01L013B001AF907BBG0EJW
     NSDictionary * dic = @{@"data":_code,@"device_id":[Global getDeviceUid],@"location":@"100.0,100.0"};
     
+    NSDictionary *failmsg = @{@"title":@"产品查询请求失败,请确认网络状态是否正常!"};
+    
     [self callServerWithUrl:url param:dic successCallBack:^(NSInteger code, id data) {
         
-        [self showRemoteData:data];
+        [self showRemoteData:data];        
         
-        
-    } loadingOptions:nil failOptions:nil];
+    } loadingOptions:nil failOptions:failmsg];
 }
 
 -(void) showRemoteData:(NSDictionary *) data{
@@ -79,6 +81,10 @@ NSString * rc_illegal_prompt = nil;
     }
     
     int scan_result_state = [[data objectForKey:@"result"]intValue];
+    if (scan_result_state < ScanResultFailed || scan_result_state > ScanResultIllegalOther) {
+        scan_result_state = ScanResultFailed;
+    }
+    
     switch (scan_result_state) {
         case ScanResultLegal :   // 平台合法商品扫描详情
             
@@ -101,6 +107,10 @@ NSString * rc_illegal_prompt = nil;
             [self initComponent4IllegalOther:scan_result_state];
             break;
             
+        case ScanResultFailed:              // 返回 -1
+            [self initComponent4IllegalFailed:scan_result_state];
+            break;
+            
         default:
             break;
     }
@@ -109,20 +119,38 @@ NSString * rc_illegal_prompt = nil;
 // 平台合法商品扫描详情
 -(void) initComponent4LegalScan:(NSDictionary *) product{
     
-    _resultValidateLabelView.text = [NSString stringWithFormat:@"您查询的 %@ 已被验证为合法正品",  [product objectForKey:@"product_name"]];
+    //
+    NSString *product_name = [product objectForKey:@"product_name"];
+    NSString *resultValidate = [NSString stringWithFormat:@"您查询的 %@ 已被验证为合法正品", product_name];
     
+    NSMutableAttributedString *resultValidateAttributedStr = [[NSMutableAttributedString alloc]initWithString:resultValidate];
+    [resultValidateAttributedStr addAttribute:NSForegroundColorAttributeName
+                          value:[UIColor redColor]
+                          range:NSMakeRange(5, product_name.length)];
+    
+    _resultValidateLabelView.attributedText = resultValidateAttributedStr;
+    
+    //
     int query_num = [[product objectForKey:@"query_num"]intValue];
-    _resultValidateNumLabelView.text = [NSString stringWithFormat:@"该产品已被验证 %d 次",  query_num];
     
-    NSString * query_num_prompt = nil;
     if (query_num > 1) {
-        query_num_prompt = @"若您是购买后首次验证, 请注意假冒风险";
+        NSString *query_num_s = [NSString stringWithFormat:@"%d",query_num];
+        NSString *resultValidateNum = [NSString stringWithFormat:@"该产品已被验证 %d 次",  query_num];
+        
+        NSMutableAttributedString *resultValidateNumAttributedStr = [[NSMutableAttributedString alloc]initWithString:resultValidateNum];
+        [resultValidateNumAttributedStr addAttribute:NSForegroundColorAttributeName
+                                               value:[UIColor redColor]
+                                               range:NSMakeRange(8, query_num_s.length)];
+        
+        _resultValidateNumLabelView.attributedText = resultValidateNumAttributedStr;
+        _resultValidatePromptLabelView.text = @"若您是购买后首次验证, 请注意假冒风险";
+        
     } else {
-        query_num_prompt = @"该产品为首次验证, 请放心使用";
+        
+        _resultValidateNumLabelView.hidden = YES;
+        _resultValidatePromptLabelView.text = @"该产品为首次验证, 请放心使用";
     }
-    _resultValidatePromptLabelView.text = query_num_prompt;
-    
-    
+
     _productNameLabelView.text = [NSString stringWithFormat:@"产品名称：%@",  [product objectForKey:@"product_name"]];
     _brandNameLabelView.text = [NSString stringWithFormat:@"品牌名称：%@",  [product objectForKey:@"brand_name"]];
     _produceTimeLabelView.text = [NSString stringWithFormat:@"生产时间：%@",  [product objectForKey:@"produce_time"]];
@@ -131,6 +159,28 @@ NSString * rc_illegal_prompt = nil;
     _factoryNameLabelView.text = [NSString stringWithFormat:@"厂商名称：%@",  [product objectForKey:@"factory_name"]];
     _factoryAddrLabelView.text = [NSString stringWithFormat:@"厂商地址：%@",  [product objectForKey:@"factory_addr"]];
     _factoryContactLabelView.text = [NSString stringWithFormat:@"联系方式：%@",  [product objectForKey:@"company_contact"]];
+    
+    
+    id urlList = [product objectForKey:@"product_img_url_list"];
+    if (urlList!=nil && ![urlList isEqual: @""]) {
+        
+        NSString * strUrl;
+        if ([urlList isKindOfClass:[NSArray class]] ) {
+            strUrl = [urlList objectAtIndex:0];
+        }else if([urlList isKindOfClass:[NSString class]]){
+            strUrl = urlList;
+        }
+        
+        if (strUrl) {
+            if (![strUrl hasPrefix:@"http://"]) {
+                strUrl = kAppApi(strUrl);
+            }
+            [_productImageView sd_setImageWithURL:[NSURL URLWithString:strUrl]];
+        }
+    } else {
+        
+        [_productImageView setImage:[UIImage imageNamed:@"history_merchant_img.png"]];
+    }
 
 }
 
@@ -166,6 +216,14 @@ NSString * rc_illegal_prompt = nil;
 -(void) initComponent4IllegalOther:(int)scan_result_state {
     
     _resultValidateLabelView.text = [NSString stringWithFormat:@"您查询的 %@ 非平台接入产品, 请注意假冒风险", rc_illegal_prompt];
+    
+    [self setUIVisibility];
+}
+
+// 返回 -1
+-(void) initComponent4IllegalFailed:(int)scan_result_state {
+    
+    _resultValidateLabelView.text = [NSString stringWithFormat:@"产品查询请求失败,请确认网络状态是否正常!"];
     
     [self setUIVisibility];
 }

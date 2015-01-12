@@ -48,7 +48,8 @@
         ITScanHistoryBaseView * scanView = [_scanHistoryViews objectAtIndex:i];
         [_segment insertSegmentWithTitle:scanView.title atIndex:i animated:NO];
     }
-    _currentSelectedIndex = _segment.selectedSegmentIndex = [ITDataStore instance].lastScanType;
+    _currentSelectedIndex = _segment.selectedSegmentIndex = [[ITDataStore instance] getLastScanType];
+    //[ITDataStore instance].lastScanType;
     
     [self.view addSubview:_segment];
     [self.view addSubview:[_scanHistoryViews objectAtIndex:_segment.selectedSegmentIndex]];

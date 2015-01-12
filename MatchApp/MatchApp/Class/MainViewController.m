@@ -67,7 +67,10 @@
     [_Topic upDate];
     [self.view addSubview:_Topic];
     
-    _page = [[UIPageControl alloc]initWithFrame:CGRectMake(250, 214, 120, 8)];
+    _page = [[UIPageControl alloc]initWithFrame:CGRectMake(kDeviceWidth - 80, 214, 80, 8)];
+    _page.currentPageIndicatorTintColor = [UIColor greenColor];
+    _page.pageIndicatorTintColor = [UIColor grayColor];
+    
     [self.view addSubview:_page];
 }
 
@@ -125,7 +128,7 @@
     [super viewWillDisappear:YES];
     
     //停止自己滚动的timer
-    [_Topic releaseTimer];
+    //[_Topic releaseTimer];
 }
 
 -(void)didClick:(id)data{
