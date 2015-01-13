@@ -48,6 +48,7 @@
 		404EB35E1A55026700CFA66E /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 404EB35D1A55026700CFA66E /* sound.mp3 */; };
 		404EB3651A5AC97B00CFA66E /* ITScanRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB3641A5AC97B00CFA66E /* ITScanRectView.m */; };
 		404EB3671A5AC9C700CFA66E /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 404EB3661A5AC9C700CFA66E /* line@2x.png */; };
+		404EB39C1A5D497600CFA66E /* ITLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB39B1A5D497600CFA66E /* ITLocation.m */; };
 		405D51261A348DF600A8C803 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D50471A348DF600A8C803 /* AppDelegate.m */; };
 		405D51271A348DF600A8C803 /* UIBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D504A1A348DF600A8C803 /* UIBaseTableViewController.m */; };
 		405D51281A348DF600A8C803 /* UIBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405D504C1A348DF600A8C803 /* UIBaseViewController.m */; };
@@ -205,6 +206,8 @@
 		404EB3631A5AC97B00CFA66E /* ITScanRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanRectView.h; sourceTree = "<group>"; };
 		404EB3641A5AC97B00CFA66E /* ITScanRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanRectView.m; sourceTree = "<group>"; };
 		404EB3661A5AC9C700CFA66E /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line@2x.png"; sourceTree = "<group>"; };
+		404EB39A1A5D497600CFA66E /* ITLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITLocation.h; sourceTree = "<group>"; };
+		404EB39B1A5D497600CFA66E /* ITLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITLocation.m; sourceTree = "<group>"; };
 		405D50461A348DF600A8C803 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		405D50471A348DF600A8C803 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		405D50491A348DF600A8C803 /* UIBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIBaseTableViewController.h; sourceTree = "<group>"; };
@@ -469,6 +472,8 @@
 				40E1B3F41A389AC900111867 /* ITLoadingView.m */,
 				4062CAA81A3B27F3002C343C /* ITDataStore.h */,
 				4062CAA91A3B27F3002C343C /* ITDataStore.m */,
+				404EB39A1A5D497600CFA66E /* ITLocation.h */,
+				404EB39B1A5D497600CFA66E /* ITLocation.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -995,6 +1000,7 @@
 				405D516C1A348DF600A8C803 /* SDWebImageDownloader.m in Sources */,
 				404EB31F1A4FCED000CFA66E /* ITInputBarCodeViewController.m in Sources */,
 				31CE94101A42D5C10038480E /* YYCommonCell.m in Sources */,
+				404EB39C1A5D497600CFA66E /* ITLocation.m in Sources */,
 				405D51731A348DF600A8C803 /* UIImage+WebP.m in Sources */,
 				405D515C1A348DF600A8C803 /* ASIDataDecompressor.m in Sources */,
 				405D518A1A348DF600A8C803 /* CycleScrollView.m in Sources */,
