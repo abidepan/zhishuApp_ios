@@ -36,6 +36,8 @@
 		31DC1E2F1A480B81009BB238 /* setting_vibrate.png in Resources */ = {isa = PBXBuildFile; fileRef = 31DC1E251A480B81009BB238 /* setting_vibrate.png */; };
 		31E835FB1A3E932300B661C9 /* splash_background-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31E835F91A3E932300B661C9 /* splash_background-568h@2x.png */; };
 		31E835FC1A3E932300B661C9 /* splash_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31E835FA1A3E932300B661C9 /* splash_background@2x.png */; };
+		31FCE9501A63C16300B884EF /* ITtextFiledBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FCE94F1A63C16300B884EF /* ITtextFiledBackground.m */; };
+		31FCE9521A63CB5D00B884EF /* match_app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31FCE9511A63CB5D00B884EF /* match_app@2x.png */; };
 		404EB3111A4FC5C600CFA66E /* ITScanCodeBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB3101A4FC5C600CFA66E /* ITScanCodeBaseViewController.m */; };
 		404EB3141A4FCC5900CFA66E /* ITScanBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB3131A4FCC5900CFA66E /* ITScanBarCodeViewController.m */; };
 		404EB31B1A4FCD0700CFA66E /* ITInputCodeBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB3191A4FCD0700CFA66E /* ITInputCodeBaseViewController.m */; };
@@ -183,6 +185,9 @@
 		31DC1E251A480B81009BB238 /* setting_vibrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_vibrate.png; sourceTree = "<group>"; };
 		31E835F91A3E932300B661C9 /* splash_background-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_background-568h@2x.png"; sourceTree = "<group>"; };
 		31E835FA1A3E932300B661C9 /* splash_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_background@2x.png"; sourceTree = "<group>"; };
+		31FCE94E1A63C16300B884EF /* ITtextFiledBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITtextFiledBackground.h; sourceTree = "<group>"; };
+		31FCE94F1A63C16300B884EF /* ITtextFiledBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITtextFiledBackground.m; sourceTree = "<group>"; };
+		31FCE9511A63CB5D00B884EF /* match_app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "match_app@2x.png"; sourceTree = "<group>"; };
 		4049099B1A15D8650053B1C5 /* MatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		404EB30F1A4FC5C600CFA66E /* ITScanCodeBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanCodeBaseViewController.h; sourceTree = "<group>"; };
 		404EB3101A4FC5C600CFA66E /* ITScanCodeBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanCodeBaseViewController.m; sourceTree = "<group>"; };
@@ -639,6 +644,7 @@
 		405D50FC1A348DF600A8C803 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				31FCE9511A63CB5D00B884EF /* match_app@2x.png */,
 				31D491AD1A5BBFE500FF1EE7 /* history_merchant_img.png */,
 				31D834011A5A8DFF00BFBEDD /* pic_1.jpg */,
 				31D834021A5A8DFF00BFBEDD /* pic_2.jpg */,
@@ -806,6 +812,8 @@
 				40E2F1861A3C838100ADE4B1 /* ITUserCenterViewController.h */,
 				40E2F1871A3C838100ADE4B1 /* ITUserCenterViewController.m */,
 				40E2F1881A3C838100ADE4B1 /* ITUserCenterViewController.xib */,
+				31FCE94E1A63C16300B884EF /* ITtextFiledBackground.h */,
+				31FCE94F1A63C16300B884EF /* ITtextFiledBackground.m */,
 			);
 			path = UserCenter;
 			sourceTree = "<group>";
@@ -898,6 +906,7 @@
 				31D194E91A383E570075CDB7 /* main_news@2x.png in Resources */,
 				40E2F1911A3C908F00ADE4B1 /* ITScanHistoryCell.xib in Resources */,
 				405D51821A348DF600A8C803 /* grayarrowup@2x.png in Resources */,
+				31FCE9521A63CB5D00B884EF /* match_app@2x.png in Resources */,
 				31D834051A5A8DFF00BFBEDD /* pic_1.jpg in Resources */,
 				405D51831A348DF600A8C803 /* placeholder@2x.png in Resources */,
 				31D834081A5A8DFF00BFBEDD /* pic_4.jpg in Resources */,
@@ -1001,6 +1010,7 @@
 				405D51711A348DF600A8C803 /* UIImage+GIF.m in Sources */,
 				405D51551A348DF600A8C803 /* MainViewController.m in Sources */,
 				31CE94131A42D5C10038480E /* YYCommonSwitchItem.m in Sources */,
+				31FCE9501A63C16300B884EF /* ITtextFiledBackground.m in Sources */,
 				405D51271A348DF600A8C803 /* UIBaseTableViewController.m in Sources */,
 				4062CAAA1A3B27F3002C343C /* ITDataStore.m in Sources */,
 				31D833FA1A5A89C200BFBEDD /* JCTopic.m in Sources */,

@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ITtextFiledBackground.h"
 
 @interface ITUserCenterViewController : UIViewController
+
+@property (nonatomic,strong) UITextField *account;
+@property (nonatomic,strong) UITextField *password;
+@property (nonatomic,strong) UIButton *loginButton;
+@property (nonatomic,strong) ITtextFiledBackground *background;
+
+@property (nonatomic,strong) UIButton *findPasswordButton;
+@property (nonatomic,strong) UIButton *registerButton;
 
 @end
