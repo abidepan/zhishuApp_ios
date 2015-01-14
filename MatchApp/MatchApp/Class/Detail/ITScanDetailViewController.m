@@ -133,7 +133,7 @@ NSString * rc_illegal_prompt = nil;
     //
     int query_num = [[product objectForKey:@"query_num"]intValue];
     
-    if (query_num > 1) {
+    if (query_num >= 1) {
         NSString *query_num_s = [NSString stringWithFormat:@"%d",query_num];
         NSString *resultValidateNum = [NSString stringWithFormat:@"该产品已被验证 %d 次",  query_num];
         

@@ -438,7 +438,6 @@
 				40E2F1751A3C833400ADE4B1 /* Scan */,
 				40E2F1791A3C833400ADE4B1 /* ScanHistory */,
 				405D51A41A37306D00A8C803 /* Setting */,
-				405D502C1A348DF600A8C803 /* Account */,
 				405D50481A348DF600A8C803 /* Common */,
 				405D50461A348DF600A8C803 /* AppDelegate.h */,
 				405D50471A348DF600A8C803 /* AppDelegate.m */,
@@ -448,13 +447,6 @@
 				405D509B1A348DF600A8C803 /* MainViewController.m */,
 			);
 			path = Class;
-			sourceTree = "<group>";
-		};
-		405D502C1A348DF600A8C803 /* Account */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Account;
 			sourceTree = "<group>";
 		};
 		405D50481A348DF600A8C803 /* Common */ = {

@@ -122,10 +122,10 @@
     //3.设置组中所有行的数据
     YYCommonArrowItem *gamecenter = [YYCommonArrowItem itemWithTitle:@"版本更新" icon:@"setting_version"];
     YYCommonArrowItem *near = [YYCommonArrowItem itemWithTitle:@"用户反馈" icon:@"setting_feedback"];
-    YYCommonArrowItem *clearcache = [YYCommonArrowItem itemWithTitle:@"清除缓存" icon:@"setting_help"];
+    //YYCommonArrowItem *clearcache = [YYCommonArrowItem itemWithTitle:@"清除缓存" icon:@"setting_clear_cache"];
     YYCommonArrowItem *share = [YYCommonArrowItem itemWithTitle:@"软件分享" icon:@"setting_shareapp"];
     
-    group.items = @[gamecenter,near,clearcache,share];
+    group.items = @[gamecenter,near,share];
     
 }
 
@@ -137,13 +137,13 @@
     //2.设置组的基本数据
     
     //3.设置组中所有行的数据
-    YYCommonArrowItem *video = [YYCommonArrowItem itemWithTitle:@"设置服务器IP" icon:@"setting_server_ip"];
-    video.destVcClass = [ITSettingIPViewController class];
-    YYCommonArrowItem *music = [YYCommonArrowItem itemWithTitle:@"使用帮助" icon:@"setting_clear_cache"];
-    music.destVcClass = [ITSettingIPViewController class];
-    YYCommonArrowItem *movie = [YYCommonArrowItem itemWithTitle:@"关于" icon:@"setting_about"];
+    //YYCommonArrowItem *settingIp = [YYCommonArrowItem itemWithTitle:@"设置服务器IP" icon:@"setting_server_ip"];
+    //settingIp.destVcClass = [ITSettingIPViewController class];
+    YYCommonArrowItem *settingHelp = [YYCommonArrowItem itemWithTitle:@"使用帮助" icon:@"setting_help"];
+    settingHelp.destVcClass = [ITSettingIPViewController class];
+    YYCommonArrowItem *settingAbout = [YYCommonArrowItem itemWithTitle:@"关于" icon:@"setting_about"];
     
-    group.items = @[video,music,movie];
+    group.items = @[settingHelp, settingAbout];
 }
 
 #pragma mark  Data source methods
