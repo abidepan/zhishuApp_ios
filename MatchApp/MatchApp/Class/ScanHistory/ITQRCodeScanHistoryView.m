@@ -114,11 +114,13 @@
     id data = [[[ITDataStore instance] qrCodeHistoryRecords] objectAtIndex:indexPath.row];
     [[ITDataStore instance] removeQrRecord:data];
     
-    
     [self.tableView reloadData];
     [self showNoResult];
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
+}
 
 
 
