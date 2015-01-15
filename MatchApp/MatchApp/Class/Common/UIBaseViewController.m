@@ -11,6 +11,7 @@
 #import "ITLoadingView.h"
 #import "ITErrorView.h"
 #import "WebServer.h"
+#import "MobClick.h"
 
 @interface UIBaseViewController ()
 
@@ -24,6 +25,17 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"PageOne"];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:YES];
+    [MobClick endLogPageView:@"PageOne"];
 }
 
 -(UINavigationController *) rootNavigationController{

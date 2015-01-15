@@ -11,6 +11,7 @@
 #import "MainViewController.h"
 #import "Constants.h"
 #import "ITDataStore.h"
+#import "MobClick.h"
 
 @interface AppDelegate ()
 
@@ -25,6 +26,10 @@
     
     [ITDataStore instance];
     [self setAppearance];
+    
+    // 友盟
+    [MobClick startWithAppkey:@"54b7778bfd98c56e3a000b94" reportPolicy:BATCH channelId:@""];
+    
     return YES;
 }
 

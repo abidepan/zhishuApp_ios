@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31C9B4301A67B50D009F7BD5 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C9B42E1A67B50D009F7BD5 /* libMobClickLibrary.a */; };
 		31CE940F1A42D5C10038480E /* YYCommonArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE94061A42D5C00038480E /* YYCommonArrowItem.m */; };
 		31CE94101A42D5C10038480E /* YYCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE94081A42D5C00038480E /* YYCommonCell.m */; };
 		31CE94111A42D5C10038480E /* YYCommonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE940A1A42D5C10038480E /* YYCommonGroup.m */; };
@@ -150,6 +151,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		31C9B42E1A67B50D009F7BD5 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
+		31C9B42F1A67B50D009F7BD5 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		31CE94051A42D5C00038480E /* YYCommonArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCommonArrowItem.h; sourceTree = "<group>"; };
 		31CE94061A42D5C00038480E /* YYCommonArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCommonArrowItem.m; sourceTree = "<group>"; };
 		31CE94071A42D5C00038480E /* YYCommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCommonCell.h; sourceTree = "<group>"; };
@@ -375,6 +378,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				405D51931A34906100A8C803 /* libz.dylib in Frameworks */,
 				40E2F8711A452CA300ADE4B1 /* libiconv.dylib in Frameworks */,
 				40E2F86F1A452C9500ADE4B1 /* Foundation.framework in Frameworks */,
 				40E2F86D1A452C8C00ADE4B1 /* UIKit.framework in Frameworks */,
@@ -383,7 +387,7 @@
 				40E2F8671A452C7800ADE4B1 /* AVFoundation.framework in Frameworks */,
 				40E2F8651A452C7300ADE4B1 /* CoreMedia.framework in Frameworks */,
 				405D51951A34906B00A8C803 /* libxml2.dylib in Frameworks */,
-				405D51931A34906100A8C803 /* libz.dylib in Frameworks */,
+				31C9B4301A67B50D009F7BD5 /* libMobClickLibrary.a in Frameworks */,
 				405D51911A34904800A8C803 /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +395,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31C9B42D1A67B4E0009F7BD5 /* UMeng */ = {
+			isa = PBXGroup;
+			children = (
+				31C9B42E1A67B50D009F7BD5 /* libMobClickLibrary.a */,
+				31C9B42F1A67B50D009F7BD5 /* MobClick.h */,
+			);
+			name = UMeng;
+			sourceTree = "<group>";
+		};
 		31D833F71A5A89C200BFBEDD /* JCTopic */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,6 +515,7 @@
 		405D50A71A348DF600A8C803 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				31C9B42D1A67B4E0009F7BD5 /* UMeng */,
 				31D833F71A5A89C200BFBEDD /* JCTopic */,
 				405D50A81A348DF600A8C803 /* ASIHttpRequest */,
 				405D50C21A348DF600A8C803 /* Colors */,
@@ -1115,6 +1129,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MatchApp/Frameworks/ZXingWidget/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/MatchApp/Library/ZBarSDK/**",
+					"$(PROJECT_DIR)/MatchApp/Library",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1141,6 +1156,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MatchApp/Frameworks/ZXingWidget/build/Debug-iphoneos",
 					"$(PROJECT_DIR)/MatchApp/Library/ZBarSDK/**",
+					"$(PROJECT_DIR)/MatchApp/Library",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

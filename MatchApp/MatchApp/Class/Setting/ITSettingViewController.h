@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "YYCommonItem.h"
+#import "UIBaseViewController.h"
 
-@interface ITSettingViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@interface ITSettingViewController : UIBaseViewController<UITableViewDelegate, UITableViewDataSource>
 
 
 @property (weak, nonatomic) IBOutlet UITableView *settingTableView;
