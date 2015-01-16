@@ -15,6 +15,23 @@
 		31CE94131A42D5C10038480E /* YYCommonSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE940E1A42D5C10038480E /* YYCommonSwitchItem.m */; };
 		31CE94171A42DAA50038480E /* ITSettingIPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE94151A42DAA50038480E /* ITSettingIPViewController.m */; };
 		31CE94181A42DAA50038480E /* ITSettingIPViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31CE94161A42DAA50038480E /* ITSettingIPViewController.xib */; };
+		31CF97C91A690D8F00049B5B /* UMFeedbackLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 31CF97B11A690D8F00049B5B /* UMFeedbackLocalizable.strings */; };
+		31CF97CA1A690D8F00049B5B /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CF97B31A690D8F00049B5B /* libUMFeedback.a */; };
+		31CF97CB1A690D8F00049B5B /* bubble_min@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31CF97B51A690D8F00049B5B /* bubble_min@2x.png */; };
+		31CF97CC1A690D8F00049B5B /* cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31CF97B61A690D8F00049B5B /* cancel@2x.png */; };
+		31CF97CD1A690D8F00049B5B /* microphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31CF97B71A690D8F00049B5B /* microphone@2x.png */; };
+		31CF97CE1A690D8F00049B5B /* save@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31CF97B81A690D8F00049B5B /* save@2x.png */; };
+		31CF97CF1A690D8F00049B5B /* ToolViewInputText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31CF97B91A690D8F00049B5B /* ToolViewInputText@2x.png */; };
+		31CF97D01A690D8F00049B5B /* ToolViewInputTextHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31CF97BA1A690D8F00049B5B /* ToolViewInputTextHL@2x.png */; };
+		31CF97D11A690D8F00049B5B /* ToolViewInputVoice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31CF97BB1A690D8F00049B5B /* ToolViewInputVoice@2x.png */; };
+		31CF97D21A690D8F00049B5B /* ToolViewInputVoiceHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31CF97BC1A690D8F00049B5B /* ToolViewInputVoiceHL@2x.png */; };
+		31CF97D31A690D8F00049B5B /* umeng_fb_audio_dialog_cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31CF97BD1A690D8F00049B5B /* umeng_fb_audio_dialog_cancel@2x.png */; };
+		31CF97D41A690D8F00049B5B /* umeng_fb_audio_dialog_content@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31CF97BE1A690D8F00049B5B /* umeng_fb_audio_dialog_content@2x.png */; };
+		31CF97D51A690D8F00049B5B /* umeng_fb_audio_play_01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31CF97BF1A690D8F00049B5B /* umeng_fb_audio_play_01@2x.png */; };
+		31CF97D61A690D8F00049B5B /* umeng_fb_audio_play_02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31CF97C01A690D8F00049B5B /* umeng_fb_audio_play_02@2x.png */; };
+		31CF97D71A690D8F00049B5B /* umeng_fb_audio_play_03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31CF97C11A690D8F00049B5B /* umeng_fb_audio_play_03@2x.png */; };
+		31CF97D81A690D8F00049B5B /* umeng_fb_audio_play_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31CF97C21A690D8F00049B5B /* umeng_fb_audio_play_default@2x.png */; };
+		31CF97D91A690D8F00049B5B /* libUMOpus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31CF97C51A690D8F00049B5B /* libUMOpus.a */; };
 		31D194E91A383E570075CDB7 /* main_news@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D194E51A383E570075CDB7 /* main_news@2x.png */; };
 		31D194EA1A383E570075CDB7 /* tab_me_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D194E61A383E570075CDB7 /* tab_me_selected@2x.png */; };
 		31D194EB1A383E570075CDB7 /* tab_scan_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31D194E71A383E570075CDB7 /* tab_scan_selected@2x.png */; };
@@ -166,6 +183,27 @@
 		31CE94141A42DAA50038480E /* ITSettingIPViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSettingIPViewController.h; sourceTree = "<group>"; };
 		31CE94151A42DAA50038480E /* ITSettingIPViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSettingIPViewController.m; sourceTree = "<group>"; };
 		31CE94161A42DAA50038480E /* ITSettingIPViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITSettingIPViewController.xib; sourceTree = "<group>"; };
+		31CF97B21A690D8F00049B5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/UMFeedbackLocalizable.strings; sourceTree = "<group>"; };
+		31CF97B31A690D8F00049B5B /* libUMFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMFeedback.a; sourceTree = "<group>"; };
+		31CF97B51A690D8F00049B5B /* bubble_min@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_min@2x.png"; sourceTree = "<group>"; };
+		31CF97B61A690D8F00049B5B /* cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel@2x.png"; sourceTree = "<group>"; };
+		31CF97B71A690D8F00049B5B /* microphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "microphone@2x.png"; sourceTree = "<group>"; };
+		31CF97B81A690D8F00049B5B /* save@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "save@2x.png"; sourceTree = "<group>"; };
+		31CF97B91A690D8F00049B5B /* ToolViewInputText@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ToolViewInputText@2x.png"; sourceTree = "<group>"; };
+		31CF97BA1A690D8F00049B5B /* ToolViewInputTextHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ToolViewInputTextHL@2x.png"; sourceTree = "<group>"; };
+		31CF97BB1A690D8F00049B5B /* ToolViewInputVoice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ToolViewInputVoice@2x.png"; sourceTree = "<group>"; };
+		31CF97BC1A690D8F00049B5B /* ToolViewInputVoiceHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ToolViewInputVoiceHL@2x.png"; sourceTree = "<group>"; };
+		31CF97BD1A690D8F00049B5B /* umeng_fb_audio_dialog_cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "umeng_fb_audio_dialog_cancel@2x.png"; sourceTree = "<group>"; };
+		31CF97BE1A690D8F00049B5B /* umeng_fb_audio_dialog_content@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "umeng_fb_audio_dialog_content@2x.png"; sourceTree = "<group>"; };
+		31CF97BF1A690D8F00049B5B /* umeng_fb_audio_play_01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "umeng_fb_audio_play_01@2x.png"; sourceTree = "<group>"; };
+		31CF97C01A690D8F00049B5B /* umeng_fb_audio_play_02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "umeng_fb_audio_play_02@2x.png"; sourceTree = "<group>"; };
+		31CF97C11A690D8F00049B5B /* umeng_fb_audio_play_03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "umeng_fb_audio_play_03@2x.png"; sourceTree = "<group>"; };
+		31CF97C21A690D8F00049B5B /* umeng_fb_audio_play_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "umeng_fb_audio_play_default@2x.png"; sourceTree = "<group>"; };
+		31CF97C31A690D8F00049B5B /* UMFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMFeedback.h; sourceTree = "<group>"; };
+		31CF97C51A690D8F00049B5B /* libUMOpus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMOpus.a; sourceTree = "<group>"; };
+		31CF97C61A690D8F00049B5B /* UMOpus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMOpus.h; sourceTree = "<group>"; };
+		31CF97C71A690D8F00049B5B /* UMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMRecorder.h; sourceTree = "<group>"; };
+		31CF97C81A690D8F00049B5B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UMFeedbackLocalizable.strings"; sourceTree = "<group>"; };
 		31D194E51A383E570075CDB7 /* main_news@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_news@2x.png"; sourceTree = "<group>"; };
 		31D194E61A383E570075CDB7 /* tab_me_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_me_selected@2x.png"; sourceTree = "<group>"; };
 		31D194E71A383E570075CDB7 /* tab_scan_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_scan_selected@2x.png"; sourceTree = "<group>"; };
@@ -378,7 +416,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31CF97CA1A690D8F00049B5B /* libUMFeedback.a in Frameworks */,
 				405D51931A34906100A8C803 /* libz.dylib in Frameworks */,
+				31CF97D91A690D8F00049B5B /* libUMOpus.a in Frameworks */,
 				40E2F8711A452CA300ADE4B1 /* libiconv.dylib in Frameworks */,
 				40E2F86F1A452C9500ADE4B1 /* Foundation.framework in Frameworks */,
 				40E2F86D1A452C8C00ADE4B1 /* UIKit.framework in Frameworks */,
@@ -398,10 +438,62 @@
 		31C84D351A68F3A200B41437 /* UMeng */ = {
 			isa = PBXGroup;
 			children = (
+				31CF97811A69044800049B5B /* Feedback */,
 				31C84D361A68F3A200B41437 /* libMobClickLibrary.a */,
 				31C84D371A68F3A200B41437 /* MobClick.h */,
 			);
 			path = UMeng;
+			sourceTree = "<group>";
+		};
+		31CF97811A69044800049B5B /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				31CF97B01A690D8F00049B5B /* UMengFeedback_SDK_2.1 */,
+			);
+			name = Feedback;
+			sourceTree = "<group>";
+		};
+		31CF97B01A690D8F00049B5B /* UMengFeedback_SDK_2.1 */ = {
+			isa = PBXGroup;
+			children = (
+				31CF97B11A690D8F00049B5B /* UMFeedbackLocalizable.strings */,
+				31CF97B31A690D8F00049B5B /* libUMFeedback.a */,
+				31CF97B41A690D8F00049B5B /* Resources */,
+				31CF97C31A690D8F00049B5B /* UMFeedback.h */,
+				31CF97C41A690D8F00049B5B /* UMOpus */,
+				31CF97C71A690D8F00049B5B /* UMRecorder.h */,
+			);
+			path = UMengFeedback_SDK_2.1;
+			sourceTree = "<group>";
+		};
+		31CF97B41A690D8F00049B5B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				31CF97B51A690D8F00049B5B /* bubble_min@2x.png */,
+				31CF97B61A690D8F00049B5B /* cancel@2x.png */,
+				31CF97B71A690D8F00049B5B /* microphone@2x.png */,
+				31CF97B81A690D8F00049B5B /* save@2x.png */,
+				31CF97B91A690D8F00049B5B /* ToolViewInputText@2x.png */,
+				31CF97BA1A690D8F00049B5B /* ToolViewInputTextHL@2x.png */,
+				31CF97BB1A690D8F00049B5B /* ToolViewInputVoice@2x.png */,
+				31CF97BC1A690D8F00049B5B /* ToolViewInputVoiceHL@2x.png */,
+				31CF97BD1A690D8F00049B5B /* umeng_fb_audio_dialog_cancel@2x.png */,
+				31CF97BE1A690D8F00049B5B /* umeng_fb_audio_dialog_content@2x.png */,
+				31CF97BF1A690D8F00049B5B /* umeng_fb_audio_play_01@2x.png */,
+				31CF97C01A690D8F00049B5B /* umeng_fb_audio_play_02@2x.png */,
+				31CF97C11A690D8F00049B5B /* umeng_fb_audio_play_03@2x.png */,
+				31CF97C21A690D8F00049B5B /* umeng_fb_audio_play_default@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		31CF97C41A690D8F00049B5B /* UMOpus */ = {
+			isa = PBXGroup;
+			children = (
+				31CF97C51A690D8F00049B5B /* libUMOpus.a */,
+				31CF97C61A690D8F00049B5B /* UMOpus.h */,
+			);
+			path = UMOpus;
 			sourceTree = "<group>";
 		};
 		31D833F71A5A89C200BFBEDD /* JCTopic */ = {
@@ -872,6 +964,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 404909921A15D8650053B1C5;
 			productRefGroup = 4049099C1A15D8650053B1C5 /* Products */;
@@ -897,6 +990,7 @@
 				405D51A21A372DC700A8C803 /* logo@2x.png in Resources */,
 				405D51B01A37355700A8C803 /* main_shop@2x.png in Resources */,
 				31DC1E2B1A480B81009BB238 /* setting_scan_timeout.png in Resources */,
+				31CF97D11A690D8F00049B5B /* ToolViewInputVoice@2x.png in Resources */,
 				405D517C1A348DF600A8C803 /* Default-6.png in Resources */,
 				405D51291A348DF600A8C803 /* UIBaseViewController.xib in Resources */,
 				31D194EA1A383E570075CDB7 /* tab_me_selected@2x.png in Resources */,
@@ -904,31 +998,41 @@
 				405D518C1A348DF600A8C803 /* CycleScrollViewCell.xib in Resources */,
 				405D51A61A3734F000A8C803 /* main_qrcode@2x.png in Resources */,
 				404EB35E1A55026700CFA66E /* sound.mp3 in Resources */,
+				31CF97D41A690D8F00049B5B /* umeng_fb_audio_dialog_content@2x.png in Resources */,
+				31CF97D81A690D8F00049B5B /* umeng_fb_audio_play_default@2x.png in Resources */,
 				405D51811A348DF600A8C803 /* grayarrowright@2x.png in Resources */,
 				40E2F18A1A3C838100ADE4B1 /* ITMakeCodeViewController.xib in Resources */,
 				405D51AF1A37355700A8C803 /* main_nfc@2x.png in Resources */,
+				31CF97CC1A690D8F00049B5B /* cancel@2x.png in Resources */,
 				31DC1E2D1A480B81009BB238 /* setting_shareapp.png in Resources */,
 				405D51AE1A37355700A8C803 /* main_makecode@2x.png in Resources */,
 				40B8D0A01A46EE2200FA2B3E /* ITScanDetailViewController.xib in Resources */,
 				404EB32A1A517BD500CFA66E /* ITScanNfcCodeViewController.xib in Resources */,
 				405D517A1A348DF600A8C803 /* Default-568h@2x.png in Resources */,
 				405D51801A348DF600A8C803 /* Default@2x.png in Resources */,
+				31CF97D01A690D8F00049B5B /* ToolViewInputTextHL@2x.png in Resources */,
 				31DC1E2F1A480B81009BB238 /* setting_vibrate.png in Resources */,
 				31D194E91A383E570075CDB7 /* main_news@2x.png in Resources */,
 				40E2F1911A3C908F00ADE4B1 /* ITScanHistoryCell.xib in Resources */,
+				31CF97D61A690D8F00049B5B /* umeng_fb_audio_play_02@2x.png in Resources */,
 				405D51821A348DF600A8C803 /* grayarrowup@2x.png in Resources */,
 				31FCE9521A63CB5D00B884EF /* match_app@2x.png in Resources */,
 				31D834051A5A8DFF00BFBEDD /* pic_1.jpg in Resources */,
 				405D51831A348DF600A8C803 /* placeholder@2x.png in Resources */,
 				31D834081A5A8DFF00BFBEDD /* pic_4.jpg in Resources */,
+				31CF97CD1A690D8F00049B5B /* microphone@2x.png in Resources */,
 				31D194EB1A383E570075CDB7 /* tab_scan_selected@2x.png in Resources */,
 				405D51851A348DF600A8C803 /* tab@2x.png in Resources */,
+				31CF97CB1A690D8F00049B5B /* bubble_min@2x.png in Resources */,
 				405D51BA1A37373600A8C803 /* ITSettingViewController.xib in Resources */,
 				405D517E1A348DF600A8C803 /* Default-Ipad@2x.png in Resources */,
+				31CF97C91A690D8F00049B5B /* UMFeedbackLocalizable.strings in Resources */,
 				405D51341A348DF600A8C803 /* Main.storyboard in Resources */,
 				31DC1E271A480B81009BB238 /* setting_beeb.png in Resources */,
 				404EB3671A5AC9C700CFA66E /* line@2x.png in Resources */,
+				31CF97D31A690D8F00049B5B /* umeng_fb_audio_dialog_cancel@2x.png in Resources */,
 				405D519C1A372AFB00A8C803 /* tab_me@2x.png in Resources */,
+				31CF97CF1A690D8F00049B5B /* ToolViewInputText@2x.png in Resources */,
 				405D51841A348DF600A8C803 /* search@2x.png in Resources */,
 				31DC1E261A480B81009BB238 /* setting_about.png in Resources */,
 				405D517B1A348DF600A8C803 /* Default-6-568h@2x.png in Resources */,
@@ -937,11 +1041,15 @@
 				31E835FB1A3E932300B661C9 /* splash_background-568h@2x.png in Resources */,
 				40E1B3F71A389AE000111867 /* ITErrorView.xib in Resources */,
 				40E2F1801A3C833400ADE4B1 /* ITScanHistoryViewController.xib in Resources */,
+				31CF97D71A690D8F00049B5B /* umeng_fb_audio_play_03@2x.png in Resources */,
 				405D51861A348DF600A8C803 /* Images.xcassets in Resources */,
+				31CF97D51A690D8F00049B5B /* umeng_fb_audio_play_01@2x.png in Resources */,
 				31DC1E281A480B81009BB238 /* setting_help.png in Resources */,
 				40E2F18C1A3C838100ADE4B1 /* ITUserCenterViewController.xib in Resources */,
 				405D519E1A372AFB00A8C803 /* tab_setting@2x.png in Resources */,
 				405D51331A348DF600A8C803 /* LaunchScreen.xib in Resources */,
+				31CF97CE1A690D8F00049B5B /* save@2x.png in Resources */,
+				31CF97D21A690D8F00049B5B /* ToolViewInputVoiceHL@2x.png in Resources */,
 				405D51AD1A37355700A8C803 /* main_history@2x.png in Resources */,
 				31DC1E2E1A480B81009BB238 /* setting_version.png in Resources */,
 				405D517D1A348DF600A8C803 /* Default-Ipad.png in Resources */,
@@ -1032,6 +1140,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		31CF97B11A690D8F00049B5B /* UMFeedbackLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31CF97B21A690D8F00049B5B /* Base */,
+				31CF97C81A690D8F00049B5B /* zh-Hans */,
+			);
+			name = UMFeedbackLocalizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		404909BC1A15D8650053B1C5 /* Debug */ = {
@@ -1131,6 +1251,8 @@
 					"$(PROJECT_DIR)/MatchApp/Library/ZBarSDK/**",
 					"$(PROJECT_DIR)/MatchApp/Library",
 					"$(PROJECT_DIR)/MatchApp/Library/UMeng",
+					"$(PROJECT_DIR)/MatchApp/Library/UMeng/UMengFeedback_SDK_2.1",
+					"$(PROJECT_DIR)/MatchApp/Library/UMeng/UMengFeedback_SDK_2.1/UMOpus",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -1159,6 +1281,8 @@
 					"$(PROJECT_DIR)/MatchApp/Library/ZBarSDK/**",
 					"$(PROJECT_DIR)/MatchApp/Library",
 					"$(PROJECT_DIR)/MatchApp/Library/UMeng",
+					"$(PROJECT_DIR)/MatchApp/Library/UMeng/UMengFeedback_SDK_2.1",
+					"$(PROJECT_DIR)/MatchApp/Library/UMeng/UMengFeedback_SDK_2.1/UMOpus",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

@@ -14,6 +14,7 @@
 #import "ITDataStore.h"
 #import "ITSettingIPViewController.h"
 #import "MobClick.h"
+#import "UMFeedback.h"
 
 @interface ITSettingViewController ()
 
@@ -116,6 +117,12 @@
     };
     
     YYCommonArrowItem *feedback = [YYCommonArrowItem itemWithTitle:@"用户反馈" icon:@"setting_feedback"];
+    feedback.operation = ^{
+        
+        [self.navigationController pushViewController:[UMFeedback feedbackViewController]
+                                             animated:YES];
+    };
+    
     //YYCommonArrowItem *clearcache = [YYCommonArrowItem itemWithTitle:@"清除缓存" icon:@"setting_clear_cache"];
     YYCommonArrowItem *share = [YYCommonArrowItem itemWithTitle:@"软件分享" icon:@"setting_shareapp"];
     
