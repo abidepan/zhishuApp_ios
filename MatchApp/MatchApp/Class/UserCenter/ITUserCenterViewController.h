@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ITtextFiledBackground.h"
+#import "UIBaseViewController.h"
 
-@interface ITUserCenterViewController : UIViewController
+@interface ITUserCenterViewController : UIBaseViewController
 
 @property (nonatomic,strong) UITextField *account;
 @property (nonatomic,strong) UITextField *password;

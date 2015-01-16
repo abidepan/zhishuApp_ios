@@ -14,6 +14,7 @@
 #import "ITMakeCodeViewController.h"
 #import "ITUserCenterViewController.h"
 #import "ITScanNfcCodeViewController.h"
+#import "MobClick.h"
 
 @interface MainViewController ()
 
@@ -124,8 +125,15 @@
     [self.navigationController pushViewController:nfcView animated:YES];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"PageOne"];
+}
+
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:YES];
+    [MobClick endLogPageView:@"PageOne"];
     
     //停止自己滚动的timer
     //[_Topic releaseTimer];
