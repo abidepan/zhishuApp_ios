@@ -11,6 +11,7 @@
 #import "Constants.h"
 #import "ITDataStore.h"
 #import "UIImageView+WebCache.h"
+#import "ITLocation.h"
 
 @interface ITScanDetailViewController ()
 
@@ -55,7 +56,11 @@ NSString * rc_illegal_prompt = nil;
     
     NSString * url = kAppApi(@"api/product/verify.json");
     // 01L013B001AF907BBG0EJW
-    NSDictionary * dic = @{@"data":_code,@"device_id":[Global getDeviceUid],@"location":@"100.0,100.0"};
+    
+    CLLocationCoordinate2D location =[ITLocation instance].currentLocation;
+    NSString * locationStr = [NSString stringWithFormat:@"%f,%f",location.latitude,location.longitude];
+    
+    NSDictionary * dic = @{@"data":_code,@"device_id":[Global getDeviceUid],@"location":locationStr};
     
     NSDictionary *failmsg = @{@"title":@"产品查询请求失败,请确认网络状态是否正常!"};
     
