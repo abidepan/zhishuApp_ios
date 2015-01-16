@@ -13,6 +13,7 @@
 #import "YYCommonArrowItem.h"
 #import "ITDataStore.h"
 #import "ITSettingIPViewController.h"
+#import "MobClick.h"
 
 @interface ITSettingViewController ()
 
@@ -84,8 +85,10 @@
     ITSettingViewController * _weakSelf = self;
     
     _scantimeout.operation = ^{
-        UIAlertView * alter = [[UIAlertView alloc] initWithTitle:@"扫描超时" message:@"" delegate:_weakSelf cancelButtonTitle:@"取消" otherButtonTitles:@"10秒",@"15秒", @"20秒", @"30秒", nil];
-        [alter show];
+        UIAlertView * alter1 = [[UIAlertView alloc] initWithTitle:@"扫描超时" message:@"" delegate:_weakSelf cancelButtonTitle:@"取消" otherButtonTitles:@"10秒",@"15秒", @"20秒", @"30秒", nil];
+        [alter1 setTag:1];
+        
+        [alter1 show];
     };
     
     //读取扫描超时时间
@@ -93,23 +96,6 @@
     _scantimeout.subtitle = scanTimeOut?scanTimeOut:@"30秒";
     
     group.items = @[beebSwitch, vibrateSwitch, _scantimeout];
-}
-
--(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-    //该方法由UIAlertViewDelegate协议定义，在点击AlertView按钮时自动执行，
-    //所以如果这里再用alertView来弹出提示，就会死循环，不停的弹AlertView
-    _scanTimeOutString = [alertView buttonTitleAtIndex:buttonIndex];
-    
-    if ([_scanTimeOutString isEqualToString:@"取消"]) { return;}
-    
-    NSLog(@"%@",_scanTimeOutString);
-    _scantimeout.subtitle = _scanTimeOutString;
-    
-    //保存扫描超时时间
-    [[ITDataStore instance] saveSettingScanTimeOut:_scanTimeOutString];
-    
-    [_settingTableView reloadData];
 }
 
 - (void)setupGroup1 {
@@ -120,12 +106,20 @@
     //2.设置组的基本数据
     
     //3.设置组中所有行的数据
-    YYCommonArrowItem *gamecenter = [YYCommonArrowItem itemWithTitle:@"版本更新" icon:@"setting_version"];
-    YYCommonArrowItem *near = [YYCommonArrowItem itemWithTitle:@"用户反馈" icon:@"setting_feedback"];
+    YYCommonArrowItem *checkVersion = [YYCommonArrowItem itemWithTitle:@"版本更新" icon:@"setting_version"];
+    checkVersion.operation = ^{
+        
+        [MobClick checkUpdate:@"有新版本更新啦！" cancelButtonTitle:@"暂不更新" otherButtonTitles:@"去更新"];
+        
+        // 手动更新在没有新版本时不起作用，并且会无限回调，暂时没有解决方案。
+        //[MobClick checkUpdateWithDelegate:self selector:@selector(callBackSelectorWithDictionary:)];
+    };
+    
+    YYCommonArrowItem *feedback = [YYCommonArrowItem itemWithTitle:@"用户反馈" icon:@"setting_feedback"];
     //YYCommonArrowItem *clearcache = [YYCommonArrowItem itemWithTitle:@"清除缓存" icon:@"setting_clear_cache"];
     YYCommonArrowItem *share = [YYCommonArrowItem itemWithTitle:@"软件分享" icon:@"setting_shareapp"];
     
-    group.items = @[gamecenter,near,share];
+    group.items = @[checkVersion, feedback, share];
     
 }
 
@@ -144,6 +138,46 @@
     YYCommonArrowItem *settingAbout = [YYCommonArrowItem itemWithTitle:@"关于" icon:@"setting_about"];
     
     group.items = @[settingHelp, settingAbout];
+}
+
+// 扫描超时弹框
+-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    //该方法由UIAlertViewDelegate协议定义，在点击AlertView按钮时自动执行，
+    //所以如果这里再用alertView来弹出提示，就会死循环，不停的弹AlertView
+    if([alertView tag] == 1) {
+  
+        _scanTimeOutString = [alertView buttonTitleAtIndex:buttonIndex];
+    
+        if ([_scanTimeOutString isEqualToString:@"取消"]) { return;}
+    
+        NSLog(@"%@",_scanTimeOutString);
+        _scantimeout.subtitle = _scanTimeOutString;
+    
+        //保存扫描超时时间
+        [[ITDataStore instance] saveSettingScanTimeOut:_scanTimeOutString];
+    
+        [_settingTableView reloadData];
+   }
+}
+
+// 手动更新弹框
+- (void)callBackSelectorWithDictionary:(NSDictionary *)appUpdateInfo{
+    
+    //NSLog(@"%@",appUpdateInfo);
+    BOOL update = [[appUpdateInfo objectForKey:@"update"] boolValue];
+    NSLog(@"update value: %@" ,update?@"YES":@"NO");
+    
+    if (update) {
+        //[MobClick checkUpdate:@"有新版本更新啦！" cancelButtonTitle:@"我爱怀旧" otherButtonTitles:@"我爱潮流"];
+    }else{
+        //您使用的已经是最新的版本!
+        
+        UIAlertView * alter2 = [[UIAlertView alloc] initWithTitle:@"您使用的已经是最新的版本!" message:@"" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alter2 setTag:2];
+        
+        [alter2 show];
+    }
 }
 
 #pragma mark  Data source methods

@@ -30,6 +30,8 @@
     // 友盟
     [MobClick startWithAppkey:@"54b7778bfd98c56e3a000b94" reportPolicy:BATCH channelId:@""];
     
+    [MobClick checkUpdate:@"有新版本更新啦！" cancelButtonTitle:@"暂不更新" otherButtonTitles:@"去更新"];
+    
     return YES;
 }
 
@@ -63,6 +65,8 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
