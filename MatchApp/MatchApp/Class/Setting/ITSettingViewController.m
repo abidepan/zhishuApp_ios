@@ -15,10 +15,13 @@
 #import "ITSettingIPViewController.h"
 #import "MobClick.h"
 #import "UMFeedback.h"
+#import "UMSocial.h"
 
 @interface ITSettingViewController ()
 
 @property(nonatomic,strong)NSMutableArray *groups;
+
+
 
 @end
 
@@ -125,6 +128,26 @@
     
     //YYCommonArrowItem *clearcache = [YYCommonArrowItem itemWithTitle:@"清除缓存" icon:@"setting_clear_cache"];
     YYCommonArrowItem *share = [YYCommonArrowItem itemWithTitle:@"软件分享" icon:@"setting_shareapp"];
+    share.operation = ^{
+        [UMSocialSnsService presentSnsIconSheetView:self
+                                             appKey:@"54b7778bfd98c56e3a000b94"
+                                          shareText:@"这是分享的描述："
+                                         shareImage:[UIImage imageNamed:@"match_app.png"]
+                                    shareToSnsNames:[NSArray arrayWithObjects:
+                                                     UMShareToSina,
+                                                     UMShareToTencent,
+                                                     UMShareToWechatSession,
+                                                     UMShareToWechatTimeline,
+                                                     UMShareToQzone,
+                                                     UMShareToQQ,
+                                                     UMShareToRenren,
+                                                     UMShareToDouban,
+                                                     UMShareToEmail,
+                                                     UMShareToSms,
+                                                     nil]
+                                           delegate:self];
+        
+    };
     
     group.items = @[checkVersion, feedback, share];
     
