@@ -13,6 +13,7 @@
 #import "ITDataStore.h"
 #import "MobClick.h"
 #import "UMFeedback.h"
+#import "UMSocial.h"
 
 @interface AppDelegate ()
 
@@ -36,6 +37,9 @@
     
     // 用户反馈
     [UMFeedback setAppkey:@"54b7778bfd98c56e3a000b94"];
+    
+    // 社会化分享
+    [UMSocialData setAppKey:@"54b7778bfd98c56e3a000b94"];
     
     return YES;
 }

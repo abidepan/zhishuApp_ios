@@ -46,7 +46,7 @@ NSString * rc_illegal_prompt = nil;
 
     [super viewDidAppear:animated];
     
-    _bgScrollView.contentSize = CGSizeMake(kDeviceWidth, kDeviceHeight +100);
+    _bgScrollView.contentSize = CGSizeMake(kDeviceWidth, kDeviceHeight + 50);
 }
 
 
@@ -228,7 +228,7 @@ NSString * rc_illegal_prompt = nil;
 // 返回 -1
 -(void) initComponent4IllegalFailed:(int)scan_result_state {
     
-    _resultValidateLabelView.text = [NSString stringWithFormat:@"产品查询请求失败,请确认网络状态是否正常!"];
+    _resultValidateLabelView.text = [NSString stringWithFormat:@"产品查询请求失败!"];
     
     [self setUIVisibility];
 }
