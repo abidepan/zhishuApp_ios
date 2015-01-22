@@ -32,13 +32,52 @@
     
     self.title = @"查真";
     
-    _qickResponseCodeVW.layer.cornerRadius =40.0f;
-    _newsVM.layer.cornerRadius =40.0f;
-    _nfcVM.layer.cornerRadius =40.0f;
-    _mallVM.layer.cornerRadius =40.0f;
-    _historyVM.layer.cornerRadius =40.0f;
-    _makeCodeVM.layer.cornerRadius =40.0f;
+    [self resizeCircleItems];
+    [self initTopSlide];
+}
+
+-(void) resizeCircleItems{
     
+    double cornerRadius =  40;
+    
+    if (kDeviceWidth>320) {
+        double time = kDeviceWidth/320.0f;
+        cornerRadius *=time;
+    }
+    
+    double marginV = (_squartContainerVW.bounds.size.height - 4 * cornerRadius)/3.0;
+    double marginH = (_squartContainerVW.bounds.size.width - 6 * cornerRadius)/4.0;
+    
+    [_qickResponseCodeVW setFrame:CGRectMake(marginH, marginV, 2*cornerRadius, 2*cornerRadius)];
+    [_nfcVM setFrame:CGRectMake(2* (marginH +cornerRadius) , marginV, 2*cornerRadius, 2*cornerRadius)];
+    [_mallVM setFrame:CGRectMake(3* marginH + 4*cornerRadius , marginV, 2*cornerRadius, 2*cornerRadius)];
+    
+    [_newsVM setFrame:CGRectMake(marginH, 2*( marginV+cornerRadius), 2*cornerRadius, 2*cornerRadius)];
+    [_historyVM setFrame:CGRectMake(2* (marginH +cornerRadius) ,2*( marginV+cornerRadius), 2*cornerRadius, 2*cornerRadius)];
+    [_makeCodeVM setFrame:CGRectMake(3* marginH + 4*cornerRadius , 2*( marginV+cornerRadius), 2*cornerRadius, 2*cornerRadius)];
+    
+    _qickResponseCodeVW.layer.cornerRadius = cornerRadius;
+    _nfcVM.layer.cornerRadius = cornerRadius;
+    _mallVM.layer.cornerRadius = cornerRadius;
+    _newsVM.layer.cornerRadius = cornerRadius;
+    _historyVM.layer.cornerRadius = cornerRadius;
+    _makeCodeVM.layer.cornerRadius = cornerRadius;
+}
+
+-(void) setY:(double)y forView:(UIView*)vw{
+    
+    [vw setFrame:CGRectMake(vw.frame.origin.x, y, vw.frame.size.width, vw.frame.size.height)];
+}
+
+-(void) resizeView:(UIView *)vw times:(double)time{
+    
+    CGPoint center = vw.center;
+    [vw setBounds:CGRectMake(0, 0, vw.bounds.size.width * time, vw.bounds.size.height * time)];
+    vw.center = center;
+}
+
+-(void)initTopSlide{
+
     // 广告滚动实例化
     _Topic = [[JCTopic alloc]initWithFrame:CGRectMake(0, 64, kDeviceWidth, 160)];
     // 代理
@@ -61,7 +100,7 @@
     [tempArray addObject:[NSDictionary dictionaryWithObjects:@[image2 ,@"",@YES] forKeys:@[@"pic",@"title",@"isLoc"]]];
     UIImage * image3 = [UIImage imageNamed:@"pic_4.jpg"];
     [tempArray addObject:[NSDictionary dictionaryWithObjects:@[image3 ,@"",@YES] forKeys:@[@"pic",@"title",@"isLoc"]]];
-
+    
     //加入数据
     _Topic.pics = tempArray;
     //更新

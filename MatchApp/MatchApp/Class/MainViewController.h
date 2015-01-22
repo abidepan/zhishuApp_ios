@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIView *mallVM;
 @property (weak, nonatomic) IBOutlet UIView *historyVM;
 @property (weak, nonatomic) IBOutlet UIView *makeCodeVM;
+@property (weak, nonatomic) IBOutlet UIView *squartContainerVW;
 
 - (IBAction)onQuickResponseCodeBtnClicked:(id)sender;
 - (IBAction)onScanHistoryBtnClicked:(id)sender;
