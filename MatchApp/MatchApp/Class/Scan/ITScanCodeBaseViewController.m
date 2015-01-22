@@ -264,7 +264,7 @@
     if ([[ITDataStore instance] getSettingIsScanVoice]) {
     
         static SystemSoundID soundIDTest = 0;
-        NSString * path = [[NSBundle mainBundle] pathForResource:@"sound" ofType:@"mp3"];
+        NSString * path = [[NSBundle mainBundle] pathForResource:@"beep" ofType:@"mp3"];
         if (path) {
             AudioServicesCreateSystemSoundID( (__bridge CFURLRef)[NSURL fileURLWithPath:path], &soundIDTest );
         }

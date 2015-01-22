@@ -46,7 +46,7 @@ NSString * rc_illegal_prompt = nil;
 
     [super viewDidAppear:animated];
     
-    _bgScrollView.contentSize = CGSizeMake(kDeviceWidth, kDeviceHeight + 50);
+    _bgScrollView.contentSize = CGSizeMake(kDeviceWidth, kDeviceHeight + 100);
 }
 
 
@@ -62,7 +62,7 @@ NSString * rc_illegal_prompt = nil;
     
     NSDictionary * dic = @{@"data":_code,@"device_id":[Global getDeviceUid],@"location":locationStr};
     
-    NSDictionary *failmsg = @{@"title":@"产品查询请求失败,请确认网络状态是否正常!"};
+    NSDictionary *failmsg = @{@"title":@"产品查询请求失败!"};
     
     [self callServerWithUrl:url param:dic successCallBack:^(NSInteger code, id data) {
         
