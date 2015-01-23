@@ -39,21 +39,39 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    [_session startRunning];
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(scanAnimation) userInfo:nil repeats:YES];
+    [self startScan];
     [super viewWillAppear:animated];
 }
 
 -(void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [timer invalidate];
-    [_session stopRunning];
-    
+
+    [self stopScan];
     if (_lightBtn.tag==1) {
         [self setLightOn:NO];
     }
+}
+
+
+
+-(void) startScan{
+
+    timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(scanAnimation) userInfo:nil repeats:YES];
+    
+    if ([_session canAddInput:self.input]) [_session addInput:self.input];
+    if ([_session canAddOutput:self.output])[_session addOutput:self.output];
+    [_session startRunning];
+}
+
+-(void) stopScan{
+
+    [timer invalidate];
+    timeoutCount =0;
+    [_session removeInput:self.input];
+    [_session removeOutput:self.output];
+    [_session stopRunning];
 }
 
 -(void) initScanView{
@@ -169,13 +187,13 @@
     
     NSInteger timeout =  [[scanTimeOut stringByReplacingOccurrencesOfString:@"秒" withString:@""] integerValue];
     if (timeoutCount >= timeout) {
+        
+        [self stopScan];
+        
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:@"扫描超时啦~~" delegate:self cancelButtonTitle:@"继续扫码" otherButtonTitles:@"手动输入", nil];
         alert.delegate = self;
         alert.tag = 999;
         [alert show];
-        timeoutCount = 0;
-        [timer invalidate];
-        [_session stopRunning];
     }
     
     //处理扫描动画
@@ -208,9 +226,9 @@
         
         _session = [[AVCaptureSession alloc]init];
         [_session setSessionPreset:AVCaptureSessionPresetHigh];
+        
         if ([_session canAddInput:self.input]) [_session addInput:self.input];
         if ([_session canAddOutput:self.output])[_session addOutput:self.output];
-        
         _output.metadataObjectTypes =[self getScanCodeTypes];// 类型
         _preview =[AVCaptureVideoPreviewLayer layerWithSession:self.session];
         _preview.videoGravity = AVLayerVideoGravityResizeAspectFill;
@@ -244,6 +262,8 @@
     
     [self playSoundAndShake];
     
+    [_session removeInput:self.input];
+    [_session removeOutput:self.output];
     [_session stopRunning];
     
     ITScanDetailViewController * scanDetail = [[ITScanDetailViewController alloc] initWithNibName:@"ITScanDetailViewController" bundle:nil];
@@ -286,9 +306,7 @@
     if (alertView.tag == 999) {
         if (buttonIndex == 0) {
             
-            [_session startRunning];
-            
-            timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(scanAnimation) userInfo:nil repeats:YES];
+            [self startScan];
         }
         else
         {
