@@ -78,7 +78,10 @@ NSString * kITSettingScanTimeOut = @"kITSettingScanTimeOut";
     [_qrCodeHistoryRecords insertObject:qrCodeRecord atIndex:0];
     
     if (_qrCodeHistoryRecords.count > MAX_SAVED_RECORDS) {
+        
+        NSLog(@"删除前  %lu", (unsigned long)_qrCodeHistoryRecords.count);
         [_qrCodeHistoryRecords removeLastObject];
+        NSLog(@"删除后  %lu", (unsigned long)_qrCodeHistoryRecords.count);
     }
     [self saveQrCodeRecords];
 }
@@ -100,7 +103,6 @@ NSString * kITSettingScanTimeOut = @"kITSettingScanTimeOut";
     [_barCodeHistoryRecords insertObject:barCodeRecord atIndex:0];
     
     if (_barCodeHistoryRecords.count > MAX_SAVED_RECORDS) {
-        
         [_barCodeHistoryRecords removeLastObject];
     }
     

@@ -53,6 +53,7 @@
 		31D834061A5A8DFF00BFBEDD /* pic_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31D834021A5A8DFF00BFBEDD /* pic_2.jpg */; };
 		31D834071A5A8DFF00BFBEDD /* pic_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31D834031A5A8DFF00BFBEDD /* pic_3.jpg */; };
 		31D834081A5A8DFF00BFBEDD /* pic_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 31D834041A5A8DFF00BFBEDD /* pic_4.jpg */; };
+		31D937EE1A70EE820039934E /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 31D937ED1A70EE820039934E /* beep.mp3 */; };
 		31DC1E261A480B81009BB238 /* setting_about.png in Resources */ = {isa = PBXBuildFile; fileRef = 31DC1E1C1A480B81009BB238 /* setting_about.png */; };
 		31DC1E271A480B81009BB238 /* setting_beeb.png in Resources */ = {isa = PBXBuildFile; fileRef = 31DC1E1D1A480B81009BB238 /* setting_beeb.png */; };
 		31DC1E281A480B81009BB238 /* setting_help.png in Resources */ = {isa = PBXBuildFile; fileRef = 31DC1E1E1A480B81009BB238 /* setting_help.png */; };
@@ -74,7 +75,6 @@
 		404EB31F1A4FCED000CFA66E /* ITInputBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB31E1A4FCED000CFA66E /* ITInputBarCodeViewController.m */; };
 		404EB3291A517BD500CFA66E /* ITScanNfcCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB3271A517BD500CFA66E /* ITScanNfcCodeViewController.m */; };
 		404EB32A1A517BD500CFA66E /* ITScanNfcCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 404EB3281A517BD500CFA66E /* ITScanNfcCodeViewController.xib */; };
-		404EB35E1A55026700CFA66E /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 404EB35D1A55026700CFA66E /* sound.mp3 */; };
 		404EB3651A5AC97B00CFA66E /* ITScanRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB3641A5AC97B00CFA66E /* ITScanRectView.m */; };
 		404EB3671A5AC9C700CFA66E /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 404EB3661A5AC9C700CFA66E /* line@2x.png */; };
 		404EB39C1A5D497600CFA66E /* ITLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB39B1A5D497600CFA66E /* ITLocation.m */; };
@@ -249,6 +249,7 @@
 		31D834021A5A8DFF00BFBEDD /* pic_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic_2.jpg; sourceTree = "<group>"; };
 		31D834031A5A8DFF00BFBEDD /* pic_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic_3.jpg; sourceTree = "<group>"; };
 		31D834041A5A8DFF00BFBEDD /* pic_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pic_4.jpg; sourceTree = "<group>"; };
+		31D937ED1A70EE820039934E /* beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = beep.mp3; sourceTree = "<group>"; };
 		31DC1E1C1A480B81009BB238 /* setting_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_about.png; sourceTree = "<group>"; };
 		31DC1E1D1A480B81009BB238 /* setting_beeb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_beeb.png; sourceTree = "<group>"; };
 		31DC1E1E1A480B81009BB238 /* setting_help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_help.png; sourceTree = "<group>"; };
@@ -277,7 +278,6 @@
 		404EB3261A517BD500CFA66E /* ITScanNfcCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanNfcCodeViewController.h; sourceTree = "<group>"; };
 		404EB3271A517BD500CFA66E /* ITScanNfcCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanNfcCodeViewController.m; sourceTree = "<group>"; };
 		404EB3281A517BD500CFA66E /* ITScanNfcCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITScanNfcCodeViewController.xib; sourceTree = "<group>"; };
-		404EB35D1A55026700CFA66E /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
 		404EB3631A5AC97B00CFA66E /* ITScanRectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITScanRectView.h; sourceTree = "<group>"; };
 		404EB3641A5AC97B00CFA66E /* ITScanRectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITScanRectView.m; sourceTree = "<group>"; };
 		404EB3661A5AC9C700CFA66E /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line@2x.png"; sourceTree = "<group>"; };
@@ -800,7 +800,7 @@
 		405D50F31A348DF600A8C803 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				404EB35D1A55026700CFA66E /* sound.mp3 */,
+				31D937ED1A70EE820039934E /* beep.mp3 */,
 				405D50F41A348DF600A8C803 /* Default-568h@2x.png */,
 				405D50F51A348DF600A8C803 /* Default-6-568h@2x.png */,
 				405D50F61A348DF600A8C803 /* Default-6.png */,
@@ -1079,7 +1079,6 @@
 				404EB31C1A4FCD0700CFA66E /* ITInputCodeBaseViewController.xib in Resources */,
 				405D518C1A348DF600A8C803 /* CycleScrollViewCell.xib in Resources */,
 				405D51A61A3734F000A8C803 /* main_qrcode@2x.png in Resources */,
-				404EB35E1A55026700CFA66E /* sound.mp3 in Resources */,
 				31CF97D41A690D8F00049B5B /* umeng_fb_audio_dialog_content@2x.png in Resources */,
 				31CF97D81A690D8F00049B5B /* umeng_fb_audio_play_default@2x.png in Resources */,
 				405D51811A348DF600A8C803 /* grayarrowright@2x.png in Resources */,
@@ -1108,6 +1107,7 @@
 				31D194EB1A383E570075CDB7 /* tab_scan_selected@2x.png in Resources */,
 				405D51851A348DF600A8C803 /* tab@2x.png in Resources */,
 				31CF97CB1A690D8F00049B5B /* bubble_min@2x.png in Resources */,
+				31D937EE1A70EE820039934E /* beep.mp3 in Resources */,
 				405D51BA1A37373600A8C803 /* ITSettingViewController.xib in Resources */,
 				405D517E1A348DF600A8C803 /* Default-Ipad@2x.png in Resources */,
 				31CF97C91A690D8F00049B5B /* UMFeedbackLocalizable.strings in Resources */,
@@ -1356,7 +1356,7 @@
 					"$(PROJECT_DIR)/MatchApp/Library/UMeng/UMSocial_Sdk_4.2.1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "cd2ec05c-2f6f-431a-b798-251efcbaff05";
 			};
 			name = Debug;
 		};
@@ -1387,7 +1387,7 @@
 					"$(PROJECT_DIR)/MatchApp/Library/UMeng/UMSocial_Sdk_4.2.1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "cd2ec05c-2f6f-431a-b798-251efcbaff05";
 			};
 			name = Release;
 		};

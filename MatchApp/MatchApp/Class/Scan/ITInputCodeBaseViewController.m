@@ -42,7 +42,6 @@
     _bottomBg.layer.cornerRadius = 4;
     self.title = @"手动输入";
     
-    
     _line1.frame = CGRectMake(_line1.frame.origin.x, _line1.frame.origin.y, _line1.frame.size.width, 0.5);
     _line2.frame = CGRectMake(_line2.frame.origin.x, _line2.frame.origin.y, _line2.frame.size.width, 0.5);
 }
@@ -51,10 +50,9 @@
     [super didReceiveMemoryWarning];
 }
 
-
 - (IBAction)onSearchBtnClicked:(id)sender {
     
-    if (_qrCodeTxtField.text.length==0) {
+    if (_qrCodeTxtField.text.length == 0) {
         
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"" message:@"二维码不能为空" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
         [alert show];

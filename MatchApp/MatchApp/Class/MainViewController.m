@@ -36,15 +36,44 @@
     [self initTopSlide];
 }
 
+// 适配屏幕
 -(void) resizeCircleItems{
     
+    // 模块按钮半径
     double cornerRadius =  40;
+    // 广告栏高度
+    double TopicHeight =  160;
+    // 按钮区域大小调整
+    CGFloat x = _squartContainerVW.frame.origin.x;
+    CGFloat y = _squartContainerVW.frame.origin.y;
+    CGFloat width = _squartContainerVW.frame.size.width;
+    CGFloat height = _squartContainerVW.frame.size.height;
     
-    if (kDeviceWidth>320) {
+    if (kDeviceWidth > 320) {
         double time = kDeviceWidth/320.0f;
         cornerRadius *=time;
     }
     
+    // 6/6s 时广告栏高度加160+40 -- 5/5s时160 -- 4s时160-20
+    if (kDeviceHeight > 568) {
+        TopicHeight += 40;
+        y += 40;
+        height -= 40;
+    } else if (kDeviceHeight < 568) {
+        TopicHeight -= 20;
+        y -= 20;
+        height += 20;
+    }
+    
+    // 广告滚动实例化
+    _Topic = [[JCTopic alloc]initWithFrame:CGRectMake(0, 64, kDeviceWidth, TopicHeight)];
+    _page = [[UIPageControl alloc]initWithFrame:CGRectMake(kDeviceWidth - 80, y - 10, 80, 8)];
+    
+    // 按钮区域大小调整
+    [_squartContainerVW setFrame:CGRectMake(x , y, width, height)];
+    
+    // marginV --Y方向上模块间距
+    // marginH --X方向上模块间距
     double marginV = (_squartContainerVW.bounds.size.height - 4 * cornerRadius)/3.0;
     double marginH = (_squartContainerVW.bounds.size.width - 6 * cornerRadius)/4.0;
     
@@ -56,6 +85,7 @@
     [_historyVM setFrame:CGRectMake(2* (marginH +cornerRadius) ,2*( marginV+cornerRadius), 2*cornerRadius, 2*cornerRadius)];
     [_makeCodeVM setFrame:CGRectMake(3* marginH + 4*cornerRadius , 2*( marginV+cornerRadius), 2*cornerRadius, 2*cornerRadius)];
     
+    // 设置圆弧
     _qickResponseCodeVW.layer.cornerRadius = cornerRadius;
     _nfcVM.layer.cornerRadius = cornerRadius;
     _mallVM.layer.cornerRadius = cornerRadius;
@@ -78,8 +108,6 @@
 
 -(void)initTopSlide{
 
-    // 广告滚动实例化
-    _Topic = [[JCTopic alloc]initWithFrame:CGRectMake(0, 64, kDeviceWidth, 160)];
     // 代理
     _Topic.JCdelegate = self;
     // 创建数据
@@ -107,7 +135,6 @@
     [_Topic upDate];
     [self.view addSubview:_Topic];
     
-    _page = [[UIPageControl alloc]initWithFrame:CGRectMake(kDeviceWidth - 80, 214, 80, 8)];
     _page.currentPageIndicatorTintColor = [UIColor greenColor];
     _page.pageIndicatorTintColor = [UIColor grayColor];
     
@@ -158,26 +185,30 @@
 
 }
 
+// NFC
 - (IBAction)onNFCBtnClicked:(id)sender {
     
-    ITScanNfcCodeViewController* nfcView = [[ITScanNfcCodeViewController alloc] initWithNibName:@"ITScanNfcCodeViewController" bundle:nil];
-    [self.navigationController pushViewController:nfcView animated:YES];
+//    ITScanNfcCodeViewController* nfcView = [[ITScanNfcCodeViewController alloc] initWithNibName:@"ITScanNfcCodeViewController" bundle:nil];
+//    [self.navigationController pushViewController:nfcView animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    // 友盟统计
     [MobClick beginLogPageView:@"PageOne"];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:YES];
+    // 友盟统计
     [MobClick endLogPageView:@"PageOne"];
     
     //停止自己滚动的timer
     //[_Topic releaseTimer];
 }
 
+// 广告栏点击事件
 -(void)didClick:(id)data{
     //_label2.text = [NSString stringWithFormat:@"%@",(NSArray*)data];
 }
