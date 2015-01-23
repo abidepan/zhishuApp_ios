@@ -11,9 +11,12 @@
 
 @interface MainViewController : UIViewController<JCTopicDelegate>
 
+// JCTopic 循环滚动广告图片 第三方控件
 @property(nonatomic,strong)JCTopic * Topic;
+// UIPageControl 四个圆点按钮
 @property (strong, nonatomic) IBOutlet UIPageControl *page;
 
+// 功能模块
 @property (weak, nonatomic) IBOutlet UIView *qickResponseCodeVW;
 @property (weak, nonatomic) IBOutlet UIView *newsVM;
 @property (weak, nonatomic) IBOutlet UIView *nfcVM;

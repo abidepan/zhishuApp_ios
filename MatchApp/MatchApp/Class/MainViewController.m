@@ -36,6 +36,7 @@
     [self initTopSlide];
 }
 
+// 适配屏幕
 -(void) resizeCircleItems{
     
     // 模块按钮半径
@@ -53,6 +54,7 @@
         cornerRadius *=time;
     }
     
+    // 6/6s 时广告栏高度加160+40 -- 5/5s时160 -- 4s时160-20
     if (kDeviceHeight > 568) {
         TopicHeight += 40;
         y += 40;
@@ -70,6 +72,8 @@
     // 按钮区域大小调整
     [_squartContainerVW setFrame:CGRectMake(x , y, width, height)];
     
+    // marginV --Y方向上模块间距
+    // marginH --X方向上模块间距
     double marginV = (_squartContainerVW.bounds.size.height - 4 * cornerRadius)/3.0;
     double marginH = (_squartContainerVW.bounds.size.width - 6 * cornerRadius)/4.0;
     
@@ -81,6 +85,7 @@
     [_historyVM setFrame:CGRectMake(2* (marginH +cornerRadius) ,2*( marginV+cornerRadius), 2*cornerRadius, 2*cornerRadius)];
     [_makeCodeVM setFrame:CGRectMake(3* marginH + 4*cornerRadius , 2*( marginV+cornerRadius), 2*cornerRadius, 2*cornerRadius)];
     
+    // 设置圆弧
     _qickResponseCodeVW.layer.cornerRadius = cornerRadius;
     _nfcVM.layer.cornerRadius = cornerRadius;
     _mallVM.layer.cornerRadius = cornerRadius;
@@ -103,7 +108,6 @@
 
 -(void)initTopSlide{
 
-    
     // 代理
     _Topic.JCdelegate = self;
     // 创建数据
@@ -181,26 +185,30 @@
 
 }
 
+// NFC
 - (IBAction)onNFCBtnClicked:(id)sender {
     
-    ITScanNfcCodeViewController* nfcView = [[ITScanNfcCodeViewController alloc] initWithNibName:@"ITScanNfcCodeViewController" bundle:nil];
-    [self.navigationController pushViewController:nfcView animated:YES];
+//    ITScanNfcCodeViewController* nfcView = [[ITScanNfcCodeViewController alloc] initWithNibName:@"ITScanNfcCodeViewController" bundle:nil];
+//    [self.navigationController pushViewController:nfcView animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    // 友盟统计
     [MobClick beginLogPageView:@"PageOne"];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:YES];
+    // 友盟统计
     [MobClick endLogPageView:@"PageOne"];
     
     //停止自己滚动的timer
     //[_Topic releaseTimer];
 }
 
+// 广告栏点击事件
 -(void)didClick:(id)data{
     //_label2.text = [NSString stringWithFormat:@"%@",(NSArray*)data];
 }

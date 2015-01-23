@@ -49,7 +49,7 @@ NSString * rc_illegal_prompt = nil;
     _bgScrollView.contentSize = CGSizeMake(kDeviceWidth, kDeviceHeight + 100);
 }
 
-
+// 请求数据
 -(void) requestDataFromServer{
     
     if (_code==nil || _code.length == 0) { return;}
@@ -57,13 +57,16 @@ NSString * rc_illegal_prompt = nil;
     NSString * url = kAppApi(@"api/product/verify.json");
     // 01L013B001AF907BBG0EJW
     
+    // 定位信息
     CLLocationCoordinate2D location =[ITLocation instance].currentLocation;
     NSString * locationStr = [NSString stringWithFormat:@"%f,%f",location.latitude,location.longitude];
     
     NSDictionary * dic = @{@"data":_code,@"device_id":[Global getDeviceUid],@"location":locationStr};
     
+    // 失败提示
     NSDictionary *failmsg = @{@"title":@"产品查询请求失败!"};
     
+    // 数据回调
     [self callServerWithUrl:url param:dic successCallBack:^(NSInteger code, id data) {
         
         [self showRemoteData:data];        
@@ -71,12 +74,14 @@ NSString * rc_illegal_prompt = nil;
     } loadingOptions:nil failOptions:failmsg];
 }
 
+// 数据显示
 -(void) showRemoteData:(NSDictionary *) data{
     
     if(data == nil){
         return;
     }
 
+    // 得到的产品信息
     NSString * productStr = [data objectForKey:@"product"];
     NSDictionary * product = nil;
     
@@ -85,6 +90,7 @@ NSString * rc_illegal_prompt = nil;
       product = [NSJSONSerialization JSONObjectWithData:[productStr dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
     }
     
+    // 得到的查询结果状态 ScanResultState
     int scan_result_state = [[data objectForKey:@"result"]intValue];
     if (scan_result_state < ScanResultFailed || scan_result_state > ScanResultIllegalOther) {
         scan_result_state = ScanResultFailed;
@@ -124,10 +130,10 @@ NSString * rc_illegal_prompt = nil;
 // 平台合法商品扫描详情
 -(void) initComponent4LegalScan:(NSDictionary *) product{
     
-    //
     NSString *product_name = [product objectForKey:@"product_name"];
     NSString *resultValidate = [NSString stringWithFormat:@"您查询的 %@ 已被验证为合法正品", product_name];
     
+    // 富文本
     NSMutableAttributedString *resultValidateAttributedStr = [[NSMutableAttributedString alloc]initWithString:resultValidate];
     [resultValidateAttributedStr addAttribute:NSForegroundColorAttributeName
                           value:[UIColor redColor]
@@ -135,12 +141,11 @@ NSString * rc_illegal_prompt = nil;
     
     _resultValidateLabelView.attributedText = resultValidateAttributedStr;
     
-    //
     int query_num = [[product objectForKey:@"query_num"]intValue];
     
     if (query_num >= 1) {
         NSString *query_num_s = [NSString stringWithFormat:@"%d",query_num];
-        NSString *resultValidateNum = [NSString stringWithFormat:@"该产品已被验证 %d 次",  query_num];
+        NSString *resultValidateNum = [NSString stringWithFormat:@"该产品已被验证 %d 次", query_num];
         
         NSMutableAttributedString *resultValidateNumAttributedStr = [[NSMutableAttributedString alloc]initWithString:resultValidateNum];
         [resultValidateNumAttributedStr addAttribute:NSForegroundColorAttributeName
@@ -165,7 +170,7 @@ NSString * rc_illegal_prompt = nil;
     _factoryAddrLabelView.text = [NSString stringWithFormat:@"厂商地址：%@",  [product objectForKey:@"factory_addr"]];
     _factoryContactLabelView.text = [NSString stringWithFormat:@"联系方式：%@",  [product objectForKey:@"company_contact"]];
     
-    
+    // 图片
     id urlList = [product objectForKey:@"product_img_url_list"];
     if (urlList!=nil && ![urlList isEqual: @""]) {
         
@@ -186,7 +191,6 @@ NSString * rc_illegal_prompt = nil;
         
         [_productImageView setImage:[UIImage imageNamed:@"history_merchant_img.png"]];
     }
-
 }
 
 // 平台验证失败商品扫描详情

@@ -24,13 +24,12 @@
 
 @implementation ITScanCodeBaseViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    double y = IOS7?100:36;
-    _scanRect = CGRectMake(30, y, kDeviceWidth-60, kDeviceWidth-60);
-    _lineRect = CGRectMake(_scanRect.origin.x+10, _scanRect.origin.y, _scanRect.size.width-20, 2);
+    double y = IOS7 ? 100 : 36;
+    _scanRect = CGRectMake(30, y, kDeviceWidth - 60, kDeviceWidth - 60);
+    _lineRect = CGRectMake(_scanRect.origin.x + 10, _scanRect.origin.y, _scanRect.size.width - 20, 2);
     [self initScanView];
     
     [self setupCamera];
@@ -41,6 +40,7 @@
 {
     [_session startRunning];
     
+    // 每0.02s扫描一次
     timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(scanAnimation) userInfo:nil repeats:YES];
     [super viewWillAppear:animated];
 }
@@ -51,17 +51,19 @@
     [timer invalidate];
     [_session stopRunning];
     
-    if (_lightBtn.tag==1) {
+    if (_lightBtn.tag == 1) {
         [self setLightOn:NO];
     }
 }
 
+// 扫描界面
 -(void) initScanView{
     
+    // 扫描背景
     [self initBlackTransparentBackground];
     self.view.backgroundColor = [UIColor clearColor];
     
-    _labIntroudction= [[UILabel alloc] initWithFrame:CGRectMake(10, _scanRect.origin.y+_scanRect.size.height+30.0f, kDeviceWidth-20 , 25)];
+    _labIntroudction= [[UILabel alloc] initWithFrame:CGRectMake(10, _scanRect.origin.y + _scanRect.size.height + 30.0f, kDeviceWidth - 20 , 25)];
     _labIntroudction.backgroundColor = [UIColor clearColor];
     _labIntroudction.font = kAppFont(15);
     _labIntroudction.minimumScaleFactor = 0.5;
@@ -71,25 +73,25 @@
     _labIntroudction.text=@"将二维码图像置于矩形方框内，即可自动扫描识别。";
     [self.view addSubview:_labIntroudction];
     
-    
     ITScanRectView * scanRect = [[ITScanRectView alloc] initWithFrame:_scanRect];
     [self.view addSubview:scanRect];
     
-    timeoutCount=0.0f;
-    num =0;
+    timeoutCount = 0.0f;
+    num = 0;
     _line = [[UIImageView alloc] initWithFrame:_lineRect];
     _line.image = [UIImage imageNamed:@"line.png"];
     [self.view addSubview:_line];
-    
-    
+ 
 }
 
+// 扫描背景
 -(void) initBlackTransparentBackground{
     
+    // 上 左 右 下
     UIView * vw1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, _scanRect.origin.y)];
-    UIView *vw2 = [[UIView alloc] initWithFrame:CGRectMake(0, _scanRect.origin.y, _scanRect.origin.x, _scanRect.size.height)];
-    UIView *vw3 = [[UIView alloc] initWithFrame:CGRectMake(_scanRect.size.width + _scanRect.origin.x, _scanRect.origin.y, _scanRect.origin.x, _scanRect.size.height)];
-    UIView * vw4 = [[UIView alloc] initWithFrame:CGRectMake(0, _scanRect.origin.y +_scanRect.size.height, kDeviceWidth, kDeviceHeight - _scanRect.origin.y -_scanRect.size.height)];
+    UIView * vw2 = [[UIView alloc] initWithFrame:CGRectMake(0, _scanRect.origin.y, _scanRect.origin.x, _scanRect.size.height)];
+    UIView * vw3 = [[UIView alloc] initWithFrame:CGRectMake(_scanRect.size.width + _scanRect.origin.x, _scanRect.origin.y, _scanRect.origin.x, _scanRect.size.height)];
+    UIView * vw4 = [[UIView alloc] initWithFrame:CGRectMake(0, _scanRect.origin.y + _scanRect.size.height, kDeviceWidth, kDeviceHeight - _scanRect.origin.y - _scanRect.size.height)];
     
     [vw1 setBackgroundColor:kRGBA(0, 0, 0, 0.5)];
     [vw2 setBackgroundColor:kRGBA(0, 0, 0, 0.5)];
@@ -101,26 +103,29 @@
     [self.view addSubview:vw3];
     [self.view addSubview:vw4];
     
-    double t = (kDeviceHeight- _scanRect.origin.y-_scanRect.size.height-50.0f)*2/3;
-    double startY = kDeviceHeight-MAX(t, 60) - (IOS7?0:64);
+    double t = (kDeviceHeight - _scanRect.origin.y - _scanRect.size.height - 50.0f) * 2/3;
+    double startY = kDeviceHeight - MAX(t, 60) - (IOS7 ? 0 : 64);
     
-    UIView * moreBtnsView = [[UIView alloc] initWithFrame:CGRectMake(_scanRect.origin.x, startY+5, _scanRect.size.width, 30)];
-    
+    // 下面的按钮View
+    UIView * moreBtnsView = [[UIView alloc] initWithFrame:CGRectMake(_scanRect.origin.x, startY + 5, _scanRect.size.width, 40)];
     moreBtnsView.backgroundColor = kLightBlueColor;
     moreBtnsView.layer.cornerRadius = 4;
     [self.view addSubview:moreBtnsView];
     
-    UIView * spliteView = [[UIView alloc] initWithFrame:CGRectMake(_scanRect.origin.x+ _scanRect.size.width/2, startY+5, 0.5, 30)];
+    // 中间的分割线
+    UIView * spliteView = [[UIView alloc] initWithFrame:CGRectMake(_scanRect.origin.x + _scanRect.size.width/2, startY + 5, 0.5, 40)];
     spliteView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:spliteView];
     
-    _lightBtn = [[UIButton alloc] initWithFrame:CGRectMake(_scanRect.origin.x , startY, _scanRect.size.width/2, 40)];
+    // 闪光灯
+    _lightBtn = [[UIButton alloc] initWithFrame:CGRectMake(_scanRect.origin.x , startY, _scanRect.size.width/2, 50)];
     _lightBtn.tag =0;
     [self.view addSubview:_lightBtn];
     [_lightBtn setTitle:@"开闪光灯" forState:UIControlStateNormal];
     [_lightBtn addTarget:self action:@selector(onLightBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     
-    UIButton * inputBtn = [[UIButton alloc] initWithFrame:CGRectMake(_scanRect.origin.x + _scanRect.size.width/2, startY, _scanRect.size.width/2, 40)];
+    // 手动输入
+    UIButton * inputBtn = [[UIButton alloc] initWithFrame:CGRectMake(_scanRect.origin.x + _scanRect.size.width/2, startY, _scanRect.size.width/2, 50)];
     [self.view addSubview:inputBtn];
     
     [inputBtn setTitle:@"手动输入" forState:UIControlStateNormal];
@@ -130,21 +135,20 @@
 
 -(void) onLightBtnClicked{
     
-    [self setLightOn:(_lightBtn.tag==0)];
+    [self setLightOn:(_lightBtn.tag == 0)];
 }
-
 
 -(void) setLightOn:(BOOL)isOn{
     
     AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     if ([device hasTorch]&& [device hasFlash]) {
         [device lockForConfiguration:nil];
-        _lightBtn.tag = isOn?1:0;
-        [device setTorchMode: _lightBtn.tag];//AVCaptureTorchModeOn
+        _lightBtn.tag = isOn ? 1 : 0;
+        [device setTorchMode: _lightBtn.tag];   //AVCaptureTorchModeOn
         [device setFlashMode:_lightBtn.tag];
         [device unlockForConfiguration];
         
-        [_lightBtn setTitle:!isOn?@"开闪光灯":@"关闪光灯" forState:UIControlStateNormal];
+        [_lightBtn setTitle:!isOn ? @"开闪光灯":@"关闪光灯" forState:UIControlStateNormal];
         
     }else{
         
@@ -184,7 +188,7 @@
         _line.frame = _lineRect;
         num = 0;
     }else{
-        _line.frame = CGRectMake(_lineRect.origin.x, _lineRect.origin.y+2*num, _lineRect.size.width, _lineRect.size.height);
+        _line.frame = CGRectMake(_lineRect.origin.x, _lineRect.origin.y + 2*num, _lineRect.size.width, _lineRect.size.height);
     }
 }
 
@@ -211,7 +215,7 @@
         if ([_session canAddInput:self.input]) [_session addInput:self.input];
         if ([_session canAddOutput:self.output])[_session addOutput:self.output];
         
-        _output.metadataObjectTypes =[self getScanCodeTypes];// 类型
+        _output.metadataObjectTypes = [self getScanCodeTypes];// 类型
         _preview =[AVCaptureVideoPreviewLayer layerWithSession:self.session];
         _preview.videoGravity = AVLayerVideoGravityResizeAspectFill;
         _preview.frame =self.view.layer.bounds;
@@ -221,6 +225,7 @@
     }
 }
 
+// 摄像头是否可用
 -(BOOL) isCameraAvailable{
     
     BOOL cameraAvailable = [UIImagePickerController isCameraDeviceAvailable:
@@ -242,19 +247,19 @@
         stringValue = metadataObject.stringValue;
     }
     
+    // 提示音 振动
     [self playSoundAndShake];
     
     [_session stopRunning];
     
+    // 得到数据后跳转到反馈页面
     ITScanDetailViewController * scanDetail = [[ITScanDetailViewController alloc] initWithNibName:@"ITScanDetailViewController" bundle:nil];
     scanDetail.code = stringValue;
     [self onGetScanCode:scanDetail];
     [self.navigationController pushViewController:scanDetail animated:YES];
-    
-    NSLog(@"%@",stringValue);
 }
 
-
+// 提示音 振动
 -(void) playSoundAndShake{
 
     if ([[ITDataStore instance] getSettingIsScanShake]) {
@@ -272,12 +277,10 @@
     }
 }
 
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
 }
-
 
 #pragma mark ===== alertview delegate =====
 
@@ -293,7 +296,6 @@
         else
         {
             [self onInputScanCodeBtnClicked];
-            
         }
     }
 }
