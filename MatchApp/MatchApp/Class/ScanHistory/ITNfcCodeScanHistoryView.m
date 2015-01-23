@@ -17,12 +17,12 @@
     
     self =[super initWithFrame:frame];
     if (self) {
-        self.title =@"NFC";
+        self.title = @"NFC";
     }
     _tableView = [[UITableView alloc] initWithFrame:self.bounds];
     [_tableView registerNib:[UINib nibWithNibName:@"ITScanHistoryCell" bundle:nil] forCellReuseIdentifier:@"NfcCodeScanHistoryCell"];
-    _tableView.delegate =  self;
-    _tableView.dataSource =  self;
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
     [_tableView setBackgroundColor:kRGB(235, 239, 242)];
     [self addSubview:_tableView];
     return self;

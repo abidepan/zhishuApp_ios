@@ -19,11 +19,10 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
-    
 }
 
 #pragma mark-懒加载
+
 -(UIImageView *)rightArrow{
     if (_rightArrow == nil) {
         _rightArrow = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"grayarrowright"]];
@@ -44,7 +43,6 @@
     }
     return _rightLabel;
 }
-
 
 // 初始化类方法
 + (instancetype)cellWithTablView:(UITableView *)tableView {

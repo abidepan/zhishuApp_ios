@@ -30,6 +30,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    // 友盟统计
     [MobClick beginLogPageView:@"PageOne"];
 }
 
@@ -48,11 +49,13 @@
     return ((AppDelegate *)[UIApplication sharedApplication].delegate ).tabBarViewController;
 }
 
-
+// 网络请求
 -(void) callServerWithUrl:(NSString*) urlString param:(NSDictionary *)param successCallBack:(WebServerCallBack)succeedCallBack loadingOptions:(NSDictionary*)loadingOptions failOptions:(NSDictionary*)faliOptoins{
     
+    // 加载进度条
     [self showLoadingViewWithTitle:[loadingOptions objectForKey:@"title"]];
     
+    // 
     [[WebServer instance] startCallServerUrl:urlString param:param Succeed:^(NSInteger code, id data) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self dismissLoadingView];
@@ -61,6 +64,7 @@
         
     } Failed:^(NSInteger code, id data) {
         
+        // 失败
         dispatch_async(dispatch_get_main_queue(), ^{
             [self dismissLoadingView];
             [self showErrorViewWithTitle:[faliOptoins objectForKey:@"title"]  Image:[faliOptoins objectForKey:@"image"]];
@@ -69,10 +73,10 @@
     }];
 }
 
-
+// 失败提示
 -(void) showErrorViewWithTitle:(NSString*)descTitle Image:(UIImage*)image{
 
-    if (_errorView==nil) {
+    if (_errorView == nil) {
         
         _errorView = [[[NSBundle mainBundle] loadNibNamed:@"ITErrorView" owner:self options:nil] objectAtIndex:0];
         [_errorView.errorBtn addTarget:self action:@selector(onErrorBtnClicked) forControlEvents:UIControlEventTouchUpInside];
@@ -87,9 +91,10 @@
     
 }
 
+// 进度条
 -(void) showLoadingViewWithTitle:(NSString*)descTitle{
     
-    if (_loadingView==nil) {
+    if (_loadingView == nil) {
         
         _loadingView = [[ITLoadingView alloc] initWithFrame:CGRectMake(0, 0, kDeviceWidth, kDeviceHeight)];
         [_loadingView initLoadingContent];
@@ -111,7 +116,6 @@
 }
 
 -(void) onErrorBtnClicked{
-
     
     if ([self respondsToSelector:@selector(onRetryPageRequest)]
         && _errorView.superview !=nil) {

@@ -152,7 +152,7 @@ NSString * kITSettingScanTimeOut = @"kITSettingScanTimeOut";
         
         id v =[dic objectForKey:key];
         
-        if (v==nil || v==[NSNull null]) {
+        if (v == nil || v == [NSNull null]) {
             [mDic setObject:@"" forKey:key];
         }else
         {
@@ -172,8 +172,8 @@ NSString * kITSettingScanTimeOut = @"kITSettingScanTimeOut";
 
 -(BOOL) getSettingIsScanVoice{
 
-    id data =[self.setting objectForKey:kITSettingIsScanVoice];
-    if (data!=nil && [data boolValue]) return YES;
+    id data = [self.setting objectForKey:kITSettingIsScanVoice];
+    if (data != nil && [data boolValue]) return YES;
     return NO;
 }
 
@@ -186,8 +186,8 @@ NSString * kITSettingScanTimeOut = @"kITSettingScanTimeOut";
 
 -(BOOL) getSettingIsScanShake{
 
-    id data =[self.setting objectForKey:kITSettingIsScanShake];
-    if (data!=nil && [data boolValue]) return YES;
+    id data = [self.setting objectForKey:kITSettingIsScanShake];
+    if (data != nil && [data boolValue]) return YES;
     return NO;
     
 }

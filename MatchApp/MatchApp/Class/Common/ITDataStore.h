@@ -13,14 +13,20 @@ typedef enum {
     ScanTypeQrCode,
     ScanTypeBarCode,
     ScanTypeNfc
-}ITScanType;
+}ITScanType; // 扫描类型
 
 @interface ITDataStore : NSObject
 
+// 数据存储
+// 用户信息
 @property (nonatomic,strong) NSMutableDictionary * userInfo;
+// 设置信息
 @property (nonatomic,strong) NSMutableDictionary * setting;
+// 二维码历史记录
 @property (nonatomic,strong) NSMutableArray * qrCodeHistoryRecords;
+// 条形码历史记录
 @property (nonatomic,strong) NSMutableArray * barCodeHistoryRecords;
+// nfc历史记录
 @property (nonatomic,strong) NSMutableArray * nfcHistoryRecords;
 
 @property (nonatomic,assign)  ITScanType lastScanType;

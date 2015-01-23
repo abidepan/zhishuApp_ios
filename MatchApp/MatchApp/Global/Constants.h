@@ -41,7 +41,7 @@
 
 #define kLightBlueColor kRGB(43.0, 142.0, 216.0)
 
-
+// 网络配置
 #define kAppHostProtocal @"http"
 #define kAppHost @"itts.itrace.com.cn"
 #define kAppHostPort @"80"
@@ -55,14 +55,14 @@ typedef enum {
     TagTypeQR,
     TagTypeNumber,
     TagTypeBar
-}TagType;
+}TagType;  // 扫描类型
 
 
 typedef enum {
     CodeTypeQR,
     CodeTypeBar,
     CodeTypeNFC,
-}CodeType;
+}CodeType;  // 条码类型
 
 
 typedef enum {
@@ -73,7 +73,7 @@ typedef enum {
     CodeFormatWebsite,
     CodeFormatPosition,
     CodeFormatWifi
-}CodeFormat;
+}CodeFormat;   //制码格式
 
 
 typedef enum {
@@ -84,7 +84,7 @@ typedef enum {
     ScanResultIllegalNoProduct,
     ScanResultIllegalError,
     ScanResultIllegalOther
-}ScanResultState;
+}ScanResultState;   // 查询错误类型
 
 
 

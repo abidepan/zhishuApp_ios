@@ -19,12 +19,12 @@
     
     self =[super initWithFrame:frame];
     if (self) {
-        self.title =@"条码";
+        self.title = @"条形码";
     }
     _tableView = [[UITableView alloc] initWithFrame:self.bounds];
     [_tableView registerNib:[UINib nibWithNibName:@"ITScanHistoryCell" bundle:nil] forCellReuseIdentifier:@"BarCodeScanHistoryCell"];
-    _tableView.delegate =  self;
-    _tableView.dataSource =  self;
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
     [_tableView setBackgroundColor:kRGB(235, 239, 242)];
     [self addSubview:_tableView];
     
@@ -33,7 +33,7 @@
 
 -(void) onHistoryViewAppear{
     
-    if([[ITDataStore instance] barCodeHistoryRecords].count ==0)
+    if([[ITDataStore instance] barCodeHistoryRecords].count == 0)
         self.tableView.tableFooterView = self.noRecordsLbl;
     else
         [self.noRecordsLbl removeFromSuperview ];
@@ -51,7 +51,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return  60;
+    return 60;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

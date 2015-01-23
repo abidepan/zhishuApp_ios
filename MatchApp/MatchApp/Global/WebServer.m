@@ -22,7 +22,7 @@ dispatch_queue_t _taskDispatchQueue;
 {
     if (!webserver) {
         webserver = [[WebServer alloc] init];
-        _taskDispatchQueue =dispatch_queue_create("com.itrace.webservices.taskDispatchQueue", DISPATCH_QUEUE_SERIAL);
+        _taskDispatchQueue = dispatch_queue_create("com.itrace.webservices.taskDispatchQueue", DISPATCH_QUEUE_SERIAL);
     }
     return webserver;
 }
@@ -33,7 +33,7 @@ dispatch_queue_t _taskDispatchQueue;
         
         NSString * actualUrl = url;
         
-        if (dict!=nil) {
+        if (dict != nil) {
             id keys = [dict allKeys];
             NSUInteger count = [keys count];
             NSString * urlMore = @"";

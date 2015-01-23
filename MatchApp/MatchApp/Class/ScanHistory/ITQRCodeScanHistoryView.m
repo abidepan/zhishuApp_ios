@@ -19,14 +19,14 @@
 
 -(instancetype)initWithFrame:(CGRect)frame{
 
-    self =[super initWithFrame:frame];
+    self = [super initWithFrame:frame];
     if (self) {
-        self.title =@"二维码";
+        self.title = @"二维码";
     }
     _tableView = [[UITableView alloc] initWithFrame:self.bounds];
     [_tableView registerNib:[UINib nibWithNibName:@"ITScanHistoryCell" bundle:nil] forCellReuseIdentifier:@"QRCodeScanHistoryCell"];
-    _tableView.delegate =  self;
-    _tableView.dataSource =  self;
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
     [_tableView setBackgroundColor:kRGB(235, 239, 242)];
     [self addSubview:_tableView];
     
@@ -44,7 +44,7 @@
 
 -(void) showNoResult{
 
-    if([[ITDataStore instance] qrCodeHistoryRecords].count ==0)
+    if([[ITDataStore instance] qrCodeHistoryRecords].count == 0)
         self.tableView.tableFooterView = self.noRecordsLbl;
     else
         [self.noRecordsLbl removeFromSuperview ];
@@ -68,13 +68,15 @@
 
     ITScanHistoryCell * cell = [tableView dequeueReusableCellWithIdentifier:@"QRCodeScanHistoryCell" forIndexPath:indexPath];
     
+    // 从数据库中读取
     id data = [[[ITDataStore instance] qrCodeHistoryRecords] objectAtIndex:indexPath.row];
     
     cell.nameLbl.text = [data objectForKey:@"product_name"];
     cell.timeLbl.text = [data objectForKey:@"produce_time"];
     
+    // 图片
     id urlList = [data objectForKey:@"product_img_url_list"];
-    if (urlList!=nil && ![urlList isEqual: @""]) {
+    if (urlList != nil && ![urlList isEqual: @""]) {
         
         NSString * strUrl;
         if ([urlList isKindOfClass:[NSArray class]] ) {
@@ -92,12 +94,14 @@
         
     } else {
         
+       // 如果没有图片，显示本地图片
        [cell.infoImgView setImage:[UIImage imageNamed:@"history_merchant_img.png"]];
     }
     
     return cell;
 }
 
+// cell点击事件，跳转到详情页
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
@@ -108,7 +112,7 @@
     [self.parentNav pushViewController:scanDetail animated:YES];
 }
 
-
+// 右滑事件
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     
     id data = [[[ITDataStore instance] qrCodeHistoryRecords] objectAtIndex:indexPath.row];
@@ -118,6 +122,7 @@
     [self showNoResult];
 }
 
+// 原生为 @“delete”
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     return @"删除";
 }

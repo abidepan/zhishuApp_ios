@@ -21,8 +21,6 @@
 
 @property(nonatomic,strong)NSMutableArray *groups;
 
-
-
 @end
 
 @implementation ITSettingViewController
@@ -37,8 +35,6 @@
     [self setupGroups];
     
     //设置tableview的属性
-    //设置全局背景色
-    //self.settingTableView.backgroundColor = ;
     self.settingTableView.sectionFooterHeight = 0;
     self.settingTableView.sectionHeaderHeight = 15;
     //self.settingTableView.separatorStyle = UITableViewCellEditingStyleNone;
@@ -258,7 +254,6 @@
         cell.accessoryView = switchView;
     }
 
-    
     //3.返回cell
     return cell;
 }
@@ -266,6 +261,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [[tableView cellForRowAtIndexPath:indexPath] setSelected:NO];
+    
     //1.取出这行对应的item模型
     YYCommonGroup *group = self.groups[indexPath.section];
     YYCommonItem *item = group.items[indexPath.row];
