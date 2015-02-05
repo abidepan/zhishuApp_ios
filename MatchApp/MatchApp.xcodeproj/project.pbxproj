@@ -593,6 +593,7 @@
 				4049099C1A15D8650053B1C5 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		4049099C1A15D8650053B1C5 /* Products */ = {
 			isa = PBXGroup;
@@ -1312,7 +1313,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Intelligent Trace Information Technology (Shanghai) Co., Ltd (P7UTH82ZK5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Intelligent Trace Information Technology (Shanghai) Co., Ltd (P7UTH82ZK5)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1336,6 +1338,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iOS Development: Yiming Fu (9VV5NK37U8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gang Lei (V4CJ76HG3B)";
 				GCC_PREFIX_HEADER = "MatchApp/Supporting Files/star-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1356,7 +1359,7 @@
 					"$(PROJECT_DIR)/MatchApp/Library/UMeng/UMSocial_Sdk_4.2.1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cd2ec05c-2f6f-431a-b798-251efcbaff05";
+				PROVISIONING_PROFILE = "29eb8542-d0b3-4dcd-8596-a56ee8a95e82";
 			};
 			name = Debug;
 		};
@@ -1365,8 +1368,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iOS Development: Yiming Fu (9VV5NK37U8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Yiming Fu (9VV5NK37U8)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Intelligent Trace Information Technology (Shanghai) Co., Ltd (P7UTH82ZK5)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Intelligent Trace Information Technology (Shanghai) Co., Ltd (P7UTH82ZK5)";
 				GCC_PREFIX_HEADER = "MatchApp/Supporting Files/star-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1387,7 +1390,7 @@
 					"$(PROJECT_DIR)/MatchApp/Library/UMeng/UMSocial_Sdk_4.2.1",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "cd2ec05c-2f6f-431a-b798-251efcbaff05";
+				PROVISIONING_PROFILE = "29eb8542-d0b3-4dcd-8596-a56ee8a95e82";
 			};
 			name = Release;
 		};
