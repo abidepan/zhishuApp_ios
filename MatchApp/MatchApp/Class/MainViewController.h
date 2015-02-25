@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "JCTopic.h"
+#import "MBProgressHUD.h"
 
 @interface MainViewController : UIViewController<JCTopicDelegate>
 
@@ -15,6 +16,8 @@
 @property(nonatomic,strong)JCTopic * Topic;
 // UIPageControl 四个圆点按钮
 @property (strong, nonatomic) IBOutlet UIPageControl *page;
+// Toast弹框
+@property(nonatomic,strong) MBProgressHUD * progressHUD;
 
 // 功能模块
 @property (weak, nonatomic) IBOutlet UIView *qickResponseCodeVW;
@@ -27,11 +30,15 @@
 
 - (IBAction)onQuickResponseCodeBtnClicked:(id)sender;
 - (IBAction)onScanHistoryBtnClicked:(id)sender;
+- (IBAction)onNewsBtnClicked:(id)sender;
+- (IBAction)onShopBtnClicked:(id)sender;
+- (IBAction)onMakeCodeBtnClicked:(id)sender;
+- (IBAction)onNFCBtnClicked:(id)sender;
 
 - (IBAction)onMineBtnClicked:(id)sender;
 - (IBAction)onScanBtnClicked:(id)sender;
 - (IBAction)onSettingBtnClicked:(id)sender;
-- (IBAction)onNFCBtnClicked:(id)sender;
+
 
 @end
 

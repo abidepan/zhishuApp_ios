@@ -92,6 +92,7 @@
     _newsVM.layer.cornerRadius = cornerRadius;
     _historyVM.layer.cornerRadius = cornerRadius;
     _makeCodeVM.layer.cornerRadius = cornerRadius;
+    
 }
 
 -(void) setY:(double)y forView:(UIView*)vw{
@@ -154,6 +155,23 @@
     [self.navigationController pushViewController:sacnView animated:YES];
 }
 
+// NFC
+- (IBAction)onNFCBtnClicked:(id)sender {
+    
+    //    ITScanNfcCodeViewController* nfcView = [[ITScanNfcCodeViewController alloc] initWithNibName:@"ITScanNfcCodeViewController" bundle:nil];
+    //    [self.navigationController pushViewController:nfcView animated:YES];
+    
+    [self showToast];
+}
+
+- (IBAction)onShopBtnClicked:(id)sender {
+    [self showToast];
+}
+
+- (IBAction)onNewsBtnClicked:(id)sender {
+    [self showToast];
+}
+
 // 历史记录
 - (IBAction)onScanHistoryBtnClicked:(id)sender {
     
@@ -161,13 +179,18 @@
     [self.navigationController pushViewController:sacnView animated:YES];
 }
 
+- (IBAction)onMakeCodeBtnClicked:(id)sender {
+    [self showToast];
+}
 
 #pragma mark - Tabbar
 // 用户中心
 - (IBAction)onMineBtnClicked:(id)sender {
     
-    ITUserCenterViewController* userView = [[ITUserCenterViewController alloc]initWithNibName:@"ITUserCenterViewController" bundle:nil];
-    [self.navigationController pushViewController:userView animated:YES];
+//    ITUserCenterViewController* userView = [[ITUserCenterViewController alloc]initWithNibName:@"ITUserCenterViewController" bundle:nil];
+//    [self.navigationController pushViewController:userView animated:YES];
+    
+    [self showToast];
 }
 
 // 二维码
@@ -183,13 +206,6 @@
     ITSettingViewController * settingView =[[ITSettingViewController alloc] initWithNibName:@"ITSettingViewController" bundle:nil];
     [self.navigationController pushViewController:settingView animated:YES];
 
-}
-
-// NFC
-- (IBAction)onNFCBtnClicked:(id)sender {
-    
-//    ITScanNfcCodeViewController* nfcView = [[ITScanNfcCodeViewController alloc] initWithNibName:@"ITScanNfcCodeViewController" bundle:nil];
-//    [self.navigationController pushViewController:nfcView animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -218,4 +234,27 @@
     _page.numberOfPages = total;
     _page.currentPage = page;
 }
+
+- (IBAction)showToast{
+ 
+    // Toast 弹框
+    _progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
+
+    [self.view addSubview:_progressHUD];
+    _progressHUD.labelText = @"此功能暂未投入使用，请耐心等待";
+    _progressHUD.mode = MBProgressHUDModeText;
+    
+    //指定距离中心点的X轴和Y轴的偏移量，如果不指定则在屏幕中间显示
+    //    HUD.yOffset = 150.0f;
+    //    HUD.xOffset = 100.0f;
+    
+    [_progressHUD showAnimated:YES whileExecutingBlock:^{
+        sleep(1.5);
+    } completionBlock:^{
+        [_progressHUD removeFromSuperview];
+        _progressHUD = nil;
+    }];
+}
+
+
 @end

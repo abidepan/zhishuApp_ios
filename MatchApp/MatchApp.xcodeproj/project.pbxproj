@@ -1337,7 +1337,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iOS Development: Yiming Fu (9VV5NK37U8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Gang Lei (V4CJ76HG3B)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Gang Lei (V4CJ76HG3B)";
 				GCC_PREFIX_HEADER = "MatchApp/Supporting Files/star-Prefix.pch";
 				HEADER_SEARCH_PATHS = (

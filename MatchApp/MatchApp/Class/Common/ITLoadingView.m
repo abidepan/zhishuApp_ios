@@ -7,7 +7,6 @@
 //
 
 #import "ITLoadingView.h"
-#import "MBProgressHUD.h"
 
 @implementation ITLoadingView
 

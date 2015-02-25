@@ -130,12 +130,12 @@
                                           shareText:@"这是分享的描述："
                                          shareImage:[UIImage imageNamed:@"match_app.png"]
                                     shareToSnsNames:[NSArray arrayWithObjects:
-                                                     UMShareToSina,
-                                                     UMShareToTencent,
-                                                     UMShareToWechatSession,
-                                                     UMShareToWechatTimeline,
-                                                     UMShareToQzone,
-                                                     UMShareToQQ,
+                                                     //UMShareToSina,
+                                                     //UMShareToTencent,
+                                                     //UMShareToWechatSession,
+                                                     //UMShareToWechatTimeline,
+                                                     //UMShareToQzone,
+                                                     //UMShareToQQ,
                                                      UMShareToRenren,
                                                      UMShareToDouban,
                                                      UMShareToEmail,
@@ -145,7 +145,8 @@
         
     };
     
-    group.items = @[checkVersion, feedback, share];
+    group.items = @[//checkVersion,
+                    feedback, share];
     
 }
 
@@ -159,11 +160,11 @@
     //3.设置组中所有行的数据
     //YYCommonArrowItem *settingIp = [YYCommonArrowItem itemWithTitle:@"设置服务器IP" icon:@"setting_server_ip"];
     //settingIp.destVcClass = [ITSettingIPViewController class];
-    YYCommonArrowItem *settingHelp = [YYCommonArrowItem itemWithTitle:@"使用帮助" icon:@"setting_help"];
-    settingHelp.destVcClass = [ITSettingIPViewController class];
-    YYCommonArrowItem *settingAbout = [YYCommonArrowItem itemWithTitle:@"关于" icon:@"setting_about"];
+    //YYCommonArrowItem *settingHelp = [YYCommonArrowItem itemWithTitle:@"使用帮助" icon:@"setting_help"];
+    //settingHelp.destVcClass = [ITSettingIPViewController class];
+    //YYCommonArrowItem *settingAbout = [YYCommonArrowItem itemWithTitle:@"关于" icon:@"setting_about"];
     
-    group.items = @[settingHelp, settingAbout];
+    //group.items = @[settingHelp, settingAbout];
 }
 
 // 扫描超时弹框
