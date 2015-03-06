@@ -33,7 +33,7 @@
     [MobClick startWithAppkey:@"54b7778bfd98c56e3a000b94" reportPolicy:BATCH channelId:@""];
     
     // 更新
-    [MobClick checkUpdate:@"有新版本更新啦！" cancelButtonTitle:@"暂不更新" otherButtonTitles:@"去更新"];
+    //[MobClick checkUpdate:@"有新版本更新啦！" cancelButtonTitle:@"暂不更新" otherButtonTitles:@"去更新"];
     
     // 用户反馈
     [UMFeedback setAppkey:@"54b7778bfd98c56e3a000b94"];

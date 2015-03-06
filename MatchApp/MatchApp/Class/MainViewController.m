@@ -14,6 +14,7 @@
 #import "ITMakeCodeViewController.h"
 #import "ITUserCenterViewController.h"
 #import "ITScanNfcCodeViewController.h"
+#import "ITSettingAboutViewController.h"
 #import "MobClick.h"
 
 @interface MainViewController ()
@@ -40,7 +41,7 @@
 -(void) resizeCircleItems{
     
     // 模块按钮半径
-    double cornerRadius =  40;
+    double cornerRadius =  50;
     // 广告栏高度
     double TopicHeight =  160;
     // 按钮区域大小调整
@@ -75,23 +76,23 @@
     // marginV --Y方向上模块间距
     // marginH --X方向上模块间距
     double marginV = (_squartContainerVW.bounds.size.height - 4 * cornerRadius)/3.0;
-    double marginH = (_squartContainerVW.bounds.size.width - 6 * cornerRadius)/4.0;
+    double marginH = (_squartContainerVW.bounds.size.width - 4 * cornerRadius)/3.0;
     
     [_qickResponseCodeVW setFrame:CGRectMake(marginH, marginV, 2*cornerRadius, 2*cornerRadius)];
-    [_nfcVM setFrame:CGRectMake(2* (marginH +cornerRadius) , marginV, 2*cornerRadius, 2*cornerRadius)];
-    [_mallVM setFrame:CGRectMake(3* marginH + 4*cornerRadius , marginV, 2*cornerRadius, 2*cornerRadius)];
+    [_historyVM setFrame:CGRectMake(2* (marginH +cornerRadius) , marginV, 2*cornerRadius, 2*cornerRadius)];
+    //[_mallVM setFrame:CGRectMake(3* marginH + 4*cornerRadius , marginV, 2*cornerRadius, 2*cornerRadius)];
     
     [_newsVM setFrame:CGRectMake(marginH, 2*( marginV+cornerRadius), 2*cornerRadius, 2*cornerRadius)];
-    [_historyVM setFrame:CGRectMake(2* (marginH +cornerRadius) ,2*( marginV+cornerRadius), 2*cornerRadius, 2*cornerRadius)];
-    [_makeCodeVM setFrame:CGRectMake(3* marginH + 4*cornerRadius , 2*( marginV+cornerRadius), 2*cornerRadius, 2*cornerRadius)];
+    [_nfcVM setFrame:CGRectMake(2* (marginH +cornerRadius) ,2*( marginV+cornerRadius), 2*cornerRadius, 2*cornerRadius)];
+    //[_makeCodeVM setFrame:CGRectMake(3* marginH + 4*cornerRadius , 2*( marginV+cornerRadius), 2*cornerRadius, 2*cornerRadius)];
     
     // 设置圆弧
     _qickResponseCodeVW.layer.cornerRadius = cornerRadius;
     _nfcVM.layer.cornerRadius = cornerRadius;
-    _mallVM.layer.cornerRadius = cornerRadius;
+    //_mallVM.layer.cornerRadius = cornerRadius;
     _newsVM.layer.cornerRadius = cornerRadius;
     _historyVM.layer.cornerRadius = cornerRadius;
-    _makeCodeVM.layer.cornerRadius = cornerRadius;
+    //_makeCodeVM.layer.cornerRadius = cornerRadius;
 }
 
 -(void) setY:(double)y forView:(UIView*)vw{
@@ -161,35 +162,44 @@
     [self.navigationController pushViewController:sacnView animated:YES];
 }
 
+- (IBAction)onAboutBtnClicked:(id)sender {
+    
+    ITSettingAboutViewController * aboutView =[[ITSettingAboutViewController alloc] initWithNibName:@"ITSettingAboutViewController" bundle:nil];
+    [self.navigationController pushViewController:aboutView animated:YES];
+}
+
 
 #pragma mark - Tabbar
-// 用户中心
-- (IBAction)onMineBtnClicked:(id)sender {
-    
-    ITUserCenterViewController* userView = [[ITUserCenterViewController alloc]initWithNibName:@"ITUserCenterViewController" bundle:nil];
-    [self.navigationController pushViewController:userView animated:YES];
-}
-
-// 二维码
-- (IBAction)onScanBtnClicked:(id)sender {
-    
-    ITScanQRCodeViewController* sacnView =[[ITScanQRCodeViewController alloc] init];
-    [self.navigationController pushViewController:sacnView animated:YES];
-}
-
-// 设置
-- (IBAction)onSettingBtnClicked:(id)sender {
-    
-    ITSettingViewController * settingView =[[ITSettingViewController alloc] initWithNibName:@"ITSettingViewController" bundle:nil];
-    [self.navigationController pushViewController:settingView animated:YES];
-
-}
+//// 用户中心
+//- (IBAction)onMineBtnClicked:(id)sender {
+//    
+//    ITUserCenterViewController* userView = [[ITUserCenterViewController alloc]initWithNibName:@"ITUserCenterViewController" bundle:nil];
+//    [self.navigationController pushViewController:userView animated:YES];
+//}
+//
+//// 二维码
+//- (IBAction)onScanBtnClicked:(id)sender {
+//    
+//    ITScanQRCodeViewController* sacnView =[[ITScanQRCodeViewController alloc] init];
+//    [self.navigationController pushViewController:sacnView animated:YES];
+//}
+//
+//// 设置
+//- (IBAction)onSettingBtnClicked:(id)sender {
+//    
+//    ITSettingViewController * settingView =[[ITSettingViewController alloc] initWithNibName:@"ITSettingViewController" bundle:nil];
+//    [self.navigationController pushViewController:settingView animated:YES];
+//
+//}
 
 // NFC
 - (IBAction)onNFCBtnClicked:(id)sender {
     
 //    ITScanNfcCodeViewController* nfcView = [[ITScanNfcCodeViewController alloc] initWithNibName:@"ITScanNfcCodeViewController" bundle:nil];
 //    [self.navigationController pushViewController:nfcView animated:YES];
+    
+        ITSettingViewController * settingView =[[ITSettingViewController alloc] initWithNibName:@"ITSettingViewController" bundle:nil];
+        [self.navigationController pushViewController:settingView animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated

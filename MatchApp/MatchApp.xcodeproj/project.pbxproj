@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		31C84D381A68F3A200B41437 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C84D361A68F3A200B41437 /* libMobClickLibrary.a */; };
+		31CB29531AA94F22007226BD /* tab_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31CB29521AA94F22007226BD /* tab_setting@2x.png */; };
+		31CB29581AA980FF007226BD /* xxx.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 31CB29571AA980FF007226BD /* xxx.bundle */; };
 		31CE940F1A42D5C10038480E /* YYCommonArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE94061A42D5C00038480E /* YYCommonArrowItem.m */; };
 		31CE94101A42D5C10038480E /* YYCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE94081A42D5C00038480E /* YYCommonCell.m */; };
 		31CE94111A42D5C10038480E /* YYCommonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CE940A1A42D5C10038480E /* YYCommonGroup.m */; };
@@ -66,6 +68,8 @@
 		31DC1E2F1A480B81009BB238 /* setting_vibrate.png in Resources */ = {isa = PBXBuildFile; fileRef = 31DC1E251A480B81009BB238 /* setting_vibrate.png */; };
 		31E835FB1A3E932300B661C9 /* splash_background-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31E835F91A3E932300B661C9 /* splash_background-568h@2x.png */; };
 		31E835FC1A3E932300B661C9 /* splash_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31E835FA1A3E932300B661C9 /* splash_background@2x.png */; };
+		31EB3C501AA85D3E002A06D5 /* ITSettingAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31EB3C4E1AA85D3E002A06D5 /* ITSettingAboutViewController.m */; };
+		31EB3C511AA85D3E002A06D5 /* ITSettingAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31EB3C4F1AA85D3E002A06D5 /* ITSettingAboutViewController.xib */; };
 		31FCE9501A63C16300B884EF /* ITtextFiledBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 31FCE94F1A63C16300B884EF /* ITtextFiledBackground.m */; };
 		31FCE9521A63CB5D00B884EF /* match_app@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31FCE9511A63CB5D00B884EF /* match_app@2x.png */; };
 		404EB3111A4FC5C600CFA66E /* ITScanCodeBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 404EB3101A4FC5C600CFA66E /* ITScanCodeBaseViewController.m */; };
@@ -140,7 +144,6 @@
 		405D51951A34906B00A8C803 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 405D51941A34906B00A8C803 /* libxml2.dylib */; };
 		405D519C1A372AFB00A8C803 /* tab_me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405D51991A372AFB00A8C803 /* tab_me@2x.png */; };
 		405D519D1A372AFB00A8C803 /* tab_scan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405D519A1A372AFB00A8C803 /* tab_scan@2x.png */; };
-		405D519E1A372AFB00A8C803 /* tab_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405D519B1A372AFB00A8C803 /* tab_setting@2x.png */; };
 		405D51A21A372DC700A8C803 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405D51A11A372DC700A8C803 /* logo@2x.png */; };
 		405D51A61A3734F000A8C803 /* main_qrcode@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405D51A51A3734F000A8C803 /* main_qrcode@2x.png */; };
 		405D51AD1A37355700A8C803 /* main_history@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 405D51A81A37355700A8C803 /* main_history@2x.png */; };
@@ -181,6 +184,8 @@
 /* Begin PBXFileReference section */
 		31C84D361A68F3A200B41437 /* libMobClickLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobClickLibrary.a; sourceTree = "<group>"; };
 		31C84D371A68F3A200B41437 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
+		31CB29521AA94F22007226BD /* tab_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_setting@2x.png"; sourceTree = "<group>"; };
+		31CB29571AA980FF007226BD /* xxx.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = xxx.bundle; sourceTree = "<group>"; };
 		31CE94051A42D5C00038480E /* YYCommonArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCommonArrowItem.h; sourceTree = "<group>"; };
 		31CE94061A42D5C00038480E /* YYCommonArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYCommonArrowItem.m; sourceTree = "<group>"; };
 		31CE94071A42D5C00038480E /* YYCommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYCommonCell.h; sourceTree = "<group>"; };
@@ -262,6 +267,9 @@
 		31DC1E251A480B81009BB238 /* setting_vibrate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = setting_vibrate.png; sourceTree = "<group>"; };
 		31E835F91A3E932300B661C9 /* splash_background-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_background-568h@2x.png"; sourceTree = "<group>"; };
 		31E835FA1A3E932300B661C9 /* splash_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash_background@2x.png"; sourceTree = "<group>"; };
+		31EB3C4D1AA85D3E002A06D5 /* ITSettingAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSettingAboutViewController.h; sourceTree = "<group>"; };
+		31EB3C4E1AA85D3E002A06D5 /* ITSettingAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSettingAboutViewController.m; sourceTree = "<group>"; };
+		31EB3C4F1AA85D3E002A06D5 /* ITSettingAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ITSettingAboutViewController.xib; sourceTree = "<group>"; };
 		31FCE94E1A63C16300B884EF /* ITtextFiledBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITtextFiledBackground.h; sourceTree = "<group>"; };
 		31FCE94F1A63C16300B884EF /* ITtextFiledBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITtextFiledBackground.m; sourceTree = "<group>"; };
 		31FCE9511A63CB5D00B884EF /* match_app@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "match_app@2x.png"; sourceTree = "<group>"; };
@@ -392,7 +400,6 @@
 		405D51941A34906B00A8C803 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		405D51991A372AFB00A8C803 /* tab_me@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_me@2x.png"; sourceTree = "<group>"; };
 		405D519A1A372AFB00A8C803 /* tab_scan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_scan@2x.png"; sourceTree = "<group>"; };
-		405D519B1A372AFB00A8C803 /* tab_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_setting@2x.png"; sourceTree = "<group>"; };
 		405D51A11A372DC700A8C803 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
 		405D51A51A3734F000A8C803 /* main_qrcode@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_qrcode@2x.png"; sourceTree = "<group>"; };
 		405D51A81A37355700A8C803 /* main_history@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main_history@2x.png"; sourceTree = "<group>"; };
@@ -632,6 +639,7 @@
 				405D50601A348DF600A8C803 /* Main.storyboard */,
 				405D509A1A348DF600A8C803 /* MainViewController.h */,
 				405D509B1A348DF600A8C803 /* MainViewController.m */,
+				31CB29571AA980FF007226BD /* xxx.bundle */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -859,11 +867,11 @@
 				31D194E71A383E570075CDB7 /* tab_scan_selected@2x.png */,
 				405D519A1A372AFB00A8C803 /* tab_scan@2x.png */,
 				31D194E81A383E570075CDB7 /* tab_setting_selected@2x.png */,
-				405D519B1A372AFB00A8C803 /* tab_setting@2x.png */,
 				404EB3661A5AC9C700CFA66E /* line@2x.png */,
 				405D50FD1A348DF600A8C803 /* grayarrowright@2x.png */,
 				405D50FE1A348DF600A8C803 /* grayarrowup@2x.png */,
 				405D50FF1A348DF600A8C803 /* placeholder@2x.png */,
+				31CB29521AA94F22007226BD /* tab_setting@2x.png */,
 				405D51001A348DF600A8C803 /* search@2x.png */,
 				405D51011A348DF600A8C803 /* tab@2x.png */,
 			);
@@ -921,6 +929,9 @@
 				31CE94141A42DAA50038480E /* ITSettingIPViewController.h */,
 				31CE94151A42DAA50038480E /* ITSettingIPViewController.m */,
 				31CE94161A42DAA50038480E /* ITSettingIPViewController.xib */,
+				31EB3C4D1AA85D3E002A06D5 /* ITSettingAboutViewController.h */,
+				31EB3C4E1AA85D3E002A06D5 /* ITSettingAboutViewController.m */,
+				31EB3C4F1AA85D3E002A06D5 /* ITSettingAboutViewController.xib */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -1066,6 +1077,8 @@
 				31D194EC1A383E570075CDB7 /* tab_setting_selected@2x.png in Resources */,
 				31DC1E2A1A480B81009BB238 /* setting_clear_cache.png in Resources */,
 				31D491AE1A5BBFE500FF1EE7 /* history_merchant_img.png in Resources */,
+				31CB29581AA980FF007226BD /* xxx.bundle in Resources */,
+				31CB29531AA94F22007226BD /* tab_setting@2x.png in Resources */,
 				405D517F1A348DF600A8C803 /* Default.png in Resources */,
 				31CE94181A42DAA50038480E /* ITSettingIPViewController.xib in Resources */,
 				31D834061A5A8DFF00BFBEDD /* pic_2.jpg in Resources */,
@@ -1135,12 +1148,12 @@
 				31CF97D51A690D8F00049B5B /* umeng_fb_audio_play_01@2x.png in Resources */,
 				31DC1E281A480B81009BB238 /* setting_help.png in Resources */,
 				40E2F18C1A3C838100ADE4B1 /* ITUserCenterViewController.xib in Resources */,
-				405D519E1A372AFB00A8C803 /* tab_setting@2x.png in Resources */,
 				405D51331A348DF600A8C803 /* LaunchScreen.xib in Resources */,
 				31CF97CE1A690D8F00049B5B /* save@2x.png in Resources */,
 				31CF97D21A690D8F00049B5B /* ToolViewInputVoiceHL@2x.png in Resources */,
 				31D0ACE61A6CEA1500C19242 /* UMSLoginViewController.xib in Resources */,
 				405D51AD1A37355700A8C803 /* main_history@2x.png in Resources */,
+				31EB3C511AA85D3E002A06D5 /* ITSettingAboutViewController.xib in Resources */,
 				31DC1E2E1A480B81009BB238 /* setting_version.png in Resources */,
 				405D517D1A348DF600A8C803 /* Default-Ipad.png in Resources */,
 				31D0ACE71A6CEA1500C19242 /* UMSnsAccountViewController.xib in Resources */,
@@ -1220,6 +1233,7 @@
 				405D51681A348DF600A8C803 /* NSData+ImageContentType.m in Sources */,
 				31CE940F1A42D5C10038480E /* YYCommonArrowItem.m in Sources */,
 				405D51711A348DF600A8C803 /* UIImage+GIF.m in Sources */,
+				31EB3C501AA85D3E002A06D5 /* ITSettingAboutViewController.m in Sources */,
 				405D51551A348DF600A8C803 /* MainViewController.m in Sources */,
 				31CE94131A42D5C10038480E /* YYCommonSwitchItem.m in Sources */,
 				31FCE9501A63C16300B884EF /* ITtextFiledBackground.m in Sources */,

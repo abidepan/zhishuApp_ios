@@ -20,17 +20,19 @@
 @property (weak, nonatomic) IBOutlet UIView *qickResponseCodeVW;
 @property (weak, nonatomic) IBOutlet UIView *newsVM;
 @property (weak, nonatomic) IBOutlet UIView *nfcVM;
-@property (weak, nonatomic) IBOutlet UIView *mallVM;
+//@property (weak, nonatomic) IBOutlet UIView *mallVM;
 @property (weak, nonatomic) IBOutlet UIView *historyVM;
-@property (weak, nonatomic) IBOutlet UIView *makeCodeVM;
+//@property (weak, nonatomic) IBOutlet UIView *makeCodeVM;
 @property (weak, nonatomic) IBOutlet UIView *squartContainerVW;
 
 - (IBAction)onQuickResponseCodeBtnClicked:(id)sender;
 - (IBAction)onScanHistoryBtnClicked:(id)sender;
+- (IBAction)onAboutBtnClicked:(id)sender;
 
-- (IBAction)onMineBtnClicked:(id)sender;
-- (IBAction)onScanBtnClicked:(id)sender;
-- (IBAction)onSettingBtnClicked:(id)sender;
+
+//- (IBAction)onMineBtnClicked:(id)sender;
+//- (IBAction)onScanBtnClicked:(id)sender;
+//- (IBAction)onSettingBtnClicked:(id)sender;
 - (IBAction)onNFCBtnClicked:(id)sender;
 
 @end
